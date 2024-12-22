@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/sonker" icon="sonic" color="#2a51c4" y="260" flipX="true" scale="1.3">
+	<anim name="idle" anim="idle" x="-6.153846153846153" y="0" fps="30" loop="true"/>
+	<anim name="singLEFT" anim="walk" x="738.4615384615385" y="0" fps="30"/>
+	<anim name="singDOWN" anim="fart" fps="30"/>
+	<anim name="singUP" anim="up" x="407.6923076923077" y="461.53846153846155" fps="30"/>
+	<anim name="singRIGHT" anim="punch" x="7.692307692307692" y="0" fps="30"/>
+</character>

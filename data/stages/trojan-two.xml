@@ -1,0 +1,16 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" name="trojan-two" folder="stages/trojan-virus">
+    <girlfriend />
+    <sprite name="bruj" x="300" y="300" sprite="bruj" scroll="1" type="loop" scale="4"   >
+         <anim name="bruj" anim="bruj" loop="true"/>
+         </sprite>
+    <sprite name="platform" x="-600" y="70" sprite="platform" scroll="1" scale="1" />
+    	<dad />
+	<boyfriend />
+    <sprite name="atelo_popup_animated" x="300" y="300" sprite="atelo_popup_animated" scroll="1" type="loop" scale="4" >
+         <anim name="popups instance " anim="popups instance " loop="true"/>
+         </sprite>
+    <sprite name="error" x="1000" y="900" sprite="error" scroll="1" type="loop" scale="2"   >
+         <anim name="error instance  " anim="error instance " loop="true"/>
+         </sprite>
+</stage>

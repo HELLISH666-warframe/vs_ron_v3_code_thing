@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/americanObamawaitthatsnotright" icon="obama" color="#af7850" x="800" y="90" camx="-610" camy="-440" scale="1.2">
+	<anim name="idle" anim="obamaidle"/>
+	<anim name="singLEFT" anim="obamaleft" x="266.6666666666667" y="75"/>
+	<anim name="singDOWN" anim="obamadown" x="375" y="-191.66666666666669"/>
+	<anim name="singUP" anim="obamaup" x="591.6666666666667" y="358.33333333333337"/>
+	<anim name="singRIGHT" anim="obamaright" x="-41.66666666666667" y="33.333333333333336"/>
+</character>

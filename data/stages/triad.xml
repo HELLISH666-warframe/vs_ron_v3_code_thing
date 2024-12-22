@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.7" name="triad" folder="stages/triad/" startCamPosY="600" startCamPosX="1000">
+	<girlfriend />
+	<sprite name="nomajin"             x="400" y="100"   sprite="nomajin"    scale="2"   scroll="0.5" />
+	<sprite name="majinother"          x="400" y="100"   sprite="majinother"  scale="2"      scroll="0.5" />
+	<sprite name="majin"               x="400" y="100"   sprite="majin"  scale="2"      scroll="0.5" />
+	<dad />
+	<boyfriend />	
+</stage>

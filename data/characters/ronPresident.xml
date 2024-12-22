@@ -1,0 +1,15 @@
+<!DOCTYPE codename-engine-character>
+<character x="340" y="-320" sprite="newcharstest/americanRon" scale="1.5" flipX="true" camx="-740" camy="200" icon="ron" color="#F1FD10">
+	<anim name="idle" anim="ron idle" x="-466.67" y="-326.67" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="ron left" x="-343.33" y="-310" fps="24" loop="false" indices="0..4"/>
+	<anim name="singDOWN" anim="ron down" x="-430.67" y="-380" fps="24" loop="false" indices="0..4"/>
+	<anim name="singUP" anim="ron up" x="-454.67" y="-292.67" fps="24" loop="false" indices="0..4"/>
+	<anim name="singRIGHT" anim="ron right" x="-513.33" y="-356.67" fps="24" loop="false" indices="0..4"/>
+	<anim name="singLEFTmiss" anim="ron left miss" x="-343.33" y="-310" fps="24" loop="false"/>
+	<anim name="singDOWNmiss" anim="ron down miss" x="-430.67" y="-380" fps="24" loop="false"/>
+	<anim name="singUPmiss" anim="ron up miss" x="-454.67" y="-292.67" fps="24" loop="false"/>
+	<anim name="singRIGHTmiss" anim="ron right miss" x="-513.33" y="-350" fps="24" loop="false"/>
+	<anim name="firstDeath" anim="ron death" x="-456" y="-328.67" fps="24" loop="false"/>
+	<anim name="deathLoop" anim="ron dead" x="-456.67" y="-653.33" fps="24" loop="false"/>
+	<anim name="deathConfirm" anim="ron alive" x="-458" y="-328.67" fps="24" loop="false"/>
+</character>

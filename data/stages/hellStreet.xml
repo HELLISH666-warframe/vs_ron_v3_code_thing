@@ -1,0 +1,23 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.7" folder="stages/hellStreet/">
+    <sprite name="sky" x="-800" y="-400" sprite="bloodshed_sky" scroll="0.1"/>
+   	<sprite name="city" x="-800" y="-400" sprite="bloodshed_city" scroll="0.25"/>
+   	<sprite name="mountains" x="-800" y="-400" sprite="bloodshed_mountains" scroll="0.3"/>
+    <sprite name="penta" x="-100" y="600" sprite="hellRon_satan" scale="0.8" scroll="0.7"/>
+   	<sprite name="street" x="-800" y="-400" sprite="bloodshed_street"/>
+    <sprite name="escape_fire" x="300" y="300" sprite="escape_fire" scroll="1" type="loop"   scale="6"   >
+         <anim name="escape_fire" anim="fire instance " loop="true"/>
+    </sprite>
+    <sprite name="lava" x="300" y="300" sprite="lava" scroll="0.5" type="loop" scale="2"  >
+         <anim name="lava" anim="lava" loop="true"/>
+     </sprite>
+     <sprite name="bloodshed_lamp"  x="900" y="-50"   sprite="bloodshed_lamp"    scroll="1"  scale="1"   >
+     </sprite>
+	   	<sprite name="spacebg" x="-800" y="-400" sprite="spacebg" scroll="0.5" />
+   	<sprite name="space" x="-800" y="-800" sprite="space" scroll="0.5" />
+	    <sprite name="bloodshed_streetBroken" x="-800" y="-390" sprite="bloodshed_streetBroken" scroll="1"  scale="1"   >
+    </sprite> 
+	   	<dad />
+   	<boyfriend />
+   	<sprite name="freindlystars" x="-800" y="-400" sprite="freindlystars" />
+</stage>

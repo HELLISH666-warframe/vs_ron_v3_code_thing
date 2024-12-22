@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="ballerorina" scale="0.5" camx="-175" camy="91" icon="ballerorina" color="#FF1010">
+	<anim name="idle" anim="ballerorina idle" x="0" y="0" fps="12" loop="true"/>
+	<anim name="singLEFT" anim="ballerorina left" x="0" y="0" fps="8" loop="false"/>
+	<anim name="singDOWN" anim="ballerorina down" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singUP" anim="ballerorina up" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singRIGHT" anim="ballerorina right" x="0" y="0" fps="12" loop="false"/>
+	<anim name="bye" anim="ballerorina baller" x="0" y="0" fps="12" loop="false"/>
+	<anim name="hey" anim="ballerorina this is a certified" x="0" y="0" fps="8" loop="false"/>
+</character>

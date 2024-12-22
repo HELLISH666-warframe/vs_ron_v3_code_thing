@@ -1,0 +1,19 @@
+{
+    "splashSkin": "vanilla",
+    "noteSkin": {
+        "strumSpecific": [
+            {
+                "strums": "default",
+                "notes": "default"
+            },
+            {
+                "strums": "ron",
+                "notes": "ron"
+            },
+            {
+                "strums": "default",
+                "notes": "default"
+            }
+        ]
+    }
+}

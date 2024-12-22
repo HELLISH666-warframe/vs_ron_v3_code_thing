@@ -1,0 +1,15 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="false" y="50" camy="200" flipX="true" holdTime="4" sprite="ou" > <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="idle" anim="shuttle man idle" loop="false" x="-5" y="0"/>
+   <anim name="singRIGHT" anim="shuttle man left" loop="false" x="5" y="-6"/>
+   <anim name="singDOWN" anim="shuttle man down" loop="false" x="-20" y="9"/>
+   <anim name="singUP" anim="shuttle man up" loop="false" x="-46" y="-13"/>
+   <anim name="singLEFT" anim="shuttle man right" loop="false" x="12" y="13"/>
+   <anim name="singRIGHTmiss" anim="shuttle man miss left" loop="false" x="-3" y="-1"/>
+   <anim name="singDOWNmiss" anim="shuttle man miss down" loop="false" x="-25" y="11"/>
+   <anim name="singUPmiss" anim="shuttle man miss up" loop="false" x="-46" y="27"/>
+   <anim name="singLEFTmiss" anim="shuttle man miss right" loop="false" x="-24" y="-8"/>
+   <anim name="hey" anim="shuttle man hey" fps="23" loop="false" x="-4" y="0"/>
+
+</character>

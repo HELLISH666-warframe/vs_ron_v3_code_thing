@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/classichellron" icon="hellron-classic" color="#000000" x="-60" y="200" antialiasing="false" camx="250" camy="100" scale="2">
+	<anim name="idle" anim="guitarclassichellron idle" fps="12" loop="true"/>
+	<anim name="singLEFT" anim="guitarclassichellron left" fps="12"/>
+	<anim name="singDOWN" anim="guitarclassichellron down" fps="12"/>
+	<anim name="singUP" anim="guitarclassichellron up" fps="12"/>
+	<anim name="singRIGHT" anim="guitarclassichellron right" fps="12"/>
+</character>

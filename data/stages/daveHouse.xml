@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" folder="stages/dave/">
+	<girlfriend />
+   	<sprite name="sky" x="-800" y="-100" sprite="ICANTBELIEVEIHAVETOCLARIFYTHIS" scroll="0.1" />
+   	<sprite name="gate" x="-600" y="100" scale="1.2" sprite="gate" scroll="0.8" />
+   	<sprite name="grass" x="-800" y="400" sprite="grass" scale="1.2" scroll="0.9" />
+   	<dad />
+   	<boyfriend />
+</stage>

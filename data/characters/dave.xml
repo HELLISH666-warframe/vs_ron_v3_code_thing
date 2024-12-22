@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="dave_sheet" icon="dave" color="#0A37F3" holdTime="6.1">
+	<anim name="idle" anim="idle" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singRIGHT" anim="right0" x="-27" y="0" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left0" x="1" y="11" fps="24" loop="false"/>
+	<anim name="singUP" anim="up0" x="-12" y="18" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down0" x="-28" y="12" fps="24" loop="false"/>
+	<anim name="err" anim="hey" x="10" y="10" fps="24" loop="false"/>
+	<anim name="um" anim="hey" x="8" y="9" fps="24" loop="false"/>
+</character>

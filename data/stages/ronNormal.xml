@@ -1,0 +1,13 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.6" name="ronNormal" folder="stages/ron/" startCamPosY="600" startCamPosX="1000">
+	<sprite name="ron_sky"               x="-600" y="-200"   sprite="ron_sky"       scroll="0.9" />
+	<sprite name="ron_city"               x="-600" y="-200"   sprite="ron_city"       scroll="0.9" />
+	<sprite name="ron_mountainsback"               x="-600" y="-200"   sprite="ron_mountainsback"       scroll="0.9" />
+	<sprite name="ron_clouds"               x="-600" y="-200"   sprite="ron_clouds"       scroll="0.9" />
+	<sprite name="ron_mountains"               x="-600" y="-200"   sprite="ron_mountains"       scroll="0.9" />
+	<sprite name="ron_hillfront"               x="-600" y="-200"   sprite="ron_hillfront"       scroll="0.9" />
+	<sprite name="ron_street"               x="-600" y="-200"   sprite="ron_street"       scroll="0.9" />
+	<girlfriend />
+	<dad />
+	<boyfriend />	
+</stage>

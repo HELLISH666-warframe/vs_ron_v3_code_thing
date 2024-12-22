@@ -1,0 +1,14 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="ou" icon="shittle" color="#80ff00" x="-170" y="70" flipX="true" camx="210" camy="70" holdTime="4.5">
+	<anim name="singLEFT" anim="shuttle man left"/>
+	<anim name="singDOWN" anim="shuttle man down"/>
+	<anim name="singUP" anim="shuttle man up"/>
+	<anim name="singRIGHT" anim="shuttle man right"/>
+	<anim name="hey" anim="shuttle man hey"/>
+	<anim name="singRIGHTmiss" anim="shuttle man miss right" x="-44" y="22"/>
+	<anim name="singLEFTmiss" anim="shuttle man miss left" x="-4" y="2"/>
+	<anim name="singUPmiss" anim="shuttle man miss up" x="-44" y="22"/>
+	<anim name="singDOWNmiss" anim="shuttle man miss down" x="-5" y="5"/>
+	<anim name="idle" anim="shuttle man idle" fps="14"/>
+</character>

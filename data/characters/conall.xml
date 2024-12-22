@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/ronDsides" icon="ron-dsides" color="#6699ff" x="-200" camx="0" camy="110" holdTime="6.1" scale="0.5">
+	<anim name="idle" anim="ronIdle"/>
+	<anim name="singLEFT" anim="ronLeft" x="146" y="-34"/>
+	<anim name="singRIGHT" anim="ronRight" x="-22" y="-18"/>
+	<anim name="singUP" anim="ronUp" x="20" y="50"/>
+	<anim name="singDOWN" anim="ronDown" x="260" y="-308"/>
+</character>

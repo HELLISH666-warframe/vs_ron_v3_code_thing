@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="false" flipX="false" holdTime="4" sprite="ronMad" scale="1.2"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="singLEFT" anim="ron angery left" loop="false" x="104" y="-18"/>
+   <anim name="singDOWN" anim="ron angery down" loop="false" x="-59" y="-11"/>
+   <anim name="singUP" anim="ron angery up" loop="false" x="45" y="40"/>
+   <anim name="singRIGHT" anim="ron angery right" loop="false" x="-62" y="10"/>
+   <anim name="idle-alt" anim="ron angery bridle alt" loop="false" x="-61" y="-6"/>
+   <anim name="hey" anim="ron angery yes" loop="false" x="0" y="0"/>
+   <anim name="idle" anim="ron angery idle" loop="false" x="0" y="0"/>
+
+</character>

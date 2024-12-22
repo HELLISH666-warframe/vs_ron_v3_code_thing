@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="Gray_GF" icon="gf" color="#a5004d" x="20" y="10">
+	<anim name="danceRight" anim="Gray GF Idle" x="0" y="-9"/>
+	<anim name="danceLeft" anim="Gray GF Idle" x="0" y="-9"/>
+</character>

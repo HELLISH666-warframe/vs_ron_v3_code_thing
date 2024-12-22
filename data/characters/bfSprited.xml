@@ -1,0 +1,15 @@
+<!DOCTYPE codename-engine-character>
+<character x="20" y="550" sprite="BOYFRIEND_sprited" scale="10" antialiasing="false" flipX="true" isPlayer="true" icon="bf-pixel" color="#1550FF">
+	<anim name="idle" anim="idle" x="0" y="0" fps="12" loop="false" indices="1..3,0"/>
+	<anim name="singLEFT" anim="left" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singDOWN" anim="down" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singUP" anim="up" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singLEFTmiss" anim="missleft" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singDOWNmiss" anim="missdown" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singUPmiss" anim="missup" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singRIGHTmiss" anim="missright" x="0" y="0" fps="12" loop="false"/>
+	<anim name="firstDeath" anim="dying" x="0" y="0" fps="12" loop="false"/>
+	<anim name="deathLoop" anim="deathloop" x="0" y="0" fps="12" loop="false" indices="0,12,1"/>
+	<anim name="deathConfirm" anim="dying" x="0" y="0" fps="12" loop="false" indices="10..7"/>
+</character>

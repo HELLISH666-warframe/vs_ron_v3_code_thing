@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" name="normal" folder="stages/ron-clic/" startCamPosY="600" startCamPosX="1000">
+	<sprite name="happyRon_sky"       scale="1.6"         x="-400" y="60"   sprite="happyRon_sky"       scroll="0.9" />
+	<sprite name="happyRon_ground"               x="-500" y="-300"   sprite="happyRon_ground"       scroll="0.9" />
+	<girlfriend />
+	<dad />
+	<boyfriend />	
+</stage>

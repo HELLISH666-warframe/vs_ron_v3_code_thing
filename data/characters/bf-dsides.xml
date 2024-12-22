@@ -1,0 +1,21 @@
+<!DOCTYPE codename-engine-character>
+<character y="320" sprite="newcharstest/dsidesbf" flipX="true" icon="bf-dsides" color="#FD00FB">
+	<anim name="idle" anim="BF idle dance" x="-5" y="0" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="BF NOTE LEFT0" x="-2" y="5" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="BF NOTE DOWN0" x="-20" y="-24" fps="24" loop="false"/>
+	<anim name="singUP" anim="BF NOTE UP0" x="15" y="39" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="BF NOTE RIGHT0" x="21" y="-2" fps="24" loop="false"/>
+	<anim name="singLEFTmiss" anim="BF NOTE LEFT MISS" x="-1" y="6" fps="24" loop="false"/>
+	<anim name="singDOWNmiss" anim="BF NOTE DOWN MISS" x="-13" y="-23" fps="24" loop="false"/>
+	<anim name="singUPmiss" anim="BF NOTE UP MISS" x="15" y="42" fps="24" loop="false"/>
+	<anim name="singRIGHTmiss" anim="BF NOTE RIGHT MISS" x="21" y="-1" fps="24" loop="false"/>
+	<anim name="hey" anim="BF HEY" x="-81" y="17" fps="24" loop="false"/>
+	<anim name="scared" anim="BF idle shaking" x="-5" y="0" fps="24" loop="true"/>
+	<anim name="firstDeath" anim="BF dies" x="-13" y="-20" fps="24" loop="false"/>
+	<anim name="deathLoop" anim="BF Dead Loop" x="-12" y="-20" fps="24" loop="true"/>
+	<anim name="deathConfirm" anim="BF Dead confirm" x="-12" y="46" fps="24" loop="false"/>
+	<anim name="Dodge down" anim="BF NOTE DOWN DODGE" x="-90" y="0" fps="24" loop="false"/>
+	<anim name="Dodge left" anim="BF NOTE LEFT DODGE" x="40" y="-40" fps="24" loop="false"/>
+	<anim name="Dodge up" anim="BF NOTE UP DODGE" x="-17" y="38" fps="24" loop="false"/>
+	<anim name="Dodge right" anim="BF NOTE RIGHT DODGE" x="-157" y="-2" fps="24" loop="false"/>
+</character>

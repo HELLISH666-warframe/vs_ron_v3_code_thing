@@ -1,0 +1,15 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/dsidesgf" icon="gf-dsides" color="#f9785f" y="-30">
+	<anim name="cheer" anim="GF Cheer" x="0" y="-18"/>
+	<anim name="singLEFT" anim="GF left note" x="0" y="-27"/>
+	<anim name="singDOWN" anim="GF Down Note" x="0" y="-42"/>
+	<anim name="singUP" anim="GF Up Note" x="0" y="-14"/>
+	<anim name="singRIGHT" anim="GF Right Note" x="0" y="-15"/>
+	<anim name="sad" anim="gf sad" x="-2" y="-43" indices="0..12"/>
+	<anim name="danceLeft" anim="GF Dancing Beat" x="0" y="-9" indices="30,0..14"/>
+	<anim name="danceRight" anim="GF Dancing Beat" x="0" y="-9" indices="15..29"/>
+	<anim name="hairBlow" anim="GF Dancing Beat Hair blowing" x="0" y="-15" loop="true" indices="0..3"/>
+	<anim name="hairFall" anim="GF Dancing Beat Hair Landing" x="0" y="-9" indices="0..11"/>
+	<anim name="scared" anim="GF FEAR" x="-2" y="-22" loop="true"/>
+</character>

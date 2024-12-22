@@ -1,0 +1,23 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" folder="stages/madStreet/">
+	<sprite name="sky" x="-800" y="-400" sprite="ayo_sky" />
+	<sprite name="mountainsback" x="-800" y="-400" sprite="ayo_mountainsback" />
+	<sprite name="mountains" x="-800" y="-400" sprite="ayo_mountains" />
+	<sprite name="hillfront" x="-800" y="-400" sprite="ayo_hillfront" />
+	<sprite name="gradient" x="-800" y="-410" sprite="ss_gradient" />
+	<sprite name="street" x="-800" y="-410" sprite="ayo_street" />
+	<sprite name="streetnolight" x="-800" y="-410" sprite="ayo_streetNoLight" />
+	    <girlfriend />
+    <sprite name="bruj" x="300" y="300" sprite="bruj" scroll="1" type="loop" scale="4"   >
+         <anim name="bruj" anim="bruj" loop="true"/>
+         </sprite>
+    <sprite name="platform" x="-600" y="70" sprite="platform" scroll="1" scale="1" />
+    	<dad />
+	<boyfriend />
+    <sprite name="atelo_popup_animated" x="300" y="300" sprite="atelo_popup_animated" scroll="1" type="loop" scale="4" >
+         <anim name="popups instance " anim="popups instance " loop="true"/>
+         </sprite>
+    <sprite name="error" x="1000" y="900" sprite="error" scroll="1" type="loop" scale="2"   >
+         <anim name="error instance  " anim="error instance " loop="true"/>
+         </sprite>
+</stage>

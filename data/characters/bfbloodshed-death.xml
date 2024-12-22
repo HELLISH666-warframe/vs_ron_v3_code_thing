@@ -1,0 +1,19 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="true" flipX="true" holdTime="6.1" sprite="bfbloodshed-death"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="idle" anim="BF idle dance" loop="false" x="-5" y="0"/>
+   <anim name="singUP" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="singLEFT" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="singRIGHT" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="singDOWN" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="singUPmiss" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="singLEFTmiss" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="singRIGHTmiss" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="singDOWNmiss" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="hey" anim="BF dies" loop="false" x="0" y="0"/>
+   <anim name="firstDeath" anim="BF dies" loop="false" x="317" y="76"/>
+   <anim name="deathConfirm" anim="BF Dead confirm" loop="false" x="232" y="69"/>
+   <anim name="scared" anim="BF idle shaking" loop="false" x="0" y="0"/>
+   <anim name="deathLoop" anim="BF Dead Loop" loop="true" x="235" y="71"/>
+
+</character>

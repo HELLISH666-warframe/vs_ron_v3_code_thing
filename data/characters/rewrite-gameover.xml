@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="true" flipX="true" holdTime="6.1" sprite="drewritego" scale="1.1"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="firstDeath" anim="rewritego death" fps="30" loop="false" x="0" y="0"/>
+   <anim name="deathConfirm" anim="rewritego confirm" fps="30" loop="false" x="0" y="0"/>
+   <anim name="deathLoop" anim="rewritego loop" fps="30" loop="true" x="0" y="0"/>
+
+</character>

@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/bfGuitar" icon="bf" color="#0079fd" x="-20" y="330" flipX="true" camx="-20" camy="20">
+	<anim name="idle" anim="BF idle dance" x="-5" y="0"/>
+	<anim name="singRIGHT" anim="bf right" x="10" y="3"/>
+	<anim name="singLEFT" anim="bf left" x="135" y="-2"/>
+	<anim name="singDOWN" anim="bf down" x="-2" y="-21"/>
+	<anim name="singUP" anim="bf up" x="4" y="47"/>
+</character>

@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/ronUnderwater" icon="ronslightly" color="#aa8900" x="-120" y="220" camx="30" scale="1.1">
+	<anim name="singLEFT" anim="left" x="127.27272727272727" y="-36.36363636363636"/>
+	<anim name="singDOWN" anim="down" x="-27.27272727272727" y="-81.81818181818181"/>
+	<anim name="singUP" anim="up" x="-18.18181818181818" y="45.45454545454545"/>
+	<anim name="singRIGHT" anim="right" x="-40.90909090909091" y="-40.90909090909091"/>
+	<anim name="idle" anim="idle"/>
+</character>

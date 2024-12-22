@@ -1,0 +1,5 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" folder="stages/other">
+   <girlfriend />
+   <sprite name="walmart" x="-600" y="-380" sprite="wallmart" scale="1"/>
+</stage>

@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="awesome-ron" antialiasing="false" icon="awesome-ron" camx="617" camy="479" color="#E6E411">
+	<anim name="idle" anim="awesome-ron idle" x="-700" y="-560" fps="12" loop="true"/>
+	<anim name="singLEFT" anim="awesome-ron left" x="-695" y="-560" fps="8" loop="false"/>
+	<anim name="singDOWN" anim="awesome-ron down" x="-700" y="-560" fps="12" loop="false"/>
+	<anim name="singUP" anim="awesome-ron up" x="-674" y="-550" fps="12" loop="false"/>
+	<anim name="singRIGHT" anim="awesome-ron right" x="-700" y="-555" fps="12" loop="false"/>
+</character>

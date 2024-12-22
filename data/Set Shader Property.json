@@ -1,0 +1,8 @@
+{
+    "params":
+    [
+        {"name": "Shader Name", "type": "String", "defValue": ""},
+		{"name": "Variable", "type": "String", "defValue": ""},
+		{"name": "Value", "type": "Float(-9999, 9999, 0.01, 2)", "defValue": 0}
+    ]
+}

@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="hellron-drippin" icon="hellron-classic" color="#000000" y="350" antialiasing="false" camx="170" camy="20" scale="1.125">
+	<anim name="idle" anim="idle" x="22.22222222222222" y="231.11111111111111"/>
+	<anim name="singUP" anim="up" x="68.44444444444444" y="391.1111111111111"/>
+	<anim name="singDOWN" anim="down" x="284.44444444444446" y="90.66666666666667"/>
+	<anim name="singRIGHT" anim="right" x="93.33333333333333" y="279.1111111111111"/>
+	<anim name="singLEFT" anim="left" x="386.6666666666667" y="305.77777777777777"/>
+</character>

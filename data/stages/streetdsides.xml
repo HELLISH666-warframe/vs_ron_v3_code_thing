@@ -1,0 +1,17 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" folder="stages/streetdsides">
+   	<sprite name="conall_sky" x="-800" y="-400" sprite="conall_sky" scroll="1" />
+   	<sprite name="conall_bgBehind" x="-800" y="-400" sprite="conall_bgBehind" scroll="1"/>
+   	<sprite name="conall_bg" x="-800" y="-400" sprite="conall_bg" scroll="1"/>
+   	<sprite name="conall_bucket" x="-800" y="-400" sprite="conall_bucket" scroll="1"/>
+	<sprite name="conallwasted_sky" x="-800" y="-400" sprite="conallwasted_sky" scroll="1" />
+   	<solid name="rain3" y="50" x="-400" width="2200" height="1000" scroll="0.1" color="0"/>
+   	<sprite name="conallwasted_bgBehind" x="-800" y="-400" sprite="conallwasted_bgBehind" scroll="1"/>
+   	<sprite name="conallwasted_bg" x="-800" y="-400" sprite="conallwasted_bg" scroll="1"/>
+   	<sprite name="conallwasted_bucket" x="-800" y="-400" sprite="conallwasted_bucket" scroll="1"/>
+   	<solid name="rain2" y="50" x="-400" width="2200" height="1000" scroll="0.4" color="0"/>
+	<girlfriend />
+   	<dad />
+   	<boyfriend />
+	<solid name="rain1" y="50" x="-400" width="2200" height="1000" scroll="1.7" color="0"/>
+</stage>

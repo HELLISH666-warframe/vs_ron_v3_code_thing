@@ -1,0 +1,18 @@
+<!DOCTYPE codename-mod-options>
+<menu name="ron Options" desc="ron shit">
+
+    <checkbox id="shaders" name="Checkbox example" />
+
+    <number id="numberExample" name="The intensity of the RGB shader. (only works if above is enabled)" min="0" max="2" change=".1"/>
+
+    <choice id="choiceExample" name="Choice Example">
+        <value name="Disabled" value="disabled"/>
+        <value name="This only" value="thisOnly"/>
+        <value name="All" value="all"/>
+    </choice>
+
+    <menu name="Submenu Example" desc="Submenu test">
+        <checkbox id="levelOfIdk2" name="Level of idk" />
+    </menu>
+
+</menu>

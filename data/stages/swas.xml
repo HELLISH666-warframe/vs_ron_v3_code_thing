@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" name="swas" folder="stages/" startCamPosY="600" startCamPosX="1000">
+	<sprite name="ground"               x="-500" y="-100"   sprite="placeholder/swas"   scale="1.3"    scroll="0.9" />
+	<girlfriend />
+	<dad />
+	<boyfriend />
+	 <sprite name="atelo_popup_animated" x="300" y="300" sprite="atelo/atelo_popup_animated" scroll="1" type="loop" scale="4" >
+         <anim name="popups instance " anim="popups instance " loop="true"/>
+	 </sprite>		
+</stage>

@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="false" flipX="false" holdTime="6.1" icon="dripron" sprite="dripron" scale="0.5"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="singLEFT" anim="dripron left" fps="12" loop="false" x="0" y="0"/>
+   <anim name="singDOWN" anim="dripron down" fps="12" loop="false" x="0" y="0"/>
+   <anim name="singUP" anim="dripron up" fps="12" loop="false" x="0" y="0"/>
+   <anim name="singRIGHT" anim="dripron right" fps="12" loop="false" x="0" y="0"/>
+   <anim name="idle" anim="dripron idle" fps="12" loop="true" x="0" y="0" indices="0,1,2,3"/>
+
+</character>

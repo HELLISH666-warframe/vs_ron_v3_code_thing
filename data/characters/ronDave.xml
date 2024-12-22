@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/ron" icon="ron" color="#ffff00" x="2300" y="200" camx="80" camy="-350" scale="0.5">
+	<anim name="idle" anim="ron idle" x="1770" y="1440" fps="12" loop="true"/>
+	<anim name="singLEFT" anim="ron left" x="1800" y="1426" fps="8"/>
+	<anim name="singDOWN" anim="ron down" x="1772" y="1434" fps="12"/>
+	<anim name="singUP" anim="ron up" x="1774" y="1432" fps="12"/>
+	<anim name="singRIGHT" anim="ron right" x="1788" y="1438" fps="12"/>
+	<anim name="hey" anim="ron death" x="1770" y="1432" fps="16"/>
+</character>

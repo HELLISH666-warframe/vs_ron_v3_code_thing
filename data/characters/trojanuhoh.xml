@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/ohnohetransformed" icon="ronpower" color="#ffd700" x="-210" y="190" camx="-217" camy="70" holdTime="6.1">
+	<anim name="idle" anim="ohnohetransformed" indices="0,0"/>
+	<anim name="hey" anim="ohnohetransformed" fps="30"/>
+</character>

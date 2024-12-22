@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="-800" y="-300" sprite="bloodshedron" scale="0.5" camx="-317" camy="179" icon="hellron" color="#131313">
+	<anim name="idle" anim="bloodshedron idle" x="0" y="0" fps="16" loop="true"/>
+	<anim name="singLEFT" anim="bloodshedron left" x="0" y="0" fps="8" loop="false"/>
+	<anim name="singDOWN" anim="bloodshedron down" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singUP" anim="bloodshedron up" x="0" y="0" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="bloodshedron right" x="0" y="0" fps="24" loop="false"/>
+</character>

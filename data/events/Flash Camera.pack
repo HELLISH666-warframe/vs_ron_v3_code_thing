@@ -1,0 +1,24 @@
+Flash Camera.hx________PACKSEP________
+function onEvent(e:EventGameEvent)
+{
+    if (e.event.name == "Flash Camera")
+        Reflect.field(state, e.event.params[0]).flash(e.event.params[2],e.event.params[1]);
+}________PACKSEP________{
+    "params": [
+        {
+			"name": "Camera",
+			"type": "DropDown('camGame', 'camHUD')",
+			"defaultValue": 0
+		},
+        {
+            "name": "Duration",
+            "type": "String",
+            "defaultValue": "1"
+        },
+        {
+            "name": "Color",
+            "type": "ColorWheel",
+            "defaultValue": "0xFFFFFFFF"
+        }
+    ]
+}________PACKSEP________iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAACXBIWXMAAA7CAAAOwgEVKEqAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURQAAAAAAAKVnuc8AAAABdFJOUwBA5thmAAAAMklEQVR4nCXBIREAIBAAsB0CgSACWdAojgREePnxEWyQwyx2s4569fD1UK917GYWOfAAgaoFZUH+dOcAAAAOZVhJZk1NACoAAAAIAAAAAAAAANJTkwAAAABJRU5ErkJggg==

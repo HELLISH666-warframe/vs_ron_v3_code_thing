@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/tgt-sonic" icon="tgt-sonic" color="#00a2e8" x="-900" y="-420" antialiasing="false" camx="730" camy="480" scale="1.1">
+	<anim name="idle" anim="tgt-sonic idle" x="-636.3636363636363" y="-509.09090909090907" fps="12"/>
+	<anim name="singLEFT" anim="tgt-sonic left" x="-635.4545454545454" y="-509.09090909090907" fps="12"/>
+	<anim name="singDOWN" anim="tgt-sonic down" x="-638.1818181818181" y="-512.7272727272726" fps="12"/>
+	<anim name="singUP" anim="tgt-sonic up" x="-636.3636363636363" y="-509.09090909090907" fps="12"/>
+	<anim name="singRIGHT" anim="tgt-sonic right" x="-635.4545454545454" y="-513.6363636363636" fps="12"/>
+</character>

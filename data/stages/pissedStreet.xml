@@ -1,0 +1,16 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" folder="stages/pissedStreet/">
+   	<sprite name="underwater" x="20" y="300" sprite="underwater" scroll="0.7" scale="4" />
+   	<sprite name="sky" x="-800" y="-400" sprite="wasted_sky" scroll="0.1" />
+	<solid name="rain3" y="50" x="-400" width="2200" height="1000" scroll="0.1" color="0"/>
+   	<sprite name="city" x="-800" y="-400" sprite="wasted_city" scroll="0.25"/>
+   	<sprite name="mountains" x="-800" y="-400" sprite="wasted_mountains" scroll="0.3"/>
+   	<sprite name="hillfront" x="-800" y="-400" sprite="wasted_hillfront" scroll="0.3"/>
+	<solid name="rain2" y="50" x="-400" width="2200" height="1000" scroll="0.4" color="0"/>
+   	<sprite name="fog" x="-800" y="-400" sprite="fog" scale="3" scroll="0.1"/>
+   	<sprite name="street" x="-800" y="-400" sprite="wasted_street" />
+	<girlfriend />
+   	<dad />
+   	<boyfriend />
+	<solid name="rain1" y="50" x="-400" width="2200" height="1000" scroll="1.7" color="0"/>
+</stage>

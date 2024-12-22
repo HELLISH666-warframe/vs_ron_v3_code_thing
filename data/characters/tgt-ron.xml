@@ -1,0 +1,13 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/trollRon" icon="tgt-ron" color="#f0391a" x="-60" y="260" flipX="true" antialiasing="false" camx="240" scale="1.1">
+	<anim name="idle" anim="trollRon idle" fps="12"/>
+	<anim name="singLEFT" anim="trollRon left" fps="12"/>
+	<anim name="singLEFTmiss" anim="trollRon missl" fps="12"/>
+	<anim name="singDOWN" anim="trollRon down" fps="12"/>
+	<anim name="singDOWNmiss" anim="trollRon missd" fps="12"/>
+	<anim name="singUP" anim="trollRon up" fps="12"/>
+	<anim name="singUPmiss" anim="trollRon missu" fps="12"/>
+	<anim name="singRIGHT" anim="trollRon right" fps="12"/>
+	<anim name="singRIGHTmiss" anim="trollRon missr" fps="12"/>
+</character>

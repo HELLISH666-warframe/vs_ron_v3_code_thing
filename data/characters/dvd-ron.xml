@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/rong_aisle" icon="rondvd" color="#ffff00" y="350">
+	<anim name="idle" anim="Idle" x="-5" y="0"/>
+	<anim name="singLEFT" anim="left" x="185" y="4"/>
+	<anim name="singDOWN" anim="down" x="120" y="-1"/>
+	<anim name="singUP" anim="up" x="4" y="7"/>
+	<anim name="singRIGHT" anim="right" x="-28" y="0"/>
+</character>

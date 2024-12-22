@@ -1,0 +1,19 @@
+Camera Zoom.hx________PACKSEP________function onEvent(_){
+    if (_.event.name == 'Camera Zoom') {
+		Reflect.field(state, _.event.params[0]).zoom += _.event.params[1];
+	}
+        
+}________PACKSEP________{
+	"params": [
+		{
+			"name": "Camera",
+			"type": "DropDown('camGame', 'camHUD')",
+			"defaultValue": 0
+		},
+		{
+			"name": "Value",
+			"type": "Float(0,999,0.1)",
+			"defaultValue": 0.1
+		}
+	]
+}

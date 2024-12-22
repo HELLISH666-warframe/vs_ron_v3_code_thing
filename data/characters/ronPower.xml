@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="Trojan_Ron" icon="ronpower-classic" x="0" y="200" color="#FFFC00" holdTime="6.1">
+	<anim name="idle" anim="Trojan Ron Idle" x="0" y="0" fps="24" loop="true"/>
+	<anim name="singUP" anim="Trojan Ron Up" x="42" y="-172" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Trojan Ron Down" x="40" y="-280" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="Trojan Ron Left" x="158" y="-177" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Trojan Ron Right" x="-169" y="-200" fps="24" loop="false"/>
+	<anim name="cheer" anim="Trojan Ron Bruh" x="71" y="-40" fps="24" loop="false"/>
+</character>

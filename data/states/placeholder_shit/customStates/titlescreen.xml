@@ -1,0 +1,71 @@
+<!DOCTYPE codename-titlestate >
+<titlestate>
+	<sprites folder="menus/titlescreen">
+		<sprite name="trueTitleBgAnimated" sprite="trueTitleBgAnimated" scale="2"  x="330" y="180" beatInterval="1">
+			<anim name="animate animate" anim="animate animate" indices="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42" />
+		</sprite>
+		<sprite name="trueTitleBarTop" sprite="trueTitleBarTop" x="0" y="0"/>
+		<sprite name="trueTitleBarBottom" sprite="trueTitleBarBottom" x="0" y="0"/>
+		<sprite name="trueTitleLogo" sprite="trueTitleLogo" x="0" y="0"/>
+		<titleEnter sprite="trueTitlePlay" x="0" y="20" />
+	</sprites>
+
+	<intro length="16">
+		<text beat="1">
+			<line text="a" />
+			<line text="fuck load" />
+			<line text="of" />
+			<line text="people" />
+		</text>
+
+		<text beat="3">
+			<line text="a" />
+			<line text="fuck load" />
+			<line text="of" />
+			<line text="people" />
+			<line text="present" />
+		</text>
+
+		<text beat="4" /> <!-- clears the screen !-->
+
+		<text beat="5">
+			<line text="In association" />
+			<line text="with" />
+		</text>
+
+		<text beat="7">
+			<line text="In association" />
+			<line text="with" />
+			<line text="not patrick" />
+			<sprite path="menus/titlescreen/newgrounds_logo" scale="0.8"/>
+		</text>
+
+		<text beat="8" /> <!-- clears the screen !-->
+
+		<text beat="9">
+			<introtext line="1" />
+		</text>
+
+		<text beat="11">
+			<introtext line="1" />
+			<introtext line="2" />
+		</text>
+
+		<text beat="12"/>
+
+		<text beat="13">
+			<line text="literally every" />
+		</text>
+
+		<text beat="14">
+			<line text="literally every" />
+			<line text="fanmade fnf mod" />
+		</text>
+
+		<text beat="15">
+			<line text="literally every" />
+			<line text="fanmade fnf mod" />
+			<line text="ever'" />
+		</text>
+	</intro>
+</titlestate>

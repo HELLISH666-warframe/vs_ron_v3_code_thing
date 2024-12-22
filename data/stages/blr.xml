@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" name="blr" folder="stages/blr/" startCamPosY="600" startCamPosX="1000">
+	<sprite name="skyBLR"               x="-100" y="-200"   sprite="madRonV1_sky"       scroll="1" />
+	<sprite name="ground"               x="-500" y="-400"   sprite="madRonV1_ground"       scroll="0.9" />
+	<girlfriend />
+	<dad />
+	<boyfriend />		
+</stage>

@@ -1,0 +1,41 @@
+	<menu name="vs ron v3" desc="The Epic People Who Worked On The Mod">
+		<!-- \/ You can also set the portrait shader as false as you can see below in the github one -->
+	<credit name="seezee" desc="Leader,Lead artist,Coder,Composer,Charter etc" icon="seezee" size="130" portrait="false"/>
+	<credit name="cyberbyte" desc="Co-Owner,Coder,Charter" icon="cyberbyte" size="130" portrait="false"/>
+	<credit name="kurtfan" desc="Co-Owner,Composer,Charter" icon="kurtfan" size="130" portrait="false"/>
+	<credit name="armand ronan" desc="Co-Owner,Composer" icon="armandronan" size="130" portrait="false"/>
+	<credit name="blueboyeet" desc="Retired Composer" icon="blueboyeet" size="130" portrait="false"/>
+	<credit name="knocks" desc="Old Owner,Artist,Composer" icon="knocks" size="130" portrait="false"/>
+	<credit name="sic" desc="Lead Composer" icon="sic" size="130" portrait="false"/>
+	<credit name="frakits" desc="Lead Coder" icon="frakits" size="130" portrait="false"/>
+	<credit name="spiritualosu" desc="Placeholder" icon="spiritualosu" size="130" portrait="false"/>
+	<credit name="mr stupid" desc="Composer" icon="mrstupid" size="130" portrait="false"/>
+	<credit name="shoutsuo" desc="Lead Charter" icon="shoutsuo" size="130" portrait="false"/>
+	<credit name="byok" desc="Artist" icon="byok" size="130" portrait="false"/>
+	<credit name="DRIFTINGZIM" desc="Artist" icon="zimmy" size="130" portrait="false"/>
+	<credit name="YAWWILLORYAWONY" desc="Artist" icon="yawill" size="130" portrait="false"/>
+	<credit name="terionic" desc="Artist,Composer" icon="terionic" size="130" portrait="false"/>
+	<credit name="blacknide" desc="Artist,Composer" icon="blacknide" size="130" portrait="false"/>
+	<credit name="sword" desc="Coder" icon="sword" size="130" portrait="false"/>
+	<credit name="coquers" desc="Composer" icon="coquers" size="130" portrait="false"/>
+	<credit name="accelerateWASTAKEN" desc="Concept Artist" icon="sonicaccelerate" size="130" portrait="false"/>
+	<credit name="goggledanimations" desc="Artist" icon="goggledanimations" size="130" portrait="false"/>
+	<credit name="glitchsmh" desc="Composer" icon="glitchsmh" size="130" portrait="false"/>
+	<credit name="justin" desc="Composer" icon="justin" size="130" portrait="false"/>
+	<credit name="bobby THE ROBOT" desc="Artist" icon="bobby" size="130" portrait="false"/>
+	<credit name="deepfriedbolonese" desc="Composer" icon="deepfriedbolonese" size="130" portrait="false"/>
+	<credit name="spaceveta" desc="Charter" icon="spaceveta" size="130" portrait="false"/>
+	<credit name="dragonflame" desc="Artist,Composer" icon="dragonflame" size="130" portrait="false"/>
+	<credit name="benju-KATCHOWEE" desc="Artist" icon="benju" size="130" portrait="false"/>
+	<credit name="karbis" desc="Coder" icon="karbis" size="130" portrait="false"/>
+	<credit name="callie" desc="Artist" icon="callie" size="130" portrait="false"/>
+	<credit name="jacelol" desc="Composer" icon="jacelol" size="130" portrait="false"/>
+	<credit name="bitto" desc="Charter" icon="bitto" size="130" portrait="false"/>
+	<credit name="gumbalino" desc="Artist" icon="gumbalino" size="130" portrait="false"/>
+	<credit name="douyhe" desc="Composer" icon="douyhe" size="130" portrait="false"/>
+	<credit name="top ten awesome" desc="awesome(Composer)" icon="top10awesome" size="130" portrait="false"/>
+<!-- TEMPLATE FOR CUSTOM CREDITS!!! -->
+<!DOCTYPE codename-mod-credits>
+</menu>
+
+

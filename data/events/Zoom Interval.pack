@@ -1,0 +1,14 @@
+Zoom Interval.hx________PACKSEP________function onEvent(_){
+    if (_.event.name == 'Zoom Interval') {
+		camZoomingInterval = _.event.params[1];
+	}
+        
+}________PACKSEP________{
+	"params": [
+		{
+			"name": "Value",
+			"type": "Int(0,999,1)",
+			"defaultValue": 4
+		}
+	]
+}

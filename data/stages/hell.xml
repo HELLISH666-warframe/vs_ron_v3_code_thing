@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.6" name="hell" folder="stages/" startCamPosY="600" startCamPosX="1000">
+	<sprite name="hell_bg" x="140" y="240" sprite="classicStages/hell_bg" scroll="0.9"  type="loop" scale="4"  >
+             <anim name="hell_bg" anim="idle instance " loop="true"/>
+    </sprite>
+	<sprite name="hellRon_satan"               x="1" y="-200"   sprite="hellStreet/hellRon_satan"       scroll="0.9" />
+	<sprite name="hellRon_ground"               x="-600" y="-200"   sprite="classicStages/hellRon_ground"       scroll="1" />
+</stage>

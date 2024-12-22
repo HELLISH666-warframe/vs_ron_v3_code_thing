@@ -1,0 +1,14 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="true" x="0" y="350" icon="bf" flipX="true" holdTime="4" sprite="bfUnderwater" scale="1.1" antialiasing="false"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="idle" anim="BF idle dance" loop="false" x="-6" y="0"/>
+   <anim name="singLEFT" anim="BF NOTE LEFT0" loop="false" x="5" y="-6"/>
+   <anim name="singDOWN" anim="BF NOTE DOWN0" loop="false" x="-20" y="-51"/>
+   <anim name="singUP" anim="BF NOTE UP0" loop="false" x="-46" y="27"/>
+   <anim name="singRIGHT" anim="BF NOTE RIGHT0" loop="false" x="-48" y="-7"/>
+   <anim name="singLEFTmiss" anim="BF NOTE LEFT MISS" loop="false" x="7" y="19"/>
+   <anim name="singDOWNmiss" anim="BF NOTE DOWN MISS" loop="false" x="-15" y="-19"/>
+   <anim name="singUPmiss" anim="BF NOTE UP MISS" loop="false" x="-46" y="27"/>
+   <anim name="singRIGHTmiss" anim="BF NOTE RIGHT MISS" loop="false" x="-44" y="22"/>
+
+</character>

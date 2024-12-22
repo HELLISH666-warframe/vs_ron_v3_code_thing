@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="someNewRain.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="oRain10000" x="0" y="0" width="11" height="55" frameX="-204" frameY="0" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10001" x="0" y="0" width="11" height="55" frameX="-204" frameY="0" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10002" x="11" y="0" width="24" height="123" frameX="-188" frameY="-16" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10003" x="11" y="0" width="24" height="123" frameX="-188" frameY="-16" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10004" x="35" y="0" width="55" height="300" frameX="-152" frameY="-43" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10005" x="35" y="0" width="55" height="300" frameX="-152" frameY="-43" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10006" x="90" y="0" width="87" height="502" frameX="-93" frameY="-188" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10007" x="90" y="0" width="87" height="502" frameX="-93" frameY="-188" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10008" x="177" y="0" width="97" height="540" frameX="-11" frameY="-601" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10009" x="177" y="0" width="97" height="540" frameX="-11" frameY="-601" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10010" x="274" y="0" width="42" height="223" frameX="-9" frameY="-919" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10011" x="274" y="0" width="42" height="223" frameX="-9" frameY="-919" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10012" x="316" y="0" width="23" height="96" frameX="-4" frameY="-1048" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10013" x="316" y="0" width="23" height="96" frameX="-4" frameY="-1048" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10014" x="339" y="0" width="20" height="24" frameX="-1" frameY="-1120" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10015" x="339" y="0" width="20" height="24" frameX="-1" frameY="-1120" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10016" x="359" y="0" width="21" height="17" frameX="-1" frameY="-1128" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10017" x="359" y="0" width="21" height="17" frameX="-1" frameY="-1128" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10018" x="380" y="0" width="24" height="17" frameX="0" frameY="-1128" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10019" x="380" y="0" width="24" height="17" frameX="0" frameY="-1128" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10020" x="404" y="0" width="0" height="0" frameX="-204" frameY="0" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain10021" x="404" y="0" width="0" height="0" frameX="-204" frameY="0" frameWidth="215" frameHeight="1145"/>
+	<SubTexture name="oRain20000" x="404" y="0" width="104" height="549" frameX="-63" frameY="0" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20001" x="404" y="0" width="104" height="549" frameX="-63" frameY="0" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20002" x="0" y="549" width="59" height="319" frameX="-22" frameY="-456" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20003" x="0" y="549" width="59" height="319" frameX="-22" frameY="-456" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20004" x="59" y="549" width="21" height="100" frameX="-22" frameY="-674" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20005" x="59" y="549" width="21" height="100" frameX="-22" frameY="-674" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20006" x="80" y="549" width="14" height="61" frameX="-14" frameY="-742" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20007" x="80" y="549" width="14" height="61" frameX="-14" frameY="-742" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20008" x="94" y="549" width="22" height="23" frameX="-7" frameY="-782" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20009" x="94" y="549" width="22" height="23" frameX="-7" frameY="-782" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20010" x="116" y="549" width="26" height="26" frameX="-7" frameY="-780" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20011" x="116" y="549" width="26" height="26" frameX="-7" frameY="-780" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20012" x="142" y="549" width="32" height="31" frameX="-5" frameY="-776" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20013" x="142" y="549" width="32" height="31" frameX="-5" frameY="-776" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20014" x="174" y="549" width="38" height="29" frameX="0" frameY="-775" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20015" x="174" y="549" width="38" height="29" frameX="0" frameY="-775" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20016" x="212" y="549" width="39" height="19" frameX="0" frameY="-785" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20017" x="212" y="549" width="39" height="19" frameX="0" frameY="-785" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20018" x="251" y="549" width="0" height="0" frameX="-193" frameY="335" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain20019" x="251" y="549" width="0" height="0" frameX="-193" frameY="335" frameWidth="167" frameHeight="807"/>
+	<SubTexture name="oRain30000" x="251" y="549" width="64" height="322" frameX="-19" frameY="0" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30001" x="251" y="549" width="64" height="322" frameX="-19" frameY="0" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30002" x="315" y="549" width="24" height="122" frameX="-19" frameY="-200" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30003" x="315" y="549" width="24" height="122" frameX="-19" frameY="-200" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30004" x="339" y="549" width="13" height="58" frameX="-9" frameY="-309" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30005" x="339" y="549" width="13" height="58" frameX="-9" frameY="-309" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30006" x="352" y="549" width="6" height="30" frameX="-8" frameY="-348" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30007" x="352" y="549" width="6" height="30" frameX="-8" frameY="-348" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30008" x="358" y="549" width="12" height="20" frameX="-1" frameY="-361" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30009" x="358" y="549" width="12" height="20" frameX="-1" frameY="-361" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30010" x="370" y="549" width="15" height="10" frameX="0" frameY="-371" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30011" x="370" y="549" width="15" height="10" frameX="0" frameY="-371" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30012" x="385" y="549" width="15" height="10" frameX="-1" frameY="-372" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30013" x="385" y="549" width="15" height="10" frameX="-1" frameY="-372" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30014" x="400" y="549" width="13" height="7" frameX="-1" frameY="-372" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30015" x="400" y="549" width="13" height="7" frameX="-1" frameY="-372" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30016" x="413" y="549" width="10" height="1" frameX="-3" frameY="-378" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30017" x="413" y="549" width="10" height="1" frameX="-3" frameY="-378" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30018" x="423" y="549" width="0" height="0" frameX="-200" frameY="762" frameWidth="83" frameHeight="382"/>
+	<SubTexture name="oRain30019" x="423" y="549" width="0" height="0" frameX="-200" frameY="762" frameWidth="83" frameHeight="382"/>
+</TextureAtlas>

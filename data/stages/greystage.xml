@@ -1,0 +1,5 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.69" folder="stages/grey/">
+	<sprite name="sky" x="-700" y="-1700" scale="2" sprite="paperBack" updateHitbox="true"/>
+	<sprite name="street" x="-1600" y="-1700" scale="2" sprite="paperFront" updateHitbox="true"/>
+</stage>

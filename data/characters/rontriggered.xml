@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<character sprite="madron" icon="ronmad-classic" x="70" y="430" camx="-90" camy="-200" color="#EECF01">
+	<anim name="idle" anim="Idle" x="152" y="240" fps="24" loop="true"/>
+	<anim name="singLEFT" anim="Sing Left" x="154" y="240" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="Sing Down" x="150" y="230" fps="24" loop="false"/>
+	<anim name="singUP" anim="Sing Up" x="153" y="237" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="Sing Right" x="150" y="232" fps="24" loop="false"/>
+	<anim name="hey" anim="Ugh" x="257" y="165" fps="24" loop="false"/>
+</character>

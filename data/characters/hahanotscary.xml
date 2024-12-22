@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="hahanotscary" icon="hahanotscary" color="#a20b02" x="-120" y="190" antialiasing="false" >
+	<anim name="singDOWN" anim="down" x="10" y="-4"/>
+	<anim name="singLEFT" anim="left" x="-14" y="1"/>
+	<anim name="singRIGHT" anim="right" x="2" y="-1"/>
+	<anim name="singUP" anim="up" x="-9" y="-5"/>
+	<anim name="idle" anim="idle"/>
+	<anim name="bruh" anim="bruh" x="-10" y="-2"/>
+</character>

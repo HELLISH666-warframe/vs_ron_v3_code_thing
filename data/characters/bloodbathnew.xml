@@ -1,0 +1,16 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="newcharstest/bloodshitron" icon="demonron" color="#833434" x="80" y="300" camy="-20" camx="-250" holdTime="4.9" scale="0.9">
+	<anim name="idle" anim="idle"/>
+	<anim name="singLEFT" anim="left" x="88.88888888888889" y="8.88888888888889"/>
+	<anim name="singDOWN" anim="down" x="132.22222222222223" y="-36.666666666666664"/>
+	<anim name="singUP" anim="up" x="87.77777777777777" y="56.666666666666664"/>
+	<anim name="singRIGHT" anim="right" x="43.333333333333336" y="25.555555555555554"/>
+	<anim name="transform" anim="eye transform spooky" x="62.22222222222222" y="158.88888888888889"/>
+	<anim name="untransform" anim="eye transform back" x="24.444444444444443" y="3.333333333333333"/>
+	<anim name="idle-alt" anim="eye idle" x="8.88888888888889" y="158.88888888888889" loop="true"/>
+	<anim name="singLEFT-alt" anim="eye left" x="201.11111111111111" y="163.33333333333334"/>
+	<anim name="singDOWN-alt" anim="eye down" x="73.33333333333333" y="76.66666666666667"/>
+	<anim name="singUP-alt" anim="eye up" x="161.11111111111111" y="208.88888888888889"/>
+	<anim name="singRIGHT-alt" anim="eye right" x="-55.55555555555556" y="165.55555555555554"/>
+</character>

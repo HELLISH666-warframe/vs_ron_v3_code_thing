@@ -1,0 +1,16 @@
+<!DOCTYPE codename-engine-character>
+<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
+<character sprite="Gray_BF" icon="gbf" color="#ffffff" x="-130" y="120" flipX="true" camx="120" camy="-60">
+	<anim name="idle" anim="Gray BF Idle" x="-5" y="120"/>
+	<anim name="singLEFT" anim="Gray BF Left" x="101" y="122"/>
+	<anim name="singDOWN" anim="Gray BF Down" x="90" y="129"/>
+	<anim name="singUP" anim="Gray BF Up" x="-11" y="303"/>
+	<anim name="singRIGHT" anim="Gray BF Right" x="-20" y="124"/>
+	<anim name="singLEFTmiss" anim="Gray BF Miss" x="-19" y="109"/>
+	<anim name="singDOWNmiss" anim="Gray BF Miss" x="-19" y="109"/>
+	<anim name="singUPmiss" anim="Gray BF Miss" x="-19" y="109"/>
+	<anim name="singRIGHTmiss" anim="Gray BF Miss" x="-19" y="109"/>
+	<anim name="firstDeath" anim="Gray BF Death" x="0" y="120"/>
+	<anim name="deathLoop" anim="Gray BF Death" x="0" y="120"/>
+	<anim name="deathConfirm" anim="Gray BF Death" x="0" y="120"/>
+</character>

@@ -1,0 +1,6 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.9" folder="stages/clusterfunk/">
+<sprite name="bg" x="-140" y="240" sprite="bg" scroll="1"  type="loop" scale="2"  >
+             <anim name="bg" anim="BG instance " loop="true"/>
+    </sprite>
+</stage>

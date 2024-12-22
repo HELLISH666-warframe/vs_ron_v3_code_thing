@@ -1,0 +1,10 @@
+<!DOCTYPE codename-engine-character>
+<character y="275" isPlayer="false" icon="ronmad-classic" flipX="false" holdTime="4" sprite="slightlyannoyedron" antialiasing="false"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="idle" anim="Idle" loop="true" x="0" y="0"/>
+   <anim name="singLEFT" anim="Sing Left" loop="false" x="40" y="-20"/>
+   <anim name="singUP" anim="Sing Up" loop="false" x="40" y="13"/>
+   <anim name="singDOWN" anim="Sing Down" loop="false" x="60" y="-180"/>
+   <anim name="singRIGHT" anim="Sing Right" loop="false" x="80" y="-50"/>
+
+</character>

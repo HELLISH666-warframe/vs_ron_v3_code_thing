@@ -1,0 +1,4 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="gGf" y="200" isGF="true" isPlayer="false" sprite="grayGrill">
+	<anim x="0" loop="false" y="0" fps="24" anim="bop" name="idle"/>
+</character>

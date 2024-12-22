@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character y="200" sprite="doyneBetter" scale="1.4" camy="200" icon="douyhe" color="#FFFBFB" holdTime="6.1">
+	<anim name="idle" anim="idle" x="0" y="-40" fps="24" loop="true"/>
+	<anim name="singUP" anim="up" x="20" y="-37" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down" x="145" y="-260" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left" x="35" y="-51" fps="24" loop="false"/>
+	<anim name="singRIGHT" anim="right" x="-47" y="-46" fps="24" loop="false"/>
+</character>

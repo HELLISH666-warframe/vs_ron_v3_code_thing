@@ -1,0 +1,21 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" name="trojan-two" folder="stages/classicStages">
+   <sprite name="veryAngreRon_sky" x="-800" y="-400" sprite="veryAngreRon_sky"/>
+   <sprite name="veryAngreRon_clouds" x="-800" y="-400" sprite="veryAngreRon_clouds"/>
+   <sprite name="veryAngreRon_ground" x="-800" y="-400"  sprite="veryAngreRon_ground"/>
+     <sprite name="trojan_console" x="300" y="300" sprite="trojan_console" scroll="1" type="loop" scale="4"   >
+         <anim name="trojan_console" anim="ezgif.com-gif-maker (7)_gif instance " loop="true"/>
+          </sprite>
+    <sprite name="trojan_bg" x="300" y="300" sprite="trojan_bg" scroll="1" type="loop" scale="4"   >
+         <anim name="trojan_bg" anim="bg instance " loop="true"/>
+         </sprite>
+           <sprite name="trojan_static" x="300" y="300" sprite="trojan_static" scroll="1" type="loop" scale="4"   >
+         <anim name="trojan_static" anim="static instance " loop="true"/>
+         </sprite>
+    <sprite name="trojan_ground" x="-600" y="-300" sprite="trojan_ground" scroll="1" scale="1" />
+    	<dad />
+	<boyfriend />
+    <sprite name="glitch_lamp" x="1000" y="40" sprite="glitch_lamp" scroll="1" type="loop" scale="2" >
+         <anim name="glitch_lamp" anim="lamppost" loop="true"/>
+         </sprite>
+</stage>

@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="true" flipX="true" holdTime="6.1" sprite="bf-dead"> <!-- CONVERTED VIA psychjsontocodenamexml.py by Burgerballs -->
+
+   <anim name="firstDeath" anim="bf-dead death" fps="30" loop="false" x="0" y="0"/>
+   <anim name="deathConfirm" anim="bf-dead confirm" fps="30" loop="false" x="290" y="-11"/>
+   <anim name="deathLoop" anim="bf-dead loop" fps="30" loop="true" x="0" y="0"/>
+
+</character>

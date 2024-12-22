@@ -1,0 +1,13 @@
+<!DOCTYPE codename-engine-character>
+<character y="350" sprite="classichellron" scale="2" antialiasing="false" icon="hellron-classic" color="#010101" gameOverChar="null" iconColor="-10592674" isGF="false">
+	<anim name="idle" anim="classichellron idle" x="0" y="0" fps="12" loop="true"/>
+	<anim name="singLEFT" anim="classichellron left" x="-10" y="0" fps="8" loop="false"/>
+	<anim name="singDOWN" anim="classichellron down" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singUP" anim="classichellron up" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singRIGHT" anim="classichellron right" x="0" y="0" fps="12" loop="false"/>
+	<anim name="idle-alt" anim="guitarclassichellron idle" x="0" y="0" fps="12" loop="true"/>
+	<anim name="singLEFT-alt" anim="guitarclassichellron left" x="-10" y="0" fps="8" loop="false"/>
+	<anim name="singDOWN-alt" anim="guitarclassichellron down" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singUP-alt" anim="guitarclassichellron up" x="0" y="0" fps="12" loop="false"/>
+	<anim name="singRIGHT-alt" anim="guitarclassichellron right" x="4" y="0" fps="12" loop="false"/>
+</character>
