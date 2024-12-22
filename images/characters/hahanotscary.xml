@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="blrRon_remake.png">
+<SubTexture name="idle0000" x="0" y="0" width="324" height="454" frameX="-232" frameY="-134" frameWidth="750" frameHeight="575" />
+<SubTexture name="idle0001" x="0" y="0" width="324" height="454" frameX="-232" frameY="-134" frameWidth="750" frameHeight="575" />
+<SubTexture name="idle0002" x="324" y="0" width="317" height="464" frameX="-233" frameY="-122" frameWidth="750" frameHeight="575" />
+<SubTexture name="idle0003" x="324" y="0" width="317" height="464" frameX="-233" frameY="-122" frameWidth="750" frameHeight="575" />
+<SubTexture name="idle0004" x="641" y="0" width="305" height="469" frameX="-235" frameY="-117" frameWidth="750" frameHeight="575" />
+<SubTexture name="idle0005" x="641" y="0" width="305" height="469" frameX="-235" frameY="-117" frameWidth="750" frameHeight="575" />
+<SubTexture name="left0000" x="0" y="469" width="408" height="466" frameX="-117" frameY="-122" frameWidth="750" frameHeight="575" />
+<SubTexture name="left0001" x="0" y="469" width="408" height="466" frameX="-117" frameY="-122" frameWidth="750" frameHeight="575" />
+<SubTexture name="left0002" x="408" y="469" width="398" height="459" frameX="-125" frameY="-129" frameWidth="750" frameHeight="575" />
+<SubTexture name="left0003" x="408" y="469" width="398" height="459" frameX="-125" frameY="-129" frameWidth="750" frameHeight="575" />
+<SubTexture name="right0000" x="806" y="469" width="417" height="477" frameX="-231" frameY="-108" frameWidth="750" frameHeight="575" />
+<SubTexture name="right0001" x="806" y="469" width="417" height="477" frameX="-231" frameY="-108" frameWidth="750" frameHeight="575" />
+<SubTexture name="right0002" x="0" y="946" width="396" height="460" frameX="-232" frameY="-126" frameWidth="750" frameHeight="575" />
+<SubTexture name="right0003" x="0" y="946" width="396" height="460" frameX="-232" frameY="-126" frameWidth="750" frameHeight="575" />
+<SubTexture name="up0000" x="396" y="946" width="541" height="503" frameX="-122" frameY="-76" frameWidth="750" frameHeight="575" />
+<SubTexture name="up0001" x="396" y="946" width="541" height="503" frameX="-122" frameY="-76" frameWidth="750" frameHeight="575" />
+<SubTexture name="up0002" x="937" y="946" width="549" height="486" frameX="-121" frameY="-92" frameWidth="750" frameHeight="575" />
+<SubTexture name="up0003" x="937" y="946" width="549" height="486" frameX="-121" frameY="-92" frameWidth="750" frameHeight="575" />
+<SubTexture name="down0000" x="0" y="1449" width="613" height="344" frameX="-81" frameY="-244" frameWidth="750" frameHeight="575" />
+<SubTexture name="down0001" x="0" y="1449" width="613" height="344" frameX="-81" frameY="-244" frameWidth="750" frameHeight="575" />
+<SubTexture name="down0002" x="613" y="1449" width="597" height="355" frameX="-87" frameY="-233" frameWidth="750" frameHeight="575" />
+<SubTexture name="down0003" x="613" y="1449" width="597" height="355" frameX="-87" frameY="-233" frameWidth="750" frameHeight="575" />
+<SubTexture name="bruh0000" x="1210" y="1449" width="306" height="464" frameX="-229" frameY="-117" frameWidth="750" frameHeight="575" />
+</TextureAtlas>
