@@ -19,9 +19,6 @@ function create(){
         case 'trojan-virus':{
             noteName.text = 'RON_NOTES';
         }
-        case 'Bijuu':{
-            noteName.text = 'RON_NOTES';
-        }
         case 'ron-classic':{
             noteName.text = 'RON_NOTES';
         }
@@ -31,50 +28,50 @@ function create(){
         case 'Ayo-classic':{
             noteName.text = 'RON_NOTES';
         }
+        case 'Bloodshed-classic':{
+            noteName.text = 'ronhell';
+        }
         case 'trojan-virus-classic':{
             noteName.text = 'RON_NOTES';
         }
-        case 'rong-aisle':{
+        case 'Bleeding-classic':{
+            noteName.text = 'ronhell';
+        }
+        case 'Bloodbath':{
+            noteName.text = 'demon';
+        }
+        case 'gron':{
+            noteName.text = 'RON_NOTES';
+        }
+        case 'Bijuu':{
+            noteName.text = 'RON_NOTES';
+        }
+        case 'ron-dsides':{
+            noteName.text = 'conall';
+        }
+        case 'lights-down-remix':{
             noteName.text = 'RON_NOTES';
         }
         case 'certified-champion':{
             noteName.text = 'RON_NOTES';
         }
-        case 'lights-down-remix':{
+        case 'rong-aisle':{
             noteName.text = 'RON_NOTES';
         }
-        case 'trouble':{
+        case 'Bloodshed-legacy-redux':{
+            noteName.text = 'demon';
+        }
+        case 'cluster-funk':{
             noteName.text = 'RON_NOTES';
         }
         case 'oh-my-god-hes-ballin':{
             noteName.text = 'RON_NOTES';
         }
-        case 'gron':{
-            noteName.text = 'RON_NOTES';
-        }
-        case 'cluster-funk':{
-            noteName.text = 'RON_NOTES';
-        }
         case 'awesome-ron':{
             noteName.text = 'RON_NOTES';
         }
-        case 'Bloodbath':{
-            noteName.text = 'demon';
-        }
-        case 'ron-dsides':{
-            noteName.text = 'conall';
-        }
         case 'Bleeding':{
             noteName.text = 'ronhell';
-        }
-        case 'Bleeding-classic':{
-            noteName.text = 'ronhell';
-        }
-        case 'Bloodshed-classic':{
-            noteName.text = 'ronhell';
-        }
-        case 'Bloodshed-legacy-redux':{
-            noteName.text = 'demon';
         }
     }
     trace(noteName.text, PlayState.SONG.meta.displayName);

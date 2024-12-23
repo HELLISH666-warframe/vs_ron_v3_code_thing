@@ -1,0 +1,19 @@
+[
+	{
+		"textColor": "#FFFF00",
+		"text": "placeholder",
+		"character": "ron",
+		"retroes": "ron",
+		"alias": "coolguy11",
+		"isLeftSide": true,
+		"expression": "happy"
+	},
+	{
+		"textColor": "#FF0000",
+		"text": "placeholder",
+		"retroes": "bf",
+		"alias": "arcade04",
+		"character": "bf",
+		"expression": "confused"
+	}
+]

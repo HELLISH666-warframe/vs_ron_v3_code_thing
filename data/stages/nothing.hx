@@ -15,7 +15,7 @@ blackeffect.active = false;
 blackeffect.scrollFactor.set();
 blackeffect.screenCenter();
 blackeffect.scale.set(4,4);
-FlxTween.tween(blackeffect, {alpha: 0.5}, 0.5, {ease: FlxEase.circInOut, type: FlxEase.PINGPONG});
+FlxTween.tween(blackeffect, {alpha: 0.5}, 0.5, {ease: FlxEase.circInOut, type: FlxTween.PINGPONG});
 
 baro.x = 0;
 baro.scrollFactor.set();
@@ -53,12 +53,12 @@ function stepHit(step)
             nothing.visible = true;
         case 768:
             insert(members.indexOf(trans), blackeffect); 
-             baro.visible = true;
+            baro.visible = true;
             bart.visible = true;
             trans.color = FlxColor.fromRGB(224,224,224);
         case 1280:
             remove(blackeffect);
-             baro.visible = false;
+            baro.visible = false;
             bart.visible = false;
             trans.color = FlxColor.fromRGB(255,255,255);
     }

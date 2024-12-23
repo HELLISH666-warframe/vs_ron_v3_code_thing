@@ -15,9 +15,7 @@ function stepHit(step)
                     mountainsback.visible = false;
                     mountains.visible = false;
                     hillfront.visible = false;
-                    gradient.visible = false;
                     street.visible = false;
-                    streetnolight.visible = false;
                 
                  bruj.visible = true;
                  platform.visible = true;
