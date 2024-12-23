@@ -25,7 +25,7 @@ function stepHit(curStep)
                 mountains.y -= 60;
                 street.visible = true;
                 FlxG.camera.flash(FlxColor.WHITE, 1);
-                //FlxTween.angle(satan, 0, 359.99, 0.75, { type: FlxTweenType.LOOPING } );
+                FlxTween.angle(satan, 0, 359.99, 0.75, { type: FlxTween.LOOPING } );
                 cameraSpeed = 2;
             case 320:
                 FlxTween.tween(satan, {y: satan.y - 700, angle: 359.99}, 3, {ease: FlxEase.circInOut});
@@ -92,8 +92,8 @@ function stepHit(curStep)
             case 1151: 
                 defaultCamZoom = 0.7;
                 FlxG.camera.flash(FlxColor.WHITE, 1);	
-                //FlxTween.angle(boyfriend, 0, boyfriend.angle + 359.99, 3, { type: FlxTweenType.LOOPING } );
-                //FlxTween.angle(freindly, 0, 5, 3, { type: FlxTweenType.PINGPONG } );
+                FlxTween.angle(boyfriend, 0, boyfriend.angle + 359.99, 3, { type: FlxTween.LOOPING } );
+                FlxTween.angle(freindly, 0, 5, 3, { type: FlxTweenType.PINGPONG } );
                 camGame.fade(0xFFFFFFFF, 0.1, true);
                 intensecameramove = true;
                 space.visible = true;

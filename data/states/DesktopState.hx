@@ -8,9 +8,9 @@ import flixel.addons.display.FlxBackdrop;
 import flixel.ui.FlxButton;
 var icons:Map<String, Dynamic> = [
 	"discord" => "https://discord.gg/ron-874366610918473748",
-	"random" => "https://www.facebook.com",
+	"random" => (new ModState('MasterFreeplayState'))
 	"settings" => new OptionsMenu(),
-	"freeplay" => (new ModState('MasterFreeplayState'))
+	"freeplay" => new FreeplayState(),
 	"story mode" => new StoryMenuState()
 	"credits" => new CreditsMain()
 ];

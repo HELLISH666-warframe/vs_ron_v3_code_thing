@@ -1,0 +1,17 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" folder="stages/">
+    <sprite name="sky" x="-800" y="-400" sprite="hellStreet/bloodshed_sky" scroll="0.1"/>
+    	<sprite name="hellbg" x="340" y="340" sprite="classicStages/hell_bg" scroll="0.9"  type="loop" scale="5"  />
+             <anim name="hell_bg" anim="idle instance " loop="true"/>
+   	<sprite name="city" x="-140" y="-400" sprite="hellStreet/bloodshed_city" scroll="0.25"/>
+   	<sprite name="mountains" x="-800" y="-400" sprite="hellStreet/bloodshed_mountains" scroll="0.3"/>
+     <sprite name="firebg" x="300" y="-400" sprite="hellStreet/escape_fire" scroll="1" type="loop"   scale="6"   />
+         <anim name="escape_fire" anim="fire instance " loop="true"/>
+    <sprite name="satan" x="70" y="-200" sprite="hellStreet/hellRon_satan"  scroll="0.3"/>
+   	<sprite name="street" x="-800" y="-400" sprite="hellStreet/bloodshed_street"/>
+     <sprite name="bloodshed_lamp"  x="900" y="-300"   sprite="hellStreet/bloodshed_lamp"    scroll="1"  scale="1"   />
+    	    <sprite name="islands" x="-800" y="-640" sprite="hellStreet/bloodshed_streetBroken" scroll="1"  scale="1"   />
+     <girlfriend />
+	<dad />
+   	<boyfriend />
+</stage>
