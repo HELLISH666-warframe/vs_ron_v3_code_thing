@@ -160,8 +160,8 @@ function stepHit(curStep)
             rain.data.zoom.value = [40];
             rain.data.raindropLength.value = [0.1];
             rain.data.opacity.value = [0.25];
-			evilTrail.color = FlxColor.RED;
-			insert(members.indexOf(dad)-1, evilTrail);
+//			evilTrail.color = FlxColor.RED;
+//			insert(members.indexOf(dad)-1, evilTrail);
 			//bye_bye_street
             cityback.visible = false;
             cityj.visible = false;
