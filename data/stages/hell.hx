@@ -64,40 +64,8 @@ function stepHit(curStep)if (curSong.toLowerCase() == 'bloodbath')
 				}
 				Estatic.alpha = (((2-health)/3)+0.2);
 			}
-			{
-				if (curStep == 518)
-				{
-					//camHUD.angle = 0;
-					//FlxG.camera.angle = 0;
-					FlxTween.cancelTweensOf(FlxG.camera);
-					FlxTween.cancelTweensOf(camHUD);
-					FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360+360}, 3, {ease: FlxEase.circOut} );
-					FlxTween.tween(FlxG.camera, {angle: Math.floor(FlxG.camera.angle/360)*360+360}, 3, {ease: FlxEase.circOut} );
-					windowmove = false;
-					cameramove = false;
-				}
-				if (curStep == 768)
-				{
-					windowmove = true;
-					cameramove = true;
-				}
-			}
 	
 	switch(curStep) {
-		case 1: defaultCamZoom = 0.9;
-		case 253: defaultCamZoom = 1.2;
-		case 409: defaultCamZoom = 1.1;
-		case 413: defaultCamZoom = 0.95;    
-		case 513: defaultCamZoom = 0.85;
-		case 518: defaultCamZoom = 0.9;
-		case 528: defaultCamZoom = 0.95;
-		case 535: defaultCamZoom = 1;
-		case 540: defaultCamZoom = 0.9;
-		case 575: defaultCamZoom = 1.1;
-		case 582: defaultCamZoom = 1.05;
-		case 592: defaultCamZoom = 0.98;
-		case 599: defaultCamZoom = 1.15;
-		case 639: defaultCamZoom = 0.85;
 		case 768:
 			 defaultCamZoom = 1.1;
 			 FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
@@ -124,46 +92,12 @@ function stepHit(curStep)if (curSong.toLowerCase() == 'bloodbath')
 }
 if (curSong.toLowerCase() == 'bleeding-classic')
 	switch(curStep) {
-		case 384:
-			defaultCamZoom += 0.15;
-		case 512:
-			SCREWYOU = false;
-			if (!ClientPrefs.gameplaySettings['botplay'])
-				botplayTxt.visible = false;
-			var xx = dad.x;
-			var yy = dad.y;
-			triggerEventNote('Change Character', 'dad', 'hellron');
-			resetTrail();
-			//dad.x = xx+80;
-			//dad.y = yy+200;
-			defaultCamZoom -= 0.25;
-		case 664:
-			defaultCamZoom += 0.3;
-		case 672:
-			defaultCamZoom -= 0.3;
 		case 768:
-			SCREWYOU = true;
-			botplayTxt.visible = true;
-			if (!ClientPrefs.gameplaySettings['botplay'])
-				botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
-			var xx = dad.x;
-			var yy = dad.y;
-			triggerEventNote('Change Character', 'dad', 'dripronclassic');
-			resetTrail();
-			//dad.x = xx-80;
-			//dad.y = yy-200;
+//			SCREWYOU = true;
+//			botplayTxt.visible = true;
+//			if (!ClientPrefs.gameplaySettings['botplay'])
+//				botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
 			FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
-			defaultCamZoom += 0.1;
-		case 832:
-			defaultCamZoom += 0.1;
-		case 896:
-			defaultCamZoom += 0.1;
-		case 1024:
-			defaultCamZoom += 0.1;
-		case 1040:
-			defaultCamZoom -= 0.2;
-		case 1168:
-			defaultCamZoom -= 0.1;
 		case 1296:
 			defaultCamZoom -= 0.1;
 			SCREWYOU = false;

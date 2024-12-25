@@ -1,3 +1,4 @@
+playCutscenes = false;
 var wig:CustomShader  = new CustomShader("glitchsmh");
 var chrom:CustomShader  = new CustomShader("chromatic aberration");
 var time:Float = 0;

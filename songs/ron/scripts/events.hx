@@ -1,3 +1,4 @@
+playCutscenes = false;
 var blackeffect:FlxSprite;
 
 function postCreate(){				

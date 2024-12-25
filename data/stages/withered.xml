@@ -1,8 +1,0 @@
-<!DOCTYPE codename-engine-stage>
-<stage zoom="0.9" folder="stages/bobtwerked/">
-   <sprite name="annoyed_sky" x="-400" y="-300" sprite="annoyed_sky" scale="1" updateHitbox="true"/>
-   <sprite name="annoyed_cloud" x="-837" y="-400" sprite="annoyed_cloud"/>
-   <sprite name="annoyed_sun" x="-737" y="100" sprite="annoyed_sun" scale="1" />
-    <sprite name="annoyed_back" x="-400" y="-300" sprite="annoyed_back" scale="1.4" updateHitbox="true"/>
-   <sprite name="annoyed_ground" x="-837" y="-400" sprite="annoyed_ground"/>
-</stage>

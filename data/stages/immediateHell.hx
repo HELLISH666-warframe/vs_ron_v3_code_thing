@@ -1,8 +1,11 @@
+//fuck_you_im_Doing_all_the_events_in_stage
 import flixel.addons.effects.FlxTrail;
 import flixel.addons.effects.FlxTrailArea;
 import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
 import openfl.display.BlendMode;
+var cameramove:Bool = false;
+var intensecameramove:Bool = false;
 var fx:FlxSprite;
 var Estatic:FlxSprite;
 var explode:FlxSound;
@@ -13,6 +16,7 @@ var chrom:CustomShader  = new CustomShader("chromatic aberration");
 var wig:CustomShader  = new CustomShader("glitchsmh");
 var vhs:CustomShader  = new CustomShader("bleedingvhs");
 var bloodshedTrail = null;
+var currentBeat:Float = (Conductor.songPosition / 1000)*(Conductor.bpm/60);
 var rain:flixel.effects.particles.FlxTypedEmitter;
 rain = new FlxTypedEmitter(-1280,0, 1280);
 rain.loadParticles(Paths.image("stages/raindrop"),500);
@@ -45,6 +49,16 @@ override function update(elapsed:Float){time += elapsed;
 	wig.data.iTime.value = [0.005*Math.sin(time)];
     vhs.data.iTime.value = [1*Math.sin(time)];
     rain.data.iTime.value = [-24*Math.sin(time)];
+	if (cameramove)
+		{
+			camHUD.angle = 22 * Math.sin((currentBeat/4) * Math.PI);
+			FlxG.camera.angle = 4 * Math.sin((currentBeat/4) * Math.PI);
+		}
+	if (intensecameramove)
+		{
+			camHUD.angle = 45 * Math.sin((currentBeat/2) * Math.PI);
+			FlxG.camera.angle = 9 * Math.sin((currentBeat/2) * Math.PI);
+		}
 }
 function postCreate() {
     satan.setGraphicSize(Std.int(satan.width * 1.2));

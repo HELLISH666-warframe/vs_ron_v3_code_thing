@@ -17,7 +17,7 @@ rain.width = 1280*4;
 rain.start(false, 0.01);
 var rain:CustomShader  = new CustomShader("rain");
 override function update(elapsed:Float){time += elapsed;
-	rain.data.iTime.value = [-0.9*Math.sin(time)];
+	rain.data.iTime.value = [-15*Math.sin(time)];
 }
 function postCreate() {}
 function stepHit(curStep) {
