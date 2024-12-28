@@ -25,7 +25,7 @@ function postCreate() {
 	wig.data.iTime.value = [0.005*Math.sin(time)];
 }
 function beatHit(curBeat) {
-	if ((curBeat >= 79) && (curBeat < 233))
+	if ((curBeat >= 7) && (curBeat < 233))
 		{
 			for (i in 0...4)
 			{ 
@@ -35,13 +35,13 @@ function beatHit(curBeat) {
 									
 					if (curBeat % 2 == 0)
 					{
-						var angler = (i%2 ? 10 : -10) * ((curBeat%4==2) ? -1 : 1);
+						var angler = (i%4 ? 20 : -90) * ((curBeat%8==0) ? -90 : 90);
 	
-						FlxTween.tween(member, {angle: angler, y: member.y + (PlayState.downscroll ? 10 : -10)}, 0.125, {
+						FlxTween.tween(member, {y: angler + (PlayState.downscroll ? 10 : -10)}, 0.125, {
 								ease: FlxEase.quartIn,
 								onComplete: function(twn:FlxTween)
 								{
-									FlxTween.tween(member, {angle: 0, y: member.y - (PlayState.downscroll ? 10 : -10)}, 0.33, {ease: FlxEase.circInOut});
+									FlxTween.tween(member, {y: 20 - (PlayState.downscroll ? 10 : -10)}, 0.33, {ease: FlxEase.circInOut});
 								}
 							});
 					}

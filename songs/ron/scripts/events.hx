@@ -1,6 +1,9 @@
 playCutscenes = false;
 var blackeffect:FlxSprite;
 
+var defaultStrumY:Float = 50;
+defaultStrumY = strumLine.y;
+
 function postCreate(){				
 	blackeffect = new FlxSprite().makeGraphic(FlxG.width, FlxG.width, FlxColor.BLACK);
 	blackeffect.scale.set(4,4);
@@ -11,7 +14,25 @@ function postCreate(){
 	blackeffect.alpha = 0;
 	add(blackeffect);}
 
-function stepHit(curStep) {
+function stepHit(curStep)
+{
+	if ((curStep >= 1) && (curStep <= 1304))
+		{
+			if (curStep % 8 == 0)
+			{
+				for (i in 0...8)
+				{ 
+					var strumLine = strumLines.members[i];
+					FlxTween.globalManager.completeTweensOf(members);
+//					if(ClientPrefs.downScroll)
+//						member.y -= 20;
+//					else
+members.y += 20;
+						for (strumLine in strumLines) 
+							for (strum in strumLine.members) 
+							FlxTween.tween(strum, {y: members.y+= 20}, 0.65, {ease: FlxEase.backOut});
+				}
+			}
 	if (curStep == 540 || curStep == 604 || curStep == 668 || curStep == 732 || curStep == 1304)
 		FlxTween.tween(FlxG.camera, {zoom: 1.2}, 0.4, {ease: FlxEase.backOut,});
 	switch (curStep) {
@@ -38,4 +59,5 @@ function stepHit(curStep) {
 			FlxTween.tween(blackeffect, {alpha: 0}, 0.5, {ease: FlxEase.circOut,});
 			defaultCamZoom = 0.8;
 	}
+}
 }

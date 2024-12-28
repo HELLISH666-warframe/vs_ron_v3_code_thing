@@ -17,8 +17,8 @@
  */
 //stolen_from_parallax-redefined
 
-public static var healthBardisabled:Bool = false;
-
+public var healthBardisabled:Bool = false;
+if ((curSong == 'ron') || (curSong == 'wasted') || (curSong == 'ayo') || (curSong == 'trojan-virus') || (curSong == 'official-debate') || (curSong == 'gron') || (curSong == 'difficult-powers') || (curSong == 'bijuu')|| (curSong == 'holy-shit-dave-fnf') || (curSong == 'slammed') || (curSong == 'ron-dsides') || (curSong == 'lights-down-remix')  || (curSong == 'pretty-wacky')|| (curSong == 'certified-champion')|| (curSong == 'rong-aisle')|| (curSong == 'bloodshed-legacy-redux') || (curSong == 'clusterfunk') || (curSong == 'awesome-ron') || (curSong == 'oh-my-god-hes-ballin') || (curSong == 'fardventure'))
 function create(){
     importScript('data/scripts/coolRectBar');
 

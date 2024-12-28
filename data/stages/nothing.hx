@@ -28,13 +28,8 @@ bart.cameras = [camHUD];
 baro.visible = false;
 bart.visible = false;
 function postCreate() {
-    nothing.visible = false;
-    trans.visible = false;
-    healthBarBG.visible = false;
-    healthBar.visible = false;
-    scoreTxt.visible = false;
-    iconP1.visible = false;
-    iconP2.visible = false;
+    graadienter.color = FlxColor.BLACK;
+    wbg.color = FlxColor.BLACK;
 }
 function stepHit(step)
 {
@@ -43,23 +38,19 @@ function stepHit(step)
         case 250:
             defaultCamZoom += 0.2;
         case 256:
-            camHUD.color = FlxColor.WHITE;
-            healthBarBG.alpha = 1;
-            healthBar.alpha = 1;
-            scoreTxt.alpha = 1;
-            iconP1.visible = true;
-            iconP2.visible = true;
-            trans.visible = true;
-            nothing.visible = true;
+		graadienter.color = FlxColor.WHITE;
+		wbg.color = FlxColor.WHITE;
         case 768:
-            insert(members.indexOf(trans), blackeffect); 
+            insert(members.indexOf(graadienter), blackeffect); 
             baro.visible = true;
             bart.visible = true;
-            trans.color = FlxColor.fromRGB(224,224,224);
+            graadienter.color = FlxColor.fromRGB(224,224,224);
+            wbg.color = FlxColor.fromRGB(224,224,224);
         case 1280:
             remove(blackeffect);
             baro.visible = false;
             bart.visible = false;
-            trans.color = FlxColor.fromRGB(255,255,255);
+            graadienter.color = FlxColor.fromRGB(255,255,255);
+            wbg.color = FlxColor.fromRGB(255,255,255);
     }
 }

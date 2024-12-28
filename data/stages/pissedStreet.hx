@@ -35,6 +35,15 @@ function stepHit(step)
 			underwater.visible = true;
 			case 1371:
 			underwater.visible = false;
+
+			sky.visible = true;
+			rain3.visible = true;
+			city.visible = true;
+			mountains.visible = true;
+			hillfront.visible = true;
+			rain2.visible = true;
+			street.visible = true;
+			rain1.visible = true;
 	}
 }
 function update() 

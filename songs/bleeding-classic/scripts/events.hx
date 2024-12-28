@@ -5,7 +5,9 @@ function resetTrail() {
 	bloodshedTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
 	insert(members.indexOf(dad)-1, bloodshedTrail);
 }
-function postCreate() {}
+function postCreate() {
+	iconP1.setIcon('oldbf');
+}
 function stepHit(curStep) {
 	switch(curStep) {
 		case 248 | 760:

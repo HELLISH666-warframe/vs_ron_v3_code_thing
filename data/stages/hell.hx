@@ -93,10 +93,10 @@ function stepHit(curStep)if (curSong.toLowerCase() == 'bloodbath')
 if (curSong.toLowerCase() == 'bleeding-classic')
 	switch(curStep) {
 		case 768:
-//			SCREWYOU = true;
-//			botplayTxt.visible = true;
-//			if (!ClientPrefs.gameplaySettings['botplay'])
-//				botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
+/*			SCREWYOU = true;
+			botplayTxt.visible = true;
+			if (!ClientPrefs.gameplaySettings['botplay'])
+*/				botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
 			FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
 		case 1296:
 			defaultCamZoom -= 0.1;

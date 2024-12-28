@@ -19,7 +19,9 @@ var rain:CustomShader  = new CustomShader("rain");
 override function update(elapsed:Float){time += elapsed;
 	rain.data.iTime.value = [-15*Math.sin(time)];
 }
-function postCreate() {}
+function postCreate() {
+	iconP1.setIcon('oldbf');
+}
 function stepHit(curStep) {
 	switch(curStep) {
 		case 256:

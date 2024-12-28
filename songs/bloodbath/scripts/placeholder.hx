@@ -1,33 +1,26 @@
-import openfl.Lib;
+import flixel.addons.effects.FlxTrail;
+import flixel.addons.effects.FlxTrailArea;
+var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); 
 var cameramove:Bool = false;
-var currentBeat:Float = (Conductor.songPosition / 1000)*(Conductor.bpm/60);
-function popUpScore(note:Note = null):Void
-{		var daRating:Rating = Conductor.judgeNote(note, noteDiff);
-	var ratingNum:Int = 0;
-
-	if (SCREWYOU)
-	{
-		switch(daRating.name)
-		{
-			// i should nerf unforgiving input its too hard
-			// skill issue
-			case 'shit':
-				health -= 0.15*healthLoss;
-			case 'bad':
-				health -= 0.045*healthLoss;
-			case 'good' | 'sick':
-				health += 0.05*healthLoss;
-		}
-	}}
-function postCreate(){	
+var currentBeat:Float = (1 / 1000)*(170/60);
+function postCreate(){		
+	evilTrail.color = FlxColor.RED;
+	insert(members.indexOf(dad)-1, evilTrail);
 	if (cameramove)
-		{
-			camHUD.angle = 81 * Math.sin((currentBeat/6) * Math.PI);
-			FlxG.camera.angle = 2 * Math.sin((currentBeat/6) * Math.PI);
-		}	
-}
+	{
+		camHUD.angle = 11 * Math.sin((curStep % 270/10) * Math.PI);
+		FlxG.camera.angle = 2 * Math.sin((curStep % 270/6) * Math.PI);
+	}
+	}
+
 function stepHit(curStep){
 	{
+		if (curStep == 1)
+		for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 1250, angle: cpuStrums.members[i].angle + 359}, (Conductor.crochet/1000), {ease:FlxEase.circOut});
+		for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {y: cpuStrums.members[i].y + 600, angle: cpuStrums.members[i].angle + 959}, (Conductor.crochet/1000), {ease:FlxEase.circOut});
+		for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 600, angle: cpuStrums.members[i].angle - 959}, (Conductor.crochet/1000), {ease:FlxEase.circOut});
+		camHUD.angle = 11 * Math.sin((curStep % 970/10) * Math.PI);
+		FlxG.camera.angle = 2 * Math.sin((curStep % 270/6) * Math.PI);
 		if (curStep == 518)
 		{
 			//camHUD.angle = 0;
@@ -46,19 +39,15 @@ function stepHit(curStep){
 		}
 	}
 	switch(curStep){
-		case 1: defaultCamZoom = 0.9;
+		case 1 | 518 | 540: defaultCamZoom = 0.9;
 		case 253: defaultCamZoom = 1.2;
-		case 409: defaultCamZoom = 1.1;
-		case 413: defaultCamZoom = 0.95;    
-		case 513: defaultCamZoom = 0.85;
-		case 518: defaultCamZoom = 0.9;
-		case 528: defaultCamZoom = 0.95;
+		case 409 | 575: defaultCamZoom = 1.1;
+		case 413 | 528: defaultCamZoom = 0.95;
+		case 513 | 639: defaultCamZoom = 0.85;
 		case 535: defaultCamZoom = 1;
-		case 540: defaultCamZoom = 0.9;
-		case 575: defaultCamZoom = 1.1;
 		case 582: defaultCamZoom = 1.05;
 		case 592: defaultCamZoom = 0.98;
 		case 599: defaultCamZoom = 1.15;
-		case 639: defaultCamZoom = 0.85;
+		//"n3therwordly"_did_the_redo
     }
 }

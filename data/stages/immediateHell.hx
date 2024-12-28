@@ -61,7 +61,12 @@ override function update(elapsed:Float){time += elapsed;
 		}
 }
 function postCreate() {
+	hellbg.setGraphicSize(Std.int(hellbg.width * 5));
+	hellbg.y += hellbg.height / 5;
     satan.setGraphicSize(Std.int(satan.width * 1.2));
+	satan.scrollFactor.set(0.2, 0.4);
+	satan.screenCenter();
+	satan.updateHitbox();
     blackeffect = new FlxSprite().makeGraphic(FlxG.width*3, FlxG.width*3, FlxColor.BLACK);
     blackeffect.updateHitbox();
     blackeffect.antialiasing = true;
@@ -92,70 +97,72 @@ function postCreate() {
     rain.data.opacity.value = [0.25];
 }
 function stepHit(curStep)
-    {
+{
+	{
+/*		if (curStep == 256)
 		{
-//			if (curStep == 256)
-//			{
-//				for (i in 0...4)
-//				{
-//					FlxTween.tween(strumLineNotes.members[i], {x: strumLineNotes.members[i].x - 1250, angle: strumLineNotes.members[i].angle + 359}, 1, {ease: FlxEase.linear, onComplete: function(w:FlxTween)
-//						setDefault(i)});
-//				}
-//				for (i in 4...8)
-//				{
-//					FlxTween.tween(strumLineNotes.members[i], {x: strumLineNotes.members[i].x - 300, angle: strumLineNotes.members[i].angle}, 1, {
-//						ease: FlxEase.linear,
-//						onComplete: function(w:FlxTween) setDefault(i)
-//					});
-//				}
-//			}
-			if (curStep == 384)
+			for (i in 0...4)
 			{
-				sky.alpha = 0.66;
-				add(Estatic);
-				Estatic.alpha = 1;
-                //bye_bye_street
-                //sky.visible = false;
-                city.visible = false;
-                mountains.visible = false;
-                street.visible = false;
-				FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
-				camGame.flash(FlxColor.WHITE, 1);
-				//addShader(FlxG.camera,"glitchsmh");
-				//Shaders["glitchsmh"].shader.data.on.value = [1.];
-                FlxG.camera.addShader(wig);
-                camHUD.addShader(wig);
-                wig.data.on.value = [1.];
-				//bloodshedGrp.visible = false;
-				blackeffect.visible = false;
-				satan.color = FlxColor.BLACK;
-				firebg.alpha = 1;
-				firebg.screenCenter();
-				
-				//addShader(camHUD, "vhs");
-                camHUD.addShader(vhs);
-				//addShader(FlxG.camera, "chromatic aberration");
-                FlxG.camera.addShader(chrom);
-                camHUD.addShader(chrom);
-				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
-				chrom.data.gOffset.value = [0.0];
-				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
-				remove(bloodshedTrail);
-                bloodshedTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
-                insert(members.indexOf(dad)-1, bloodshedTrail);
-                //dad.y -= 230;
-				//dad.x -= 230;
-				dad.y -= 530;
-				dad.x -= 990;
-				boyfriend.y -= 230;
-				boyfriend.x += 300;
+				FlxTween.tween(strumLineNotes.members[i], {x: strumLineNotes.members[i].x - 1250, angle: strumLineNotes.members[i].angle + 359}, 1, {ease: FlxEase.linear, onComplete: function(w:FlxTween)
+					setDefault(i)});
+			}
+			for (i in 4...8)
+			{
+			FlxTween.tween(strumLineNotes.members[i], {x: strumLineNotes.members[i].x - 300, angle: strumLineNotes.members[i].angle}, 1, {
+					ease: FlxEase.linear,
+					onComplete: function(w:FlxTween) setDefault(i)
+				});
+			}
+*/		}
+		if (curStep == 384)
+		{
+			sky.alpha = 0.66;
+			add(Estatic);
+			Estatic.alpha = 1;
+            //bye_bye_street
+            //sky.visible = false;
+            city.visible = false;
+            mountains.visible = false;
+            street.visible = false;
+			FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
+			camGame.flash(FlxColor.WHITE, 1);
+			//addShader(FlxG.camera,"glitchsmh");
+			//Shaders["glitchsmh"].shader.data.on.value = [1.];
+            FlxG.camera.addShader(wig);
+            camHUD.addShader(wig);
+            wig.data.on.value = [1.];
+			//bloodshedGrp.visible = false;
+			blackeffect.visible = false;
+			satan.color = FlxColor.BLACK;
+			firebg.alpha = 1;
+			firebg.screenCenter();
+			
+			//addShader(camHUD, "vhs");
+            camHUD.addShader(vhs);
+			//addShader(FlxG.camera, "chromatic aberration");
+            FlxG.camera.addShader(chrom);
+            camHUD.addShader(chrom);
+			chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
+			chrom.data.gOffset.value = [0.0];
+			chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
+			remove(bloodshedTrail);
+            bloodshedTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
+            insert(members.indexOf(dad)-1, bloodshedTrail);
+            //dad.y -= 230;
+			//dad.x -= 230;
+			dad.y -= 530;
+			dad.x -= 990;
+			boyfriend.y -= 230;
+			boyfriend.x += 300;
 
-				FlxTween.angle(satan, 0, 359.99, 1.5, { 
-					ease: FlxEase.quadIn, 
-					onComplete: function(twn:FlxTween) 
+			FlxTween.angle(satan, 0, 359.99, 1.5, 
+				{ 
+				ease: FlxEase.quadIn, 
+				onComplete: function(twn:FlxTween) 
 					{
 						FlxTween.angle(satan, 0, 359.99, 0.75, { type: FlxTween.LOOPING } );
-					}} 
+					}
+				} 
 				);
 				
 				FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
@@ -189,11 +196,11 @@ function stepHit(curStep)
 				
 				FlxTween.globalManager.completeTweensOf(satan);
 				FlxTween.angle(satan, 0, 359.99, 0.33, { type: FlxTween.LOOPING } );
-				exploders.animation.play('explosion');
+/*				exploders.animation.play('explosion');
 				exploders.scale.set(2,2);
 				exploders.alpha = 1;
 				exploders.screenCenter();
-			}
+*/				}
 			if (curStep == 1664)
 			{		
 				//triggerEventNote('Change Scroll Speed', '1.45', '1');
@@ -229,4 +236,3 @@ function stepHit(curStep)
 				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
 			}
 		}
-    }
