@@ -1,5 +1,5 @@
 //frakits_made_the_modchart
-function postCreate() {
+/*function postCreate() {
 	camHUD.height += 60;
 	camGame.zoom = 0.6;
 	defaultCamZoom = 0.8;
@@ -18,3 +18,4 @@ function beatHit(curBeat) {
 	}
 }
 function flash() camHUD.flash();
+*/

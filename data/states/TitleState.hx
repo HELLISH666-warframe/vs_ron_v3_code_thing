@@ -13,8 +13,8 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
 var done = false;
-static var crt:CustomShader  = new CustomShader("fake CRT");
-static var fish:CustomShader  = new CustomShader("godray");
+var crt:CustomShader  = new CustomShader("fake CRT");
+var god:CustomShader  = new CustomShader("godray");
 var fish:CustomShader  = new CustomShader("colorizer");
 function update() {
 	if (done != (done = true)) {
@@ -22,6 +22,7 @@ function update() {
 		members[0].scale.set(2,2);
 		members[0].updateHitbox();
 		    FlxG.camera.addShader(crt);
+			FlxG.camera.addShader(god);
 			FlxG.camera.addShader(fish);
 		if (blackScreen.frames != null) {
 			CoolUtil.loadAnimatedGraphic(blackScreen, Paths.image("menus/titlescreen/titleThing"));

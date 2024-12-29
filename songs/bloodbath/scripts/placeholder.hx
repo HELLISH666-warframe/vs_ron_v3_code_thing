@@ -1,34 +1,41 @@
 import flixel.addons.effects.FlxTrail;
 import flixel.addons.effects.FlxTrailArea;
+var time:Float = 0;
 var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); 
 var cameramove:Bool = false;
-var currentBeat:Float = (1 / 1000)*(170/60);
+var windowmove:Bool = false;
+var healthLoss:Float = 1;
+healthLoss = health -= 0.02;
 function postCreate(){		
 	evilTrail.color = FlxColor.RED;
 	insert(members.indexOf(dad)-1, evilTrail);
+	}
+override function update(elapsed:Float){time += elapsed;
+	if (windowmove)
+		window.move(Math.round(24 * Math.sin((time/0.5) * Math.PI) + 327), Math.round(24 * Math.sin((time/0.5) * 3) + 160));
 	if (cameramove)
-	{
-		camHUD.angle = 11 * Math.sin((curStep % 270/10) * Math.PI);
-		FlxG.camera.angle = 2 * Math.sin((curStep % 270/6) * Math.PI);
-	}
-	}
-
+		{
+		camHUD.angle = 11 * Math.sin((time/3) * Math.PI);
+		FlxG.camera.angle = 2 * Math.sin((time/3) * Math.PI);
+		}
+}
 function stepHit(curStep){
 	{
-		if (curStep == 1)
-		for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 1250, angle: cpuStrums.members[i].angle + 359}, (Conductor.crochet/1000), {ease:FlxEase.circOut});
-		for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {y: cpuStrums.members[i].y + 600, angle: cpuStrums.members[i].angle + 959}, (Conductor.crochet/1000), {ease:FlxEase.circOut});
-		for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 600, angle: cpuStrums.members[i].angle - 959}, (Conductor.crochet/1000), {ease:FlxEase.circOut});
-		camHUD.angle = 11 * Math.sin((curStep % 970/10) * Math.PI);
-		FlxG.camera.angle = 2 * Math.sin((curStep % 270/6) * Math.PI);
+	if (curStep == 258)
+		{
+			windowmove = true;
+			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 325}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 800}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			cameramove = true;
+		}
 		if (curStep == 518)
 		{
-			//camHUD.angle = 0;
-			//FlxG.camera.angle = 0;
+			camHUD.angle = 0;
+			FlxG.camera.angle = 0;
 			FlxTween.cancelTweensOf(FlxG.camera);
 			FlxTween.cancelTweensOf(camHUD);
-			FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360+360}, 3, {ease: FlxEase.circOut} );
-			FlxTween.tween(FlxG.camera, {angle: Math.floor(FlxG.camera.angle/360)*360+360}, 3, {ease: FlxEase.circOut} );
+//			FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360+360}, 3, {ease: FlxEase.circOut} );
+//			FlxTween.tween(FlxG.camera, {angle: Math.floor(FlxG.camera.angle/360)*360+360}, 3, {ease: FlxEase.circOut} );
 			windowmove = false;
 			cameramove = false;
 		}
@@ -51,3 +58,17 @@ function stepHit(curStep){
 		//"n3therwordly"_did_the_redo
     }
 }
+override function beatHit(){
+	if (((dad.curCharacter == 'bloodbathnew')) && (curBeat % 2 == 0))
+	{
+		var multiplier:Float = 1;
+		if (health >= 1)
+			multiplier = 1;
+		else
+			multiplier = multiplier + ((1 - health));
+		FlxG.camera.shake(0.025 * multiplier / 4, 0.1);
+		camHUD.shake(0.0055 * multiplier / 4, 0.15);
+		
+	}}
+function onDadHit(e)
+	if (health > 0.2) {health -= 0.024;}

@@ -23,20 +23,20 @@ function stepHit(curStep) {
 				//dad.y = yy-200;
 				resetTrail();
 				defaultCamZoom += 0.1;
-//				SCREWYOU = true;
-//				botplayTxt.visible = true;
-//				botplayTxt.y = scoreTxt.y - 100;
-//				if (!ClientPrefs.gameplaySettings['botplay'])
-//				{
-//					botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
-//					botplayTxt.screenCenter();
-//				}
+/*				SCREWYOU = true;
+				botplayTxt.visible = true;
+				botplayTxt.y = scoreTxt.y - 100;
+				if (!ClientPrefs.gameplaySettings['botplay'])
+				{
+					botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
+					botplayTxt.screenCenter();
+*/				}
         case 384:
 			defaultCamZoom += 0.15;
 		case 512:
-//			SCREWYOU = false;
-//			if (!ClientPrefs.gameplaySettings['botplay'])
-//				botplayTxt.visible = false;
+/*			SCREWYOU = false;
+			if (!ClientPrefs.gameplaySettings['botplay'])
+*/				botplayTxt.visible = false;
         var xx = dad.x;
         var yy = dad.y;
 //			triggerEventNote('Change Character', 'dad', 'hellron');

@@ -62,6 +62,8 @@ function stepHit(step)
 //		moveing = true;
 		wig.data.on.value = [1.];
 		defaultCamZoom = 0.88;
+	case 1160 | 1164 | 1165 | 1166 | 1167:
+		window.move(window.x + FlxG.random.int( -50, 50),window.y + FlxG.random.int( -32, 32));
 	case 1424:
 /*		moveing = false;
 		for (i in 0...8)

@@ -1,1 +1,0 @@
-playCutscenes = true;

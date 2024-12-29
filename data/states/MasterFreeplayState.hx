@@ -8,7 +8,6 @@ import flixel.addons.transition.FlxTransitionableState;
 import flixel.FlxSprite;
 import flixel.effects.FlxFlicker;
 import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.input.gamepad.FlxGamepad;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
@@ -31,8 +30,11 @@ import sys.FileSystem;
 	var time:Float = 0;
 	var loBg:FlxSprite;
 	var loBgt:FlxSprite;
+	var chrom:CustomShader  = new CustomShader("chromatic aberration");
 
-	override function create()
+	var time:Float = 0;
+var iTime:Float = 0;
+	function create()
 	{
 
 		persistentUpdate = true;
@@ -115,12 +117,18 @@ import sys.FileSystem;
 		cooltext.y = 125;
         cooltext.x = 550;
 
+		FlxG.camera.addShader(chrom);
+		chrom.data.rOffset.value = [chromeOffset/2];
+		chrom.data.gOffset.value = [0.0];
+		chrom.data.bOffset.value = [chromeOffset * -1];
+		super.create();
 	}
-FlxG.camera.addShader(crt);
 	override function update(elapsed:Float)
 	{
 		time += elapsed;
         vimage.color = bg.color;
+		chrom.data.rOffset.value = [0.005*Math.sin(time)];
+		chrom.data.bOffset.value = [-0.005*Math.sin(time)];
         cooltext.y += Math.sin(time*4)/2;
 		switch(curSelectedMaster) {
 			case 0:

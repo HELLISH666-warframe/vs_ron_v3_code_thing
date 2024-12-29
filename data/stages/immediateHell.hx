@@ -28,7 +28,8 @@ rain.keepScaleRatio = true;
 rain.width = 1280*4;
 rain.start(false, 0.01);
 var rain:CustomShader  = new CustomShader("rain");
-
+var healthLoss:Float = 1;
+healthLoss = health -= 0.02;
 explode = FlxG.sound.load(Paths.sound("hellexplode"));
 
 fx = new FlxSprite().loadGraphic(Paths.image('stages/effect'));
@@ -51,13 +52,13 @@ override function update(elapsed:Float){time += elapsed;
     rain.data.iTime.value = [-24*Math.sin(time)];
 	if (cameramove)
 		{
-			camHUD.angle = 22 * Math.sin((currentBeat/4) * Math.PI);
-			FlxG.camera.angle = 4 * Math.sin((currentBeat/4) * Math.PI);
+		camHUD.angle = 22 * Math.sin((time/1) * Math.PI);
+		FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
 		}
 	if (intensecameramove)
 		{
-			camHUD.angle = 45 * Math.sin((currentBeat/2) * Math.PI);
-			FlxG.camera.angle = 9 * Math.sin((currentBeat/2) * Math.PI);
+		camHUD.angle = 45 * Math.sin((time/0.5) * Math.PI);
+		FlxG.camera.angle = 9 * Math.sin((time/0.5) * Math.PI);
 		}
 }
 function postCreate() {
@@ -87,6 +88,8 @@ function postCreate() {
     exploders.scale.set(0.01,0.01);
     exploders.alpha = 0.01;
 
+	hellbg.alpha = 0;
+	satan.alpha = 0;
     firebg.alpha = 0;
     islands.visible = false;
 	bloodshed_lamp.visible = false;
@@ -99,23 +102,17 @@ function postCreate() {
 function stepHit(curStep)
 {
 	{
-/*		if (curStep == 256)
+
+		if (curStep == 256)
 		{
-			for (i in 0...4)
-			{
-				FlxTween.tween(strumLineNotes.members[i], {x: strumLineNotes.members[i].x - 1250, angle: strumLineNotes.members[i].angle + 359}, 1, {ease: FlxEase.linear, onComplete: function(w:FlxTween)
-					setDefault(i)});
-			}
-			for (i in 4...8)
-			{
-			FlxTween.tween(strumLineNotes.members[i], {x: strumLineNotes.members[i].x - 300, angle: strumLineNotes.members[i].angle}, 1, {
-					ease: FlxEase.linear,
-					onComplete: function(w:FlxTween) setDefault(i)
-				});
-			}
-*/		}
+			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 325}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 800}, (Conductor.crochet/600), {ease: FlxEase.linear});
+		}
+	}
 		if (curStep == 384)
 		{
+			hellbg.alpha = 1;
+			satan.alpha = 1;
 			sky.alpha = 0.66;
 			add(Estatic);
 			Estatic.alpha = 1;
@@ -184,7 +181,7 @@ function stepHit(curStep)
 			if (curStep == 640)
 			{
 				gf.visible = false;
-				//cameramove = false;
+				cameramove = false;
 			}
 			//BULLSHIT
 			if (curStep == 1408)
@@ -236,3 +233,23 @@ function stepHit(curStep)
 				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
 			}
 		}
+		override function beatHit(){
+			if (((dad.curCharacter == 'hellron-drippin') || (dad.curCharacter == 'dripronclassic')) && (curBeat % 2 == 0))
+			{
+				var multiplier:Float = 1;
+				if (health >= 1)
+					multiplier = 1;
+				else
+					multiplier = multiplier + ((1 - health));
+				FlxG.camera.shake(0.025 * multiplier / 4, 0.1);
+				camHUD.shake(0.0055 * multiplier / 4, 0.15);
+				if (health > 0.5*healthLoss)
+					health -= 0.5*healthLoss;
+				else
+					health = 0.03*healthLoss;
+
+				iconP2.angle = 0;
+				FlxTween.cancelTweensOf(iconP2);
+				FlxTween.tween(iconP2, {angle: 359.99}, Conductor.crochet / 1200 * 2, {ease: FlxEase.circOut});
+				
+			}}
