@@ -1,10 +1,10 @@
 COMPOSER(s)
-Tailsfan01
+ArmandRonan
 
 CHARTER(s)
-WitherJPG
+Bitto
 
 ARTIST(s)
-Seezee
 Gumbalino
+SonicAccelerate
 Wildythomas

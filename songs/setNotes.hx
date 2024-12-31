@@ -43,8 +43,17 @@ function create(){
         case 'gron':{
             noteName.text = 'RON_NOTES';
         }
+        case 'difficult-powers':{
+            noteName.text = 'NOTEold_assets';
+        }
         case 'Bijuu':{
             noteName.text = 'RON_NOTES';
+        }
+        case 'holy-shit-dave-fnf':{
+            noteName.text = 'NOTEold_assets';
+        }
+        case 'slammed':{
+            noteName.text = 'NOTEold_assets';
         }
         case 'ron-dsides':{
             noteName.text = 'conall';

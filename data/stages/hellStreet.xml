@@ -14,8 +14,8 @@
      <sprite name="street" x="-800" y="-400" sprite="street/ron_street" />
      <sprite name="mountainsbackbl" x="-800" y="-400" sprite="hellStreet/bloodshed_mountainsback" scroll="0.25"/>
    	<sprite name="hillfrontbl" x="-800" y="-400" sprite="hellStreet/bloodshed_city" scroll="0.25"/>
+        <sprite name="satan" x="-100" y="600" sprite="hellStreet/hellRon_satan"/>
    	<sprite name="mountainsbl" x="-800" y="-400" sprite="hellStreet/bloodshed_mountains" scroll="0.3"/>
-    <sprite name="satan" x="-100" y="600" sprite="hellStreet/hellRon_satan"/>
    	<sprite name="streetbl" x="-800" y="-400" sprite="hellStreet/bloodshed_street"/>
     <sprite name="wbg" x="300" y="-5560" sprite="hellStreet/lava"  type="loop" />
          <anim name="lava" anim="lava" loop="true"/>

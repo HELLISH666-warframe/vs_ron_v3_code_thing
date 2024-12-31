@@ -1,0 +1,9 @@
+COMPOSER(s)
+Blacknide
+
+CHARTER(s)
+Seezee
+
+ARTIST(s)
+Seezee
+Sonic Adventure Assets

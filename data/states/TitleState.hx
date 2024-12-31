@@ -13,8 +13,8 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import openfl.Assets;
 var done = false;
-var crt:CustomShader  = new CustomShader("fake CRT");
 var god:CustomShader  = new CustomShader("godray");
+var crt:CustomShader  = new CustomShader("fake CRT");
 var fish:CustomShader  = new CustomShader("colorizer");
 function update() {
 	if (done != (done = true)) {
@@ -22,7 +22,6 @@ function update() {
 		members[0].scale.set(2,2);
 		members[0].updateHitbox();
 		    FlxG.camera.addShader(crt);
-			FlxG.camera.addShader(god);
 			FlxG.camera.addShader(fish);
 		if (blackScreen.frames != null) {
 			CoolUtil.loadAnimatedGraphic(blackScreen, Paths.image("menus/titlescreen/titleThing"));
@@ -42,5 +41,12 @@ function update() {
 function beatHit(curBeat) {
 	FlxTween.completeTweensOf(FlxG.camera);
 	FlxG.camera.zoom += 0.03;
-	FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1500, {ease: FlxEase.backOut});
+	FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1500, {ease: FlxEase.backOut});}
+function stepHit(curStep){
+	{
+		switch(curStep){
+			case 64:
+				FlxG.camera.addShader(god);
+}
+}
 }

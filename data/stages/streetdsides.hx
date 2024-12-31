@@ -25,10 +25,10 @@ function stepHit(step)
     {
          //stage 2
         case 1315:
-            conall_sky.visible = false;
-            conall_bgBehind.visible = false;
-            conall_bg.visible = false;
-            conall_bucket.visible = false;
+            conall_sky.destroy();
+			conall_bgBehind.destroy();
+			conall_bg.destroy();
+            conall_bucket.destroy();
             conallwasted_sky.visible = true;
             rain3.visible = true;
             conallwasted_bgBehind.visible = true;

@@ -96,8 +96,8 @@ if (curSong.toLowerCase() == 'bleeding-classic')
 /*			SCREWYOU = true;
 			botplayTxt.visible = true;
 			if (!ClientPrefs.gameplaySettings['botplay'])
-*/				botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
-			FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
+				botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
+*/			FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
 		case 1296:
 			defaultCamZoom -= 0.1;
 			SCREWYOU = false;

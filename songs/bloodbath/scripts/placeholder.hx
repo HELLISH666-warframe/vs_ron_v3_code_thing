@@ -4,20 +4,18 @@ var time:Float = 0;
 var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); 
 var cameramove:Bool = false;
 var windowmove:Bool = false;
-var healthLoss:Float = 1;
-healthLoss = health -= 0.02;
 function postCreate(){		
 	evilTrail.color = FlxColor.RED;
 	insert(members.indexOf(dad)-1, evilTrail);
 	}
 override function update(elapsed:Float){time += elapsed;
-	if (windowmove)
-		window.move(Math.round(24 * Math.sin((time/0.5) * Math.PI) + 327), Math.round(24 * Math.sin((time/0.5) * 3) + 160));
-	if (cameramove)
-		{
-		camHUD.angle = 11 * Math.sin((time/3) * Math.PI);
-		FlxG.camera.angle = 2 * Math.sin((time/3) * Math.PI);
-		}
+if (windowmove)
+	window.move(Math.round(24 * Math.sin((time/0.5) * Math.PI) + 327), Math.round(24 * Math.sin((time/0.5) * 3) + 160));
+if (cameramove)
+	{
+	camHUD.angle = 11 * Math.sin((time/3) * Math.PI);
+	FlxG.camera.angle = 2 * Math.sin((time/3) * Math.PI);
+	}
 }
 function stepHit(curStep){
 	{

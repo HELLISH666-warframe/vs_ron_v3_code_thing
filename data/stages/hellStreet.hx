@@ -2,6 +2,7 @@ import flixel.addons.effects.FlxTrail;
 import flixel.addons.effects.FlxTrailArea;
 import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
+var exploders:FlxSprite = new FlxSprite();
 var Estatic2:FlxSprite; 
 var fx:FlxSprite;
 var Estatic:FlxSprite;
@@ -59,6 +60,14 @@ Estatic.scrollFactor.set();
 Estatic.screenCenter();
 Estatic.alpha = 0;
 
+var exploders:FlxSprite = new FlxSprite();
+exploders.frames = Paths.getFrames("stages/hellStreet/explosion");
+exploders.animation.addByPrefix("explosion", "explosion",  24, false);
+exploders.scale.set(5.8, 5.8);
+exploders.scrollFactor.set(0, 0);
+exploders.screenCenter();
+var explode:FlxSound;
+explode = FlxG.sound.load(Paths.sound("hellexplode"));
 
 //var cloudsbig = new FlxBackdrop(Paths.image('bgs/newbgtest/ron/ron_clouds'), X, 0, 0);
 //cloudsbig.scrollFactor.set(0.1,0.1);
@@ -90,7 +99,7 @@ function postCreate() {
     satan.y += 600;
     satan.x -= 100;
     satan.updateHitbox();
-    add(satan);
+	satan.visible = false;
     hellbg.setGraphicSize(Std.int(hellbg.width * 5));
 	asdfsa.visible = false;
     hellbg.alpha = 0.1;
@@ -129,6 +138,8 @@ function postCreate() {
     Estatic2 = new FlxSprite().loadGraphic(Paths.image("stages/hellStreet/bloodshed_streetBroken"));
     Estatic2.scale.set(1.2,1.2); // This changes the scale of the sprite
     insert(1, Estatic2);
+	exploders.visible = false;
+	add(exploders);
 }
 function stepHit(curStep)
 //    {
@@ -163,17 +174,24 @@ function stepHit(curStep)
 //			evilTrail.color = FlxColor.RED;
 //			insert(members.indexOf(dad)-1, evilTrail);
 			//bye_bye_street
-            cityback.visible = false;
-            cityj.visible = false;
-            mountainsback.visible = false;
-            mountains.visible = false;
-            hillfront.visible = false;
-            street.visible = false;
+//            cityback.visible = false;
+//            cityj.visible = false;
+//            mountainsback.visible = false;
+//            mountains.visible = false;
+//            hillfront.visible = false;
+//            street.visible = false;
+			cityback.destroy();
+			cityj.destroy();
+			mountainsback.destroy();
+			mountains.destroy();
+			hillfront.destroy();
+			street.destroy();
 
             mountainsbackbl.visible = true;
             hillfrontbl.visible = true;
             mountainsbl.visible = true;
             streetbl.visible = true;
+			satan.visible = true;
 
 			FlxG.camera.flash(FlxColor.WHITE, 1);
 			hellbg.alpha = 0.5;
@@ -188,30 +206,37 @@ function stepHit(curStep)
 			cameraSpeed = 2;
 		case 256:
 			cameraSpeed = 3;
-//			for (i in 0...4)
-//			{ 
-//				var member = strumLineNotes.members[i];
-//				FlxTween.tween(strumLineNotes.members[i], { x: defaultStrumX[i]+ 1250 ,angle: 360}, 1, {ease: FlxEase.quintInOut});
-//				defaultStrumX[i] += 1250;
-//			}
-//			for (i in 4...8)
-//			{ 
-//				var member = strumLineNotes.members[i];
-//				FlxTween.tween(strumLineNotes.members[i], { x: defaultStrumX[i] - 275,angle: 360}, 1, {ease: FlxEase.backOut});
-//				defaultStrumX[i] -= 275;
-//			}
-		case 320:
+			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 325 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 800}, (Conductor.crochet/600), {ease: FlxEase.linear});
+/*			for (i in 0...4)
+			{ 
+				var member = strumLineNotes.members[i];
+				FlxTween.tween(strumLineNotes.members[i], { x: defaultStrumX[i]+ 1250 ,angle: 360}, 1, {ease: FlxEase.quintInOut});
+				defaultStrumX[i] += 1250;
+			}
+			for (i in 4...8)
+			{ 
+				var member = strumLineNotes.members[i];
+				FlxTween.tween(strumLineNotes.members[i], { x: defaultStrumX[i] - 275,angle: 360}, 1, {ease: FlxEase.backOut});
+				defaultStrumX[i] -= 275;
+			}
+*/		case 320:
 			FlxTween.tween(satan, {y: satan.y - 700, angle: 359.99}, 3, {ease: FlxEase.circInOut});
 		case 368:
 			defaultCamZoom = 1;
 		case 376:
 			FlxG.camera.shake(0.03, 1);
 		case 382:
-//			exploders.animation.play('explosion');
-//			exploders.scale.set(2,2);
-//			exploders.alpha = 1;
-//			exploders.screenCenter();
+			exploders.visible = true;
+			exploders.animation.play('explosion');
+			FlxG.sound.play(Paths.sound('hellexplode'), 5.7);
 		case 384:
+			mountainsbackbl.destroy();
+			hillfrontbl.destroy();
+			mountainsbl.destroy();
+			streetbl.destroy();
+			exploders.animation.play('explosion');
+			FlxG.sound.play(Paths.sound('hellexplode'), 5.7);
 //			FlxG.camera.follow(camFollowPos, LOCKON, cameraSpeed*2);
 			cameramove = true;
 			rain.data.zoom.value = [20];
@@ -227,7 +252,7 @@ function stepHit(curStep)
 //			gf.visible = false;
 //			triggerEventNote('Change Bars Size', '8', '1');
 			FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
-			islands.y = boyfriend.y + 4700;
+			islands.y = boyfriend.y + 5100;
 			FlxTween.tween(boyfriend, {x: boyfriend.x + 300}, 0.5, {ease: FlxEase.circOut});
 			FlxTween.tween(dad, {x: dad.x - 300}, 0.5, {ease: FlxEase.circOut});
 			FlxTween.tween(dad, {y: dad.y + 5600}, 23, {ease: FlxEase.circIn});
@@ -259,10 +284,9 @@ function stepHit(curStep)
 			FlxG.camera.flash(FlxColor.WHITE, 1);
 //			FlxG.camera.follow(camFollowPos, LOCKON, cameraSpeed);
 		case 894:
-//			exploders.animation.play('explosion',true);
-//			exploders.scale.set(2,2);
-//			exploders.alpha = 1;
-//			exploders.screenCenter();
+			FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
+
+			exploders.animation.play('explosion');
 		case 896: 
 			cameramove = true;
 			islands.visible = false;

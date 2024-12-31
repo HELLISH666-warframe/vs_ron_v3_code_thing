@@ -16,13 +16,24 @@ rain.keepScaleRatio = true;
 rain.width = 1280*4;
 rain.start(false, 0.01);
 var rain:CustomShader  = new CustomShader("rain");
+var nonohud:Bool = false;
 
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
 	wig.data.iTime.value = [0.005*Math.sin(time)];
 	rain.data.iTime.value = [-25*Math.sin(time)];
-	vhs.data.iTime.value = [-1*Math.sin(time)];}
+	vhs.data.iTime.value = [-1*Math.sin(time)];
+if (nonohud)
+	{
+	strumLines.visible= false;
+	missesTxt.alpha = 0;
+	accuracyTxt.alpha = 0;
+	scoreTxt.alpha = 0;
+	iconP1.visible = false;
+	iconP2.visible = false;
+	scoreTxt.alpha = 0;
+	}}
 function postCreate() {
 	FlxG.camera.addShader(rain);
 	rain.data.zoom.value = [35];
@@ -82,6 +93,7 @@ function stepHit(step)
 		dad.specialAnim = true;
 		dad.heyTimer = 9999;
 */	case 1552:
+        nonohud = true;
 		camHUD.alpha = 1;
 		var budjet = new FlxSprite(0, 0);
 		budjet.loadGraphic(Paths.image('ron/budjet'));

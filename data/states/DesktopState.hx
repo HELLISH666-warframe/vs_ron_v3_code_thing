@@ -74,15 +74,15 @@ function create() {
 				button.color = 0xFF485EC2;
 				if (clickAmounts == 2) {
 					if (icons[i] == "story mode is idiot") {
-//						PlayState.loadWeek("ron", "hard");
 						PlayState.loadSong("ron", "hard");
-						PlayState.isStoryMode = true;
-//						FlxG.switchState.isStoryMode = true;
 						FlxG.switchState(new PlayState());
+/*						PlayState.loadWeek("ron", "hard");
+						PlayState.isStoryMode = true;
+						FlxG.switchState.isStoryMode = true;
 						PlayState.storyWeek = {
 							name: "ron"
 						}
-						/*StoryMenuState.musicTime = FlxG.sound.music.time;
+*/						/*StoryMenuState.musicTime = FlxG.sound.music.time;
 						new StoryMenuState();
 						transitioningToIdiotism = true;
 						rainbTmr.cancel();

@@ -1,10 +1,8 @@
 COMPOSER(s)
-Seezee
 ArmandRonan
 
 CHARTER(s)
-Seezee
+Shoutsuo
 
 ARTIST(s)
-Seezee
-Wildythomas
+YaWill

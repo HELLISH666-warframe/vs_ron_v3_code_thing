@@ -1,14 +1,13 @@
 <!DOCTYPE codename-engine-stage>
-<stage zoom="0.7"  folder="stages/farm/">
-   	<sprite name="sky" x="-800" y="-400" sprite="sky" scroll="0.3" />
-   	<sprite name="gmod" x="-400" y="-100" sprite="gm_flatgrass" scale="0.4" scroll="0.4" />
-   	<sprite name="hill" x="-400" y="0" sprite="orangey hills"  scroll="0.4" scale="1" />
-   	<sprite name="farm" x="40" y="-80" scale="0.7"  sprite="funfarmhouse" scroll="0.5" />
-	<sprite name="grass" x="-600" y="290" sprite="grass lands" scroll="1" />
-	<sprite name="left" x="-500" y="40" sprite="cornFence" scroll="1" />
-	<sprite name="two" x="1000" y="100" sprite="cornFence2" scroll="1" />
-	<sprite name="sign" x="-200" y="200" sprite="sign" />
-   	<girlfriend />
+<stage zoom="1"  folder="stages/farm/">
+   	<sprite name="sky" x="-600" y="-200" sprite="sky" scroll="0.6" />
+   	<sprite name="gmod" x="150" y="75" sprite="gm_flatgrass" scale="0.4" scroll="0.6" />
+   	<sprite name="hill" x="-173" y="200" sprite="orangey hills"  scroll="0.6" scale="1" />
+   	<sprite name="farm" x="100" y="125" scale="0.9"  sprite="funfarmhouse" scroll="0.7" />
+	<sprite name="grass" x="-600" y="500" sprite="grass lands" />
+	<sprite name="left" x="-400" y="200" sprite="cornFence" scroll="1" />
+	<sprite name="two" x="1100" y="200" sprite="cornFence2" scroll="1" />
+	<sprite name="sign" x="0" y="350" sprite="sign" />
    	<dad />
    	<boyfriend />
 </stage>

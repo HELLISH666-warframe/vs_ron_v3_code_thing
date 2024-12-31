@@ -29,14 +29,15 @@ function stepHit(step)
     switch (step)
     {
         case 1304:
-            sky.visible = false;
-            bigcloud.visible = false;
-            backcity.visible = false;
-            city.visible = false;
-            backmountain.visible = false;
-            mountain.visible = false;
-            hill.visible = false;
-            street.visible = false;
+            sky.destroy();
+            bigcloud.destroy();
+            backcity.destroy();
+            city.destroy();
+            backmountain.destroy();
+            mountain.destroy();
+            hill.destroy();
+            street.destroy();
+
             skywasted.visible = true;
             rain3.visible = true;
             citywasted.visible = true;

@@ -44,22 +44,30 @@ Estatic = new FlxSprite().loadGraphic(Paths.image('stages/deadly'));
 Estatic.scrollFactor.set();
 Estatic.screenCenter();
 Estatic.alpha = 0;
+
+var exploders:FlxSprite = new FlxSprite();
+exploders.frames = Paths.getFrames("stages/hellStreet/explosion");
+exploders.animation.addByPrefix("explosion", "explosion",  24, false);
+exploders.scale.set(3.8, 3.8);
+exploders.scrollFactor.set(0, 0);
+exploders.screenCenter();
+
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
 	wig.data.iTime.value = [0.005*Math.sin(time)];
     vhs.data.iTime.value = [1*Math.sin(time)];
     rain.data.iTime.value = [-24*Math.sin(time)];
-	if (cameramove)
-		{
-		camHUD.angle = 22 * Math.sin((time/1) * Math.PI);
-		FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
-		}
-	if (intensecameramove)
-		{
-		camHUD.angle = 45 * Math.sin((time/0.5) * Math.PI);
-		FlxG.camera.angle = 9 * Math.sin((time/0.5) * Math.PI);
-		}
+if (cameramove)
+	{
+	camHUD.angle = 22 * Math.sin((time/1) * Math.PI);
+	FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
+	}
+if (intensecameramove)
+	{
+	camHUD.angle = 45 * Math.sin((time/0.5) * Math.PI);
+	FlxG.camera.angle = 9 * Math.sin((time/0.5) * Math.PI);
+	}
 }
 function postCreate() {
 	hellbg.setGraphicSize(Std.int(hellbg.width * 5));
@@ -76,17 +84,9 @@ function postCreate() {
     blackeffect.alpha = 0;
     add(blackeffect);
     
-    var exploders:FlxSprite = new FlxSprite();
-    exploders.cameras = [camHUD];
-    exploders.frames = Paths.getSparrowAtlas('stages/hellStreet/explosion');
-    exploders.scrollFactor.set(0, 0);
-    exploders.animation.addByPrefix('explosion', 'explosion', 24, false);
-    exploders.updateHitbox();
-    exploders.screenCenter();
-    insert(0,exploders);
-    exploders.animation.play('explosion');
-    exploders.scale.set(0.01,0.01);
-    exploders.alpha = 0.01;
+	exploders.visible = false;
+	add(exploders);
+
 
 	hellbg.alpha = 0;
 	satan.alpha = 0;
@@ -109,18 +109,18 @@ function stepHit(curStep)
 			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 800}, (Conductor.crochet/600), {ease: FlxEase.linear});
 		}
 	}
-		if (curStep == 384)
-		{
-			hellbg.alpha = 1;
-			satan.alpha = 1;
-			sky.alpha = 0.66;
+	if (curStep == 384)
+	{
+		hellbg.alpha = 1;
+		satan.alpha = 1;
+		sky.alpha = 0.66;
 			add(Estatic);
 			Estatic.alpha = 1;
             //bye_bye_street
             //sky.visible = false;
-            city.visible = false;
-            mountains.visible = false;
-            street.visible = false;
+			city.destroy();
+			mountains.destroy();
+			street.destroy();
 			FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
 			camGame.flash(FlxColor.WHITE, 1);
 			//addShader(FlxG.camera,"glitchsmh");
@@ -133,6 +133,7 @@ function stepHit(curStep)
 			satan.color = FlxColor.BLACK;
 			firebg.alpha = 1;
 			firebg.screenCenter();
+			
 			
 			//addShader(camHUD, "vhs");
             camHUD.addShader(vhs);
@@ -163,11 +164,9 @@ function stepHit(curStep)
 				);
 				
 				FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
-				
+
+				exploders.visible = true;
 				exploders.animation.play('explosion');
-				exploders.scale.set(2,2);
-				exploders.alpha = 1;
-				exploders.screenCenter();
 				
 				//bgLol.visible = false;
 				islands.visible = true;
@@ -193,6 +192,7 @@ function stepHit(curStep)
 				
 				FlxTween.globalManager.completeTweensOf(satan);
 				FlxTween.angle(satan, 0, 359.99, 0.33, { type: FlxTween.LOOPING } );
+				exploders.animation.play('explosion');
 /*				exploders.animation.play('explosion');
 				exploders.scale.set(2,2);
 				exploders.alpha = 1;
@@ -251,5 +251,7 @@ function stepHit(curStep)
 				iconP2.angle = 0;
 				FlxTween.cancelTweensOf(iconP2);
 				FlxTween.tween(iconP2, {angle: 359.99}, Conductor.crochet / 1200 * 2, {ease: FlxEase.circOut});
+				iconP2.alpha = (2-(health)-0.25)/2+0.2;
+				iconP1.alpha = (health-0.25)/2+0.2;
 				
 			}}
