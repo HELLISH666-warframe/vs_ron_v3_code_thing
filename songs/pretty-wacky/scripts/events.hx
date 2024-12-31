@@ -59,31 +59,34 @@ function stepHit(curStep){
 //		insert(members.indexOf(stage.getSprite("wbg")), snowemitter); 
 		case 752:
 			defaultCamZoom += 0.1;
-			case 761: mosaic.data.uBlocksize.value = [1];
-			FlxG.camera.addShader(mosaic);
-			case 762:mosaic.data.uBlocksize.value = [2];
-			case 763:mosaic.data.uBlocksize.value = [3];
-			case 764:mosaic.data.uBlocksize.value = [6];
-			case 765:mosaic.data.uBlocksize.value = [9];
-			case 766: mosaic.data.uBlocksize.value = [13];
-			case 767: mosaic.data.uBlocksize.value = [20];
+			case 761: 
+			if (FlxG.save.data.mosaic) {
+				mosaic.data.uBlocksize.value = [1];
+				FlxG.camera.addShader(mosaic);
+			}
+			case 762:if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [2];}
+			case 763:if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [3];}
+			case 764:if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [6];}
+			case 765:if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [9];}
+			case 766:if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [13];}
+			case 767: if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [20];}
 			case 768:
-			mosaic.data.uBlocksize.value = [0];
+			if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [0];	FlxG.camera.removeShader(mosaic);}
 			cameraSpeed = 3;
-			FlxG.camera.addShader(chrom);
+			if (FlxG.save.data.chrom) {
+				FlxG.camera.addShader(chrom);
 //			camHUD.addShader(chrom);
 			chrom.data.rOffset.value = [1];
 			chrom.data.gOffset.value = [0.0];
 			chrom.data.bOffset.value = [1 * -1];
+			}
 			defaultCamZoom -= 0.1;
 			FlxG.camera.zoom -= 0.1;
 			FlxG.camera.flash(FlxColor.fromRGB(224, 224, 224), 3);
 /*			FlxTween.cancelTweensOf(camFollowPos);
 */			FlxTween.tween(camFollowPos, {x: camFollow.x, y: camFollow.y}, 0.01);
 			case 1280:
-				FlxG.camera.removeShader(mosaic);
-				FlxG.camera.removeShader(chrom);
-				camHUD.removeShader(chrom);
+				if (FlxG.save.data.chrom) {FlxG.camera.removeShader(chrom);camHUD.removeShader(chrom);}
 //				FlxTween.cancelTweensOf(camFollowPos);
 				cameraSpeed = 1;
 				defaultCamZoom += 0.1;

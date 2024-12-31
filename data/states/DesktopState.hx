@@ -46,10 +46,12 @@ function create() {
 			FlxG.camera.addShader(crt);
 			FlxG.camera.addShader(bit);
 			bit.data.enablethisbitch.value = [1.];
-			FlxG.camera.addShader(chrom);
-			chrom.data.rOffset.value = [1/2];
-			chrom.data.gOffset.value = [0.0];
-			chrom.data.bOffset.value = [1 * -1];
+			if (FlxG.save.data.chrom) {
+				FlxG.camera.addShader(chrom);
+				chrom.data.rOffset.value = [1/2];
+				chrom.data.gOffset.value = [0.0];
+				chrom.data.bOffset.value = [1 * -1];
+			}
 	
 	window = new FlxSprite(FlxG.width/1.3-405,ywindow);
 	window.frames = Paths.getSparrowAtlas('menus/desktop/menuCarNew');

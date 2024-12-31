@@ -167,10 +167,12 @@ function stepHit(curStep)
     switch (curStep)
     {
 		case 128:
-            FlxG.camera.addShader(rain);
-            rain.data.zoom.value = [40];
-            rain.data.raindropLength.value = [0.1];
-            rain.data.opacity.value = [0.25];
+			if (FlxG.save.data.rain) {
+				FlxG.camera.addShader(rain);
+				rain.data.zoom.value = [40];
+				rain.data.raindropLength.value = [0.1];
+				rain.data.opacity.value = [0.25];
+				}
 //			evilTrail.color = FlxColor.RED;
 //			insert(members.indexOf(dad)-1, evilTrail);
 			//bye_bye_street
@@ -198,11 +200,12 @@ function stepHit(curStep)
 			FlxTween.angle(satan, 0, 359.99, 0.75, { type: FlxTween.LOOPING } );
 			//triggerEventNote('Change Scroll Speed', '1.3', '1');
 			witheredRa.color = 0xFF660000;
-            FlxG.camera.addShader(chrom);
-            camHUD.addShader(chrom);
-            chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
-            chrom.data.gOffset.value = [0.0];
-            chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
+			if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
+				camHUD.addShader(chrom);
+				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
+				chrom.data.gOffset.value = [0.0];
+				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
+				}
 			cameraSpeed = 2;
 		case 256:
 			cameraSpeed = 3;

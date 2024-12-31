@@ -17,15 +17,19 @@ function stepHit(curStep){
 	switch(curStep){
 		case 256:
 			camGame.flash(FlxColor.WHITE, 0.2);
+			if (FlxG.save.data.chrom) {
 			FlxG.camera.addShader(chrom);
 //			camHUD.addShader(chrom);
 			chrom.data.rOffset.value = [1/2];
 			chrom.data.gOffset.value = [0.0];
 			chrom.data.bOffset.value = [1 * -1];
-			FlxG.camera.addShader(wig);
+			}
+			if (FlxG.save.data.glitch) {
+				FlxG.camera.addShader(wig);
 //			camHUD.addShader(wig);
 			wig.data.iTime.value = [2,2];
 			wig.data.on.value = [1.];
+			}
 	}
 }
 }

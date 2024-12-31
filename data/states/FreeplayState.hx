@@ -68,11 +68,13 @@ function postCreate() {
 	}
 	changeSelection(0, true);{
 	   FlxG.camera.addShader(crt);
-	   FlxG.camera.addShader(chrom);
-	   camText.addShader(chrom);
-	   chrom.data.rOffset.value = [1/2];
-	   chrom.data.gOffset.value = [0.0];
-	   chrom.data.bOffset.value = [1 * -1];
+	   if (FlxG.save.data.chrom) {
+		FlxG.camera.addShader(chrom);
+		camText.addShader(chrom);
+		chrom.data.rOffset.value = [1/2];
+		chrom.data.gOffset.value = [0.0];
+		chrom.data.bOffset.value = [1 * -1];
+    }
 			camText.addShader(fish);
 			fish.data.MAX_POWER.value = [0.19];
 	}

@@ -1,18 +1,13 @@
 <!DOCTYPE codename-mod-options>
-<menu name="ron Options" desc="ron shit">
-
-    <checkbox id="shaders" name="Checkbox example" />
-
-    <number id="numberExample" name="The intensity of the RGB shader. (only works if above is enabled)" min="0" max="2" change=".1"/>
-
-    <choice id="choiceExample" name="Choice Example">
-        <value name="Disabled" value="disabled"/>
-        <value name="This only" value="thisOnly"/>
-        <value name="All" value="all"/>
-    </choice>
-
-    <menu name="Submenu Example" desc="Submenu test">
-        <checkbox id="levelOfIdk2" name="Level of idk" />
-    </menu>
+<menu name="ron Options" desc="shader_shit">
+			<checkbox id="glitch" name="Glitch Shaders" desc="Enable/Disable Glitch Shaders. (Mainly used in 60-PIN). (medium intensive)" />
+			<checkbox id="chrom" name="chromatic aberration" desc="Enable/Disable chromatic aberration Shaders." />
+ <checkbox id="mosaic" name="mosaic Shader" desc="Enable/Disable mosaic Shader. (ONLY_USED_IN_PRETTY-WACKY)" /> 
+ <checkbox id="crt" name="CRT Shader" desc="Enable/Disable Wrath Shaders. (medium intensive)" />
+ <!-- <checkbox id="staticy" name="Static Shaders" desc="Enable/Disable Static Shaders. (low/no intensive)" /> -->
+ <!-- <checkbox id="saturation" name="Saturation Shaders" desc="Enable/Disable Saturation Shaders. (low/no intensive)" />
+  		<checkbox id="drunk" name="Drunk Shaders" desc="Enable/Disable Drunk Shaders. (low/no intensive)" /> -->     
+			<checkbox id="vhs" name="VHS Shader" desc="Enable/Disable VHS Shaders. (BLEEDING'S VHS SHADER & BLR'S SHADER). (low/no intensive)" />
+			<checkbox id="rain" name="RAIN" desc="fucking_rain" />
 
 </menu>

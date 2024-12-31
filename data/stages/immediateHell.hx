@@ -125,9 +125,11 @@ function stepHit(curStep)
 			camGame.flash(FlxColor.WHITE, 1);
 			//addShader(FlxG.camera,"glitchsmh");
 			//Shaders["glitchsmh"].shader.data.on.value = [1.];
-            FlxG.camera.addShader(wig);
-            camHUD.addShader(wig);
-            wig.data.on.value = [1.];
+			if (FlxG.save.data.glitch) {
+				FlxG.camera.addShader(wig);
+				camHUD.addShader(wig);
+				wig.data.on.value = [1.];
+			}
 			//bloodshedGrp.visible = false;
 			blackeffect.visible = false;
 			satan.color = FlxColor.BLACK;
@@ -136,13 +138,15 @@ function stepHit(curStep)
 			
 			
 			//addShader(camHUD, "vhs");
-            camHUD.addShader(vhs);
+			if (FlxG.save.data.vhs) {camHUD.addShader(vhs);}
 			//addShader(FlxG.camera, "chromatic aberration");
-            FlxG.camera.addShader(chrom);
-            camHUD.addShader(chrom);
-			chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
-			chrom.data.gOffset.value = [0.0];
-			chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
+			if (FlxG.save.data.chrom) {
+				FlxG.camera.addShader(chrom);
+				camHUD.addShader(chrom);
+				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
+				chrom.data.gOffset.value = [0.0];
+				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
+			}
 			remove(bloodshedTrail);
             bloodshedTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
             insert(members.indexOf(dad)-1, bloodshedTrail);
@@ -228,9 +232,11 @@ function stepHit(curStep)
 			}
 			if (curStep > 384)
 			{
+				if (FlxG.save.data.chrom) {
 				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
 				chrom.data.gOffset.value = [0.0];
 				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
+				}
 			}
 		}
 		override function beatHit(){

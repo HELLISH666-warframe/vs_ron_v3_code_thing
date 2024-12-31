@@ -9,6 +9,30 @@ import flixel.graphics.FlxGraphic;
 import flixel.FlxG;
 import lime.graphics.Image;
 import Type;
+function new()
+    {   
+        //SAVE DATA VARIABLES
+        //accolades
+        if (FlxG.save.data.seenAccolades == null) FlxG.save.data.seenAccolades = false;
+        //planets themselves
+        if (FlxG.save.data.songsBeaten == null) FlxG.save.data.songsBeaten = [];    
+    
+        //if (FlxG.save.data.bloom == null) FlxG.save.data.bloom = true;
+        if (FlxG.save.data.glitch == null) FlxG.save.data.glitch = true;
+        if (FlxG.save.data.chrom == null) FlxG.save.data.chrom = true;
+        if (FlxG.save.data.heatwave == null) FlxG.save.data.heatwave = true;
+        if (FlxG.save.data.crt == null) FlxG.save.data.crt = true;
+        if (FlxG.save.data.staticy == null) FlxG.save.data.staticy = true;
+        //if (FlxG.save.data.saturation == null) FlxG.save.data.saturation = true;
+        //if (FlxG.save.data.drunk == null) FlxG.save.data.drunk = true;
+        if (FlxG.save.data.vhs == null) FlxG.save.data.vhs = true;
+        if (FlxG.save.data.rain == null) FlxG.save.data.rain = true;
+    
+        if (FlxG.save.data.particles == null) FlxG.save.data.particles = true;
+        if (FlxG.save.data.trails == null) FlxG.save.data.trails = true;
+        if (FlxG.save.data.flashing == null) FlxG.save.data.flashing = true;
+    
+    }
 function update() {
     FlxG.autoPause = false;
     Main.framerateSprite.codenameBuildField.text = "REAL Memory Counter: " + 193759 + "TB\nThe REAL FL Studio 21.1.1.3750";

@@ -121,17 +121,17 @@ function stepHit(step)
 		FlxTween.tween(dad, {angle: 0}, 0.2, {ease: FlxEase.linear});
 		FlxTween.tween(boyfriend, {angle: 0}, 0.2, {ease: FlxEase.linear});
 		FlxTween.tween(gf, {angle: 0}, 0.2, {ease: FlxEase.linear});
-		FlxG.camera.addShader(wig);
-		camHUD.addShader(wig);
-		wig.data.iTime.value = [2,2];
-		wig.data.on.value = [1.];
+	if (FlxG.save.data.glitch) {FlxG.camera.addShader(wig);camHUD.addShader(wig);
+		wig.data.iTime.value = [2,2];wig.data.on.value = [1.];
+		}
+		if (FlxG.save.data.crt) {FlxG.camera.addShader(crt);camHUD.addShader(crt);}
 		FlxG.camera.addShader(crt);
 		camHUD.addShader(crt);
-		FlxG.camera.addShader(chrom);
-		camHUD.addShader(chrom);
+	if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);camHUD.addShader(chrom);
 		chrom.data.rOffset.value = [1/2];
 		chrom.data.gOffset.value = [0.0];
 		chrom.data.bOffset.value = [1 * -1];
+		}
 		case 1488:
 		camGame.visible = true;
 		camHUD.visible = true;
