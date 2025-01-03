@@ -43,7 +43,7 @@ function create() {
 	add(sanstitre);
 	add(rainbowscreen);
 	add(new FlxSprite().loadGraphic(Paths.image("menus/desktop/pcBg")));
-			FlxG.camera.addShader(crt);
+			if (FlxG.save.data.crt){FlxG.camera.addShader(crt);}
 			FlxG.camera.addShader(bit);
 			bit.data.enablethisbitch.value = [1.];
 			if (FlxG.save.data.chrom) {

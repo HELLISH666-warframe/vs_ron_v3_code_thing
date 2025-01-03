@@ -125,8 +125,6 @@ function stepHit(step)
 		wig.data.iTime.value = [2,2];wig.data.on.value = [1.];
 		}
 		if (FlxG.save.data.crt) {FlxG.camera.addShader(crt);camHUD.addShader(crt);}
-		FlxG.camera.addShader(crt);
-		camHUD.addShader(crt);
 	if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);camHUD.addShader(chrom);
 		chrom.data.rOffset.value = [1/2];
 		chrom.data.gOffset.value = [0.0];

@@ -1,3 +1,4 @@
+//fuck_you_im_having_the_animated_bg_always_loaded
 function postCreate() {
 	
 	platform.visible = false;
@@ -5,20 +6,19 @@ function postCreate() {
 	error.visible = false;
 }
 function stepHit(step)
-        {
-            switch (step)
-            {
-                //stage 2
-                case 384:
-                    sky.destroy();
-                    mountainsback.destroy();
-                    mountains.destroy();
-                    hillfront.destroy();
-                    street.destroy();
+{
+    switch (step)
+    {
+        //stage 2
+        case 384:
+            sky.destroy();
+            mountainsback.destroy();
+            mountains.destroy();
+            hillfront.destroy();
+            street.destroy();
                 
-                 platform.visible = true;
-                 atelo_popup_animated.visible = true;
-                 error.visible = true;
-        
-            }
-        }
+            platform.visible = true;
+            atelo_popup_animated.visible = true;
+            error.visible = true;
+    }
+}

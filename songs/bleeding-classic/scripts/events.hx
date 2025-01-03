@@ -17,20 +17,10 @@ function stepHit(curStep) {
 			bloodshedTrail.color = FlxColor.RED;
 			insert(members.indexOf(dad)-1, bloodshedTrail);
 			case 256:
-				var xx = dad.x;
-				var yy = dad.y;
 				//dad.x = xx-80;
 				//dad.y = yy-200;
 				resetTrail();
 				defaultCamZoom += 0.1;
-/*				SCREWYOU = true;
-				botplayTxt.visible = true;
-				botplayTxt.y = scoreTxt.y - 100;
-				if (!ClientPrefs.gameplaySettings['botplay'])
-				{
-					botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
-					botplayTxt.screenCenter();
-*/				}
         case 384:
 			defaultCamZoom += 0.15;
 		case 512:

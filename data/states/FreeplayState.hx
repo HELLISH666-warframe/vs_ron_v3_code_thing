@@ -24,25 +24,35 @@
 var portrait:FlxSprite;
 var preload = [];
 var particles:FlxTypedEmitter;
+public var mode:String = 'main';
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
-	chrom.data.bOffset.value = [-0.005*Math.sin(time)];}
-
+	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
+}
+	
 function postCreate() {
 	FlxG.cameras.add(camText, false);
 	grpSongs.camera = camText;
 	for (i in iconArray) i.camera = camText;
 
-	//going_unused_untill_i_learn_to_make_it_chanhge_colour
-	//var bg:FlxSprite = CoolUtil.loadAnimatedGraphic(new FlxSprite(), Paths.image('menus/freeplay/mainbgAnimate'));
-	//add(bg);
-	//bg.screenCenter();
-	//bg.scale.set(2,2);
+	bg = new FlxSprite();
+	bg.frames = Paths.getSparrowAtlas('menus/freeplay/mainbgAnimate');
+	bg.animation.addByPrefix('animate', 'animate', 24, true);
+	bg.animation.play('animate');
+	bg.scale.set(2,2);
+	bg.updateHitbox();
+	bg.screenCenter();
+	add(bg);
 
 	portrait = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/portraits/ron'));
 	portrait.scale.set(0.51,0.51);
 	portrait.updateHitbox();
 	add(portrait);
+
+	var bar:FlxSprite = CoolUtil.loadAnimatedGraphic(new FlxSprite(), Paths.image('menus/freeplay/bar'));
+	add(bar);
+	bar.screenCenter();
+	bar.x += 30;
 
 	scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 	scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, "RIGHT");
@@ -54,29 +64,38 @@ function postCreate() {
 	diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
 	diffText.font = scoreText.font;
 	add(diffText);
+	var modeText = new FlxText(10, 10, 0,"fuck", 48);
+	modeText.setFormat(Paths.font("w95.otf"), 48, FlxColor.WHITE);
+	add(modeText);
 
 	add(scoreText);
 	
-	var bar:FlxSprite = CoolUtil.loadAnimatedGraphic(new FlxSprite(), Paths.image('menus/freeplay/bar'));
-	add(bar);
-	bar.screenCenter();
-	bar.x += 30;
+
+	portraitOverlay = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/portraits/ron'));
+	portraitOverlay.scale.set(0.51,0.51);
+	portraitOverlay.updateHitbox();
+	add(portraitOverlay);
+	portraitOverlay.visible = false;
 	for (i in songs) {
 		var graphic = FlxGraphic.fromAssetKey(Paths.image('menus/freeplay/portraits/' + i.name));
 		graphic.persist = true;
 		preload.push(graphic);
+	if ((i.name.toLowerCase() == 'slammed'))
+	{
+		FlxG.camera.zoom = 1.2;
+	}
+	else
+		FlxG.camera.zoom = 1;
 	}
 	changeSelection(0, true);{
-	   FlxG.camera.addShader(crt);
-	   if (FlxG.save.data.chrom) {
-		FlxG.camera.addShader(chrom);
-		camText.addShader(chrom);
+	if (FlxG.save.data.crt){FlxG.camera.addShader(crt);}
+	if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);camText.addShader(chrom);
 		chrom.data.rOffset.value = [1/2];
 		chrom.data.gOffset.value = [0.0];
 		chrom.data.bOffset.value = [1 * -1];
     }
-			camText.addShader(fish);
-			fish.data.MAX_POWER.value = [0.19];
+		camText.addShader(fish);
+		fish.data.MAX_POWER.value = [0.19];
 	}
 var coolemitter:FlxTypedEmitter = new FlxTypedEmitter();
 		coolemitter.width = FlxG.width*1.5;
@@ -123,3 +142,15 @@ function onChangeSelection(event) {
 		FlxTween.tween(portrait, {y: mfwY, angle: 0}, 0.4, {ease: FlxEase.elasticOut});
 	}});
 }
+ function shadering() {
+	clearShader(FlxG.camera);
+	for (i in songs){
+	switch (i.name[curSelected].i.name.toLowerCase())
+	{
+		case "gron":
+			//grayscale looks better unless a cooler paper shader is found
+			//addShader(camWhat,"paper");
+			camText.addShader(crt);
+	}
+}
+ }

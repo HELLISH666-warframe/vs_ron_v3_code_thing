@@ -24,7 +24,7 @@ lights-down-remix
 pretty-wacky
 certified-champion
 rong-aisle
-Bloodshed-legacy-redux
+bloodshed-legacy-redux
 clusterfunk
 oh-my-god-hes-ballin
 awesome-ron

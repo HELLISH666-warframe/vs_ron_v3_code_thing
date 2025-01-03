@@ -14,7 +14,7 @@ import flixel.util.FlxTimer;
 import FreeplayState;
 import sys.FileSystem;
 
-{
+
 	
 
 	var image:FlxSprite;
@@ -155,7 +155,7 @@ var iTime:Float = 0;
 
 		if(controls.ACCEPT)
 		{
-			FlxG.resetState();
+			FlxG.switchState(new FreeplayState());
 		}
 		if(controls.DOWN_P)
 		{
@@ -211,6 +211,6 @@ var iTime:Float = 0;
 			});
 		}
 	}
-}
+
 
 

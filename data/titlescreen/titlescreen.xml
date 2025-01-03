@@ -4,7 +4,6 @@
 		<sprite name="logoBack" sprite="trueTitleBack" x="0" y="0" />
 		<sprite name="logo" sprite="trueTitleLogo" x="0" y="0" />
 
-		<titleEnter sprite="trueTitlePlay" x="0" y="0" />
 	</sprites>
 
 	<intro length="16">

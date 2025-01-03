@@ -1,6 +1,6 @@
 var fxtwo:FlxSprite;
 var funnyDSidesSpin:Bool = false;
-var camOverlay:FlxCamera;
+public var camOverlay:FlxCamera;
 function create(){
 	camOverlay = new FlxCamera();
 	camOverlay.alpha = 0;

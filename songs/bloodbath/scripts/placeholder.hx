@@ -14,7 +14,7 @@ if (windowmove)
 if (cameramove)
 	{
 	camHUD.angle = 11 * Math.sin((time/3) * Math.PI);
-	FlxG.camera.angle = 2 * Math.sin((time/3) * Math.PI);
+	camera.angle = 2 * Math.sin((time/3) * Math.PI);
 	}
 }
 function stepHit(curStep){
@@ -28,10 +28,9 @@ function stepHit(curStep){
 		}
 		if (curStep == 518)
 		{
-			camHUD.angle = 0;
 			FlxG.camera.angle = 0;
 			FlxTween.cancelTweensOf(FlxG.camera);
-			FlxTween.cancelTweensOf(camHUD);
+			FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360}, 0.8, {ease: FlxEase.expoOut});
 //			FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360+360}, 3, {ease: FlxEase.circOut} );
 //			FlxTween.tween(FlxG.camera, {angle: Math.floor(FlxG.camera.angle/360)*360+360}, 3, {ease: FlxEase.circOut} );
 			windowmove = false;
@@ -56,17 +55,3 @@ function stepHit(curStep){
 		//"n3therwordly"_did_the_redo
     }
 }
-override function beatHit(){
-	if (((dad.curCharacter == 'bloodbathnew')) && (curBeat % 2 == 0))
-	{
-		var multiplier:Float = 1;
-		if (health >= 1)
-			multiplier = 1;
-		else
-			multiplier = multiplier + ((1 - health));
-		FlxG.camera.shake(0.025 * multiplier / 4, 0.1);
-		camHUD.shake(0.0055 * multiplier / 4, 0.15);
-		
-	}}
-function onDadHit(e)
-	if (health > 0.2) {health -= 0.024;}

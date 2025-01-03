@@ -28,8 +28,6 @@ rain.keepScaleRatio = true;
 rain.width = 1280*4;
 rain.start(false, 0.01);
 var rain:CustomShader  = new CustomShader("rain");
-var healthLoss:Float = 1;
-healthLoss = health -= 0.02;
 explode = FlxG.sound.load(Paths.sound("hellexplode"));
 
 fx = new FlxSprite().loadGraphic(Paths.image('stages/effect'));
@@ -94,10 +92,12 @@ function postCreate() {
     islands.visible = false;
 	bloodshed_lamp.visible = false;
 
-    FlxG.camera.addShader(rain);
-    rain.data.zoom.value = [40];
-    rain.data.raindropLength.value = [0.1];
-    rain.data.opacity.value = [0.25];
+	if (FlxG.save.data.rain) {
+		FlxG.camera.addShader(rain);
+		rain.data.zoom.value = [40];
+		rain.data.raindropLength.value = [0.1];
+		rain.data.opacity.value = [0.25];
+		}
 }
 function stepHit(curStep)
 {
@@ -185,6 +185,7 @@ function stepHit(curStep)
 			{
 				gf.visible = false;
 				cameramove = false;
+				FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360}, 0.8, {ease: FlxEase.expoOut});
 			}
 			//BULLSHIT
 			if (curStep == 1408)
@@ -197,11 +198,7 @@ function stepHit(curStep)
 				FlxTween.globalManager.completeTweensOf(satan);
 				FlxTween.angle(satan, 0, 359.99, 0.33, { type: FlxTween.LOOPING } );
 				exploders.animation.play('explosion');
-/*				exploders.animation.play('explosion');
-				exploders.scale.set(2,2);
-				exploders.alpha = 1;
-				exploders.screenCenter();
-*/				}
+				}
 			if (curStep == 1664)
 			{		
 				//triggerEventNote('Change Scroll Speed', '1.45', '1');
@@ -239,25 +236,3 @@ function stepHit(curStep)
 				}
 			}
 		}
-		override function beatHit(){
-			if (((dad.curCharacter == 'hellron-drippin') || (dad.curCharacter == 'dripronclassic')) && (curBeat % 2 == 0))
-			{
-				var multiplier:Float = 1;
-				if (health >= 1)
-					multiplier = 1;
-				else
-					multiplier = multiplier + ((1 - health));
-				FlxG.camera.shake(0.025 * multiplier / 4, 0.1);
-				camHUD.shake(0.0055 * multiplier / 4, 0.15);
-				if (health > 0.5*healthLoss)
-					health -= 0.5*healthLoss;
-				else
-					health = 0.03*healthLoss;
-
-				iconP2.angle = 0;
-				FlxTween.cancelTweensOf(iconP2);
-				FlxTween.tween(iconP2, {angle: 359.99}, Conductor.crochet / 1200 * 2, {ease: FlxEase.circOut});
-				iconP2.alpha = (2-(health)-0.25)/2+0.2;
-				iconP1.alpha = (health-0.25)/2+0.2;
-				
-			}}

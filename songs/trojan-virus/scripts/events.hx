@@ -35,10 +35,11 @@ if (nonohud)
 	scoreTxt.alpha = 0;
 	}}
 function postCreate() {
-	FlxG.camera.addShader(rain);
-	rain.data.zoom.value = [35];
-	rain.data.raindropLength.value = [0.075];
-	rain.data.opacity.value = [0.2];
+	if (FlxG.save.data.rain) {	FlxG.camera.addShader(rain);
+		rain.data.zoom.value = [35];
+		rain.data.raindropLength.value = [0.075];
+		rain.data.opacity.value = [0.2];
+		}
 
 }
 				FlxG.camera.shake(0.00625, 0.1);
@@ -49,14 +50,12 @@ function stepHit(step)
 	switch (step)
 	{
 	case 384:
-		FlxG.camera.addShader(chrom);
-		chrom.data.rOffset.value = [1/2];
-		chrom.data.gOffset.value = [0.0];
-		chrom.data.bOffset.value = [1 * -1];
-		FlxG.camera.addShader(vhs);
+		if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
+			chrom.data.rOffset.value = [1/2];chrom.data.gOffset.value = [0.0];chrom.data.bOffset.value = [1 * -1];
+			}
+		if (FlxG.save.data.vhs) {FlxG.camera.addShader(vhs);}
+		if (FlxG.save.data.glitch) {FlxG.camera.addShader(wig);camHUD.addShader(wig);}
 		FlxG.camera.flash(FlxColor.WHITE, 1, null, true);
-		FlxG.camera.addShader(wig);
-		camHUD.addShader(wig);
 		wig.data.on.value = [1.];
 		camHUD.shake(0.002);
 		defaultCamZoom = 0.8;
@@ -67,11 +66,12 @@ function stepHit(step)
 			member.x = defaultStrumX[i];
 		}
 		moveing = false;
-*/		wig.data.on.value = [0.];
+*/
+if (FlxG.save.data.glitch) {wig.data.on.value = [0.];}
 		defaultCamZoom = 0.55;
 	case 912:
 //		moveing = true;
-		wig.data.on.value = [1.];
+if (FlxG.save.data.glitch) {wig.data.on.value = [0.1];}
 		defaultCamZoom = 0.88;
 	case 1160 | 1164 | 1165 | 1166 | 1167:
 		window.move(window.x + FlxG.random.int( -50, 50),window.y + FlxG.random.int( -32, 32));
@@ -82,7 +82,8 @@ function stepHit(step)
 			var member = strumLineNotes.members[i];
 			member.x = defaultStrumX[i];
 		}
-*/		wig.data.on.value = [0.];
+*/	
+if (FlxG.save.data.glitch) {camHUD.removeShader(wig);}
 		FlxTween.tween(camHUD, {alpha: 0}, 2, {ease: FlxEase.circInOut});
 //		case 1432:
 //			FlxTween.tween(camHUD, {alpha: 0}, 2, {ease: FlxEase.circInOut});

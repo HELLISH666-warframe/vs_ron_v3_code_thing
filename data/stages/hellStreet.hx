@@ -2,6 +2,8 @@ import flixel.addons.effects.FlxTrail;
 import flixel.addons.effects.FlxTrailArea;
 import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
+var cameramove:Bool = false;
+var intensecameramove:Bool = false;
 var exploders:FlxSprite = new FlxSprite();
 var Estatic2:FlxSprite; 
 var fx:FlxSprite;
@@ -90,6 +92,16 @@ override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
     rain.data.iTime.value = [-24*Math.sin(time)];
+	if (cameramove)
+		{
+		camHUD.angle = 11 * Math.sin((time/2) * Math.PI);
+		FlxG.camera.angle = 2 * Math.sin((time/2) * Math.PI);
+		}
+	if (intensecameramove)
+		{
+		camHUD.angle = 11 * Math.sin((time/1) * Math.PI);
+		FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
+		}
 }
 function postCreate() {
     var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); 
@@ -126,6 +138,8 @@ function postCreate() {
 	space.visible = false;
 	earth.visible = false;
     freindly.visible = false;
+	freindly.scrollFactor.set(0.05, 0.05);
+	freindly.screenCenter();
     firebg.scale.set(5,3);
     firebg.scrollFactor.set();
     firebg.screenCenter();
@@ -176,12 +190,6 @@ function stepHit(curStep)
 //			evilTrail.color = FlxColor.RED;
 //			insert(members.indexOf(dad)-1, evilTrail);
 			//bye_bye_street
-//            cityback.visible = false;
-//            cityj.visible = false;
-//            mountainsback.visible = false;
-//            mountains.visible = false;
-//            hillfront.visible = false;
-//            street.visible = false;
 			cityback.destroy();
 			cityj.destroy();
 			mountainsback.destroy();
@@ -201,7 +209,6 @@ function stepHit(curStep)
 			//triggerEventNote('Change Scroll Speed', '1.3', '1');
 			witheredRa.color = 0xFF660000;
 			if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
-				camHUD.addShader(chrom);
 				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
 				chrom.data.gOffset.value = [0.0];
 				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
@@ -209,8 +216,8 @@ function stepHit(curStep)
 			cameraSpeed = 2;
 		case 256:
 			cameraSpeed = 3;
-			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 325 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});
-			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 800}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 275 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 1250 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});
 /*			for (i in 0...4)
 			{ 
 				var member = strumLineNotes.members[i];
