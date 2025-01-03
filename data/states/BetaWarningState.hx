@@ -5,7 +5,6 @@ var crt:CustomShader  = new CustomShader("fake CRT");
 var time:Float = 0;
 var timer:Int;
 var mmtw:FlxSound = new FlxSound();
-if (FlxG.save.data.vhs) {
 override function postCreate() {
 
 	mmtw = new FlxSound();
@@ -52,7 +51,8 @@ override function update(elapsed:Float){time += elapsed;
 	if (FlxG.keys.justPressed.ENTER){
 		mmtw.destroy();
 		FlxG.sound.play(Paths.sound('resumeSong'));
-		FlxTween.tween(FlxG.camera, {zoom: 0.5, angle: 45}, 0.5, {ease: FlxEase.quadIn});
+		FlxTween.tween(FlxG.camera, {zoom: 0.5, angle: 45}, 0.9, {ease: FlxEase.quadIn});
+		new FlxTimer().start(0.8, function(tmr:FlxTimer)
+		FlxG.switchState(new TitleState()));
 	}
-}
 }

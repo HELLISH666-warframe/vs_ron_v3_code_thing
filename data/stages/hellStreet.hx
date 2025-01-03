@@ -2,6 +2,7 @@ import flixel.addons.effects.FlxTrail;
 import flixel.addons.effects.FlxTrailArea;
 import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
+var evilTrail = null;
 var cameramove:Bool = false;
 var intensecameramove:Bool = false;
 var exploders:FlxSprite = new FlxSprite();
@@ -140,6 +141,7 @@ function postCreate() {
     freindly.visible = false;
 	freindly.scrollFactor.set(0.05, 0.05);
 	freindly.screenCenter();
+	freindly.updateHitbox();
     firebg.scale.set(5,3);
     firebg.scrollFactor.set();
     firebg.screenCenter();
@@ -154,30 +156,32 @@ function postCreate() {
     insert(1, Estatic2);
 	exploders.visible = false;
 	add(exploders);
+	add(fx);
+	add(Estatic);
+	FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
+
 }
 function stepHit(curStep)
-//    {
+    {
 //        var evilTrail = null;
 //        if (curStep >= 128 && evilTrail == null) {
 //            evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
 //        }
-//        if (curStep < 1151)
-//            Estatic.alpha = (((2-health)/3)+0.3)/2;
-//        else
-//            Estatic.alpha = 0;
-//        if (curStep >= 384)
-//        {
-//            if (curStep <= 576 || ((curStep >= 896) && (curStep <= 1151)))				
-//                for (i in evilTrail.members)
-//                    i.velocity.y = 500;
-//            snowemitter.x = FlxG.camera.scroll.x;
-//            snowemitter.y = FlxG.camera.scroll.y;
-//        }
-//        else
-//        {
-//            Estatic.alpha = 0;
-//            snowemitter.x = 99999;
-//        }
+        if (curStep < 1151)
+            Estatic.alpha = (((2-health)/3)+0.3)/2;
+        else
+            Estatic.alpha = 0;
+        if (curStep >= 384)
+        {
+            if (curStep <= 576 || ((curStep >= 896) && (curStep <= 1151)))				
+            snowemitter.x = FlxG.camera.scroll.x;
+            snowemitter.y = FlxG.camera.scroll.y;
+        }
+        else
+        {
+            Estatic.alpha = 0;
+            snowemitter.x = 99999;
+        }
     switch (curStep)
     {
 		case 128:
@@ -214,6 +218,9 @@ function stepHit(curStep)
 				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
 				}
 			cameraSpeed = 2;
+		case 129:
+			evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
+			insert(members.indexOf(dad)-1, evilTrail);
 		case 256:
 			cameraSpeed = 3;
 			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 275 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});
@@ -329,6 +336,7 @@ function stepHit(curStep)
 			intensecameramove = true;
 			space.visible = true;
 			earth.visible = true;
+			freindly.y = boyfriend.y + 5100;
 			freindly.visible = true;
 			defaultCamZoom -= 0.1;
 			dad.y += 9400;
@@ -338,3 +346,4 @@ function stepHit(curStep)
 //			healthBar.setGraphicSize(800,Std.int(healthBar.height));
 //			healthBar.updateHitbox();
     }
+}

@@ -20,7 +20,7 @@ function postCreate() {
 	add(Estatic);
 	FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
 }
-function stepHit(curStep)if (curSong.toLowerCase() == 'bloodbath') 
+function stepHit(curStep){if (curSong.toLowerCase() == 'bloodbath') 
 {
 	if ((curStep >= 254) && (curStep <= 518))
 	{
@@ -72,6 +72,7 @@ function stepHit(curStep)if (curSong.toLowerCase() == 'bloodbath')
 	case 1039: defaultCamZoom = 0.85; // shit ton of code because yeah
 		case 1056: windowmove = false;
 	}
+}
 	if (curSong.toLowerCase() == 'bloodshed-classic')
 		switch(curStep) {
 			case 288:
@@ -92,17 +93,6 @@ function stepHit(curStep)if (curSong.toLowerCase() == 'bloodbath')
 }
 if (curSong.toLowerCase() == 'bleeding-classic')
 	switch(curStep) {
-		case 768:
-/*			SCREWYOU = true;
-			botplayTxt.visible = true;
-			if (!ClientPrefs.gameplaySettings['botplay'])
-				botplayTxt.text = "UNFORGIVING INPUT ENABLED!";
-*/			FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
-		case 1296:
-			defaultCamZoom -= 0.1;
-			SCREWYOU = false;
-			if (!ClientPrefs.gameplaySettings['botplay'])
-				botplayTxt.visible = false;
 	}
 	if ((curStep >= 256) && (curStep <= 512))
 	{
@@ -114,7 +104,7 @@ if (curSong.toLowerCase() == 'bleeding-classic')
 				ease: FlxEase.quadIn, 
 				onComplete: function(twn:FlxTween) 
 				{
-					FlxTween.angle(satan, 0, 359.99, 0.75, { type: FlxTween.PINGPONG } );
+					FlxTween.angle(satan, 0, 359.99, 0.75, { type: FlxTween.LOOPING } );
 				}} 
 			);
 		}
@@ -131,7 +121,7 @@ if (curSong.toLowerCase() == 'bleeding-classic')
 				ease: FlxEase.quadIn, 
 				onComplete: function(twn:FlxTween) 
 				{
-					FlxTween.angle(satan, 0, 359.99, 0.35, { type: FlxTween.PINGPONG } );
+					FlxTween.angle(satan, 0, 359.99, 0.35, { type: FlxTween.LOOPING } );
 				}} 
 			);
 		}

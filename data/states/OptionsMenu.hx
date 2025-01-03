@@ -1,4 +1,3 @@
-var fish:CustomShader  = new CustomShader("fisheye");
 var vhs:CustomShader  = new CustomShader("vhs");
 var crt:CustomShader  = new CustomShader("fake CRT");
 var time:Float = 0;
@@ -12,8 +11,6 @@ function postCreate() {
 	members[0].updateHitbox();
 	members[0].screenCenter();
 	members[0].color = FlxColor.YELLOW;
-	if (FlxG.save.data.vhs) {FlxG.camera.addShader(fish);
-		fish.data.MAX_POWER.value = [0.10];
-		FlxG.camera.addShader(vhs);
+	if (FlxG.save.data.vhs) {//FlxG.camera.addShader(vhs);
 		FlxG.camera.addShader(crt);}
 }

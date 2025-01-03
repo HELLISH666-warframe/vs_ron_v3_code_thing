@@ -12,7 +12,6 @@
  var crt:CustomShader  = new CustomShader("fake CRT");
  var chrom:CustomShader  = new CustomShader("chromatic aberration");
  var fish:CustomShader  = new CustomShader("fisheye");
- //shader shit//
 //cam
  var camWhat:FlxCamera;
  var camText:FlxCamera = new FlxCamera();
@@ -20,7 +19,6 @@
  camWhat = new FlxCamera();
  FlxG.cameras.reset(camWhat);
  FlxCamera.defaultCameras = [camWhat];
- //cam shit//	
 var portrait:FlxSprite;
 var preload = [];
 var particles:FlxTypedEmitter;

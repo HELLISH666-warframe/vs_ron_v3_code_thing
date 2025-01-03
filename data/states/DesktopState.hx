@@ -1,3 +1,4 @@
+//𝔽𝕣𝕒𝕜𝕚𝕥𝕤_made_this_i_just_added_the_shaders
 var crt:CustomShader  = new CustomShader("fake CRT");
 var bit:CustomShader  = new CustomShader("8bitcolor");
 var chrom:CustomShader  = new CustomShader("chromatic aberration");
@@ -44,10 +45,9 @@ function create() {
 	add(rainbowscreen);
 	add(new FlxSprite().loadGraphic(Paths.image("menus/desktop/pcBg")));
 			if (FlxG.save.data.crt){FlxG.camera.addShader(crt);}
-			FlxG.camera.addShader(bit);
-			bit.data.enablethisbitch.value = [1.];
-			if (FlxG.save.data.chrom) {
-				FlxG.camera.addShader(chrom);
+			if (FlxG.save.data.colour) {FlxG.camera.addShader(bit);
+			bit.data.enablethisbitch.value = [1.];}
+			if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
 				chrom.data.rOffset.value = [1/2];
 				chrom.data.gOffset.value = [0.0];
 				chrom.data.bOffset.value = [1 * -1];

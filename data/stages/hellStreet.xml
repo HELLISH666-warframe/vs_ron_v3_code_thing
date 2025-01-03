@@ -25,5 +25,5 @@
 	<sprite name="islands" x="-800" y="-5560" sprite="hellStreet/bloodshed_streetBroken" scroll="1" />
 	<dad />
    	<boyfriend />
-   	<sprite name="freindly"  sprite="hellStreet/freindlystars" />
+   	<sprite name="freindly" x="-800" y="-5560"  sprite="hellStreet/freindlystars" />
 </stage>

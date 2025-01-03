@@ -11,18 +11,12 @@ import lime.graphics.Image;
 import Type;
 function new()
     {   
-        //SAVE DATA VARIABLES
-        //accolades
-        if (FlxG.save.data.seenAccolades == null) FlxG.save.data.seenAccolades = false;
-        //planets themselves
-        if (FlxG.save.data.songsBeaten == null) FlxG.save.data.songsBeaten = [];    
     
-
         if (FlxG.save.data.glitch == null) FlxG.save.data.glitch = true;
         if (FlxG.save.data.chrom == null) FlxG.save.data.chrom = true;
         if (FlxG.save.data.mosaic == null) FlxG.save.data.mosaic = true;
         if (FlxG.save.data.crt == null) FlxG.save.data.crt = true;
-        if (FlxG.save.data.staticy == null) FlxG.save.data.staticy = true;
+        if (FlxG.save.data.colour == null) FlxG.save.data.colour = true;
         //if (FlxG.save.data.saturation == null) FlxG.save.data.saturation = true;
         //if (FlxG.save.data.drunk == null) FlxG.save.data.drunk = true;
         if (FlxG.save.data.vhs == null) FlxG.save.data.vhs = true;

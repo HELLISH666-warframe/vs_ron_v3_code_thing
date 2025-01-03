@@ -1,3 +1,4 @@
+//yes_theres_two_i_have_to_or_else_on_healthdrain_doesnt_work_for_some_reaon
 var healthLoss:Float = 1;
 healthLoss = health -= 0.02;
 if (!FlxG.save.data.pussy) {

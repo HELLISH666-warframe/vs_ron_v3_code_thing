@@ -14,7 +14,8 @@ var iTime:Float = 0;
 var exploders:FlxSprite = new FlxSprite();
 var chrom:CustomShader  = new CustomShader("chromatic aberration");
 var wig:CustomShader  = new CustomShader("glitchsmh");
-var vhs:CustomShader  = new CustomShader("bleedingvhs");
+var bleed:CustomShader  = new CustomShader("bleedingvhs");
+var vhs:CustomShader  = new CustomShader("vhs");
 var bloodshedTrail = null;
 var currentBeat:Float = (Conductor.songPosition / 1000)*(Conductor.bpm/60);
 var rain:flixel.effects.particles.FlxTypedEmitter;
@@ -54,7 +55,8 @@ override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
 	wig.data.iTime.value = [0.005*Math.sin(time)];
-    vhs.data.iTime.value = [1*Math.sin(time)];
+    bleed.data.iTime.value = [1*Math.sin(time)];
+	vhs.data.iTime.value = [1*Math.sin(time)];
     rain.data.iTime.value = [-24*Math.sin(time)];
 if (cameramove)
 	{
@@ -113,7 +115,7 @@ function stepHit(curStep)
 	{
 		hellbg.alpha = 1;
 		satan.alpha = 1;
-		sky.alpha = 0.66;
+		wbg.alpha = 0.66;
 			add(Estatic);
 			Estatic.alpha = 1;
             //bye_bye_street
@@ -193,7 +195,7 @@ function stepHit(curStep)
 				FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
 				
 				cameramove = true;
-				//wbg.alpha = 0;
+				wbg.alpha = 0;
 				
 				FlxTween.globalManager.completeTweensOf(satan);
 				FlxTween.angle(satan, 0, 359.99, 0.33, { type: FlxTween.LOOPING } );
@@ -205,7 +207,8 @@ function stepHit(curStep)
 				camGame.flash(FlxColor.WHITE, 1);
 				cameramove = false;
 				intensecameramove = true;
-				//clearShader(camHUD);
+				if (FlxG.save.data.vhs) {camHUD.removeShader(vhs);}
+				if (FlxG.save.data.vhs) {camHUD.addShader(bleed);}
 				//addShader(camHUD, "bleedingvhs");
 				Estatic.color = FlxColor.BLACK;
 				Estatic.blend = BlendMode.NORMAL;

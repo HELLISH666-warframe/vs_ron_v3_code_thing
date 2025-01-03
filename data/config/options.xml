@@ -4,7 +4,7 @@
 			<checkbox id="chrom" name="chromatic aberration" desc="Enable/Disable chromatic aberration Shaders." />
  <checkbox id="mosaic" name="mosaic Shader" desc="Enable/Disable mosaic Shader. (ONLY_USED_IN_PRETTY-WACKY)" /> 
  <checkbox id="crt" name="CRT Shader" desc="fake_CRT_shader" />
- <!-- <checkbox id="staticy" name="Static Shaders" desc="Enable/Disable Static Shaders. (low/no intensive)" /> -->
+ <checkbox id="colour" name="8bitcolor" desc="8bitcolor_shader" />
  <!-- <checkbox id="saturation" name="Saturation Shaders" desc="Enable/Disable Saturation Shaders. (low/no intensive)" />
   		<checkbox id="drunk" name="Drunk Shaders" desc="Enable/Disable Drunk Shaders. (low/no intensive)" /> -->     
 			<checkbox id="vhs" name="VHS Shader" desc="Enable/Disable VHS Shaders. (BLEEDING'S VHS SHADER & BLR'S SHADER). (low/no intensive)" />
