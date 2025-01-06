@@ -8,6 +8,7 @@ import funkin.backend.scripting.ModState;
 import flixel.graphics.FlxGraphic;
 import flixel.FlxG;
 import lime.graphics.Image;
+import funkin.backend.utils.NativeAPI;
 import Type;
 function new()
     {   
@@ -38,7 +39,8 @@ var redirectStates:Map<FlxState, String> = [
 ];
 
 function preStateSwitch() {
-    for (redirectState in redirectStates.keys()) 
-        if (Std.isOfType(FlxG.game._requestedState, redirectState)) 
-            FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
+	for (redirectState in redirectStates.keys())
+		if (FlxG.game._requestedState is redirectState)
+			FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
+
 }

@@ -9,6 +9,7 @@ fx.screenCenter();
 fx.scrollFactor.set(0, 0);
 fx.alpha = 0.3;
 
+
 Estatic = new FlxSprite().loadGraphic(Paths.image('stages/deadly'));
 Estatic.scrollFactor.set();
 Estatic.screenCenter();

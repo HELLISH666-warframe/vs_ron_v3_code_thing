@@ -2,8 +2,8 @@
 import flixel.math.FlxRect;
 
 public var leftBar:FlxSprite;
-var rightBar:FlxSprite;
-var hpBorder:FlxSprite;
+public var rightBar:FlxSprite;
+public var hpBorder:FlxSprite;
 var middleBar:FlxSprite;
 
 public var barPos:Array<Float> = [FlxG.width * 0.184,FlxG.height * 0.75];
@@ -32,7 +32,7 @@ function create() {
     hpBorder.setGraphicSize(Std.int(hpBorder.width * hpScale));
     hpBorder.updateHitbox();
     //CAMErA
-    for (all in [rightBar,leftBar,hpBorder]){
+    for (all in [rightBar,leftBar]){
         all.camera = (cam != null ? cam : camHUD);
     }
 
@@ -47,7 +47,7 @@ function create() {
 }
 
 public function hideHbar(thingB:Bool = false) {
-    for (item in [rightBar,leftBar,hpBorder]) item.visible = !(thingB);
+    for (item in [rightBar,leftBar]) item.visible = !(thingB);
 
     if (far) middleBar.visible = !(thingB);
 }

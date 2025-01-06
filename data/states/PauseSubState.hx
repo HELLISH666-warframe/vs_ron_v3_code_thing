@@ -29,7 +29,6 @@ override function create() {
 	add(parentDisabler);
     
 	pauseMusic = FlxG.sound.load(Paths.music('breakfast'), 0, true);
-	pauseMusic.persist = false;
 	pauseMusic.group = FlxG.sound.defaultMusicGroup;
 	pauseMusic.play(false, FlxG.random.int(0, Std.int(pauseMusic.length / 2)));
 	

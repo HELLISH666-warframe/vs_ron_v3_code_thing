@@ -3,6 +3,6 @@
 	<anim name="idle" anim="BF idle dance" x="-5" y="0" fps="24" loop="false"/>
 	<anim name="singRIGHT" anim="bf right" x="53" y="3" fps="24" loop="false"/>
 	<anim name="singLEFT" anim="bf left" x="-50" y="-2" fps="24" loop="false"/>
-	<anim name="singDOWN" anim="bf down" x="-12" y="-21" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="bf down" x="-17" y="-21" fps="24" loop="false"/>
 	<anim name="singUP" anim="bf up" x="-26" y="47" fps="24" loop="false"/>
 </character>

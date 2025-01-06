@@ -94,17 +94,15 @@ function postCreate() {
     islands.visible = false;
 	bloodshed_lamp.visible = false;
 
-	if (FlxG.save.data.rain) {
-		FlxG.camera.addShader(rain);
-		rain.data.zoom.value = [40];
-		rain.data.raindropLength.value = [0.1];
-		rain.data.opacity.value = [0.25];
-		}
+	if (FlxG.save.data.rain) {FlxG.camera.addShader(rain);
+	rain.data.zoom.value = [40];
+	rain.data.raindropLength.value = [0.1];
+	rain.data.opacity.value = [0.25];
+	}
 }
 function stepHit(curStep)
 {
 	{
-
 		if (curStep == 256)
 		{
 			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 325}, (Conductor.crochet/600), {ease: FlxEase.linear});
@@ -116,48 +114,46 @@ function stepHit(curStep)
 		hellbg.alpha = 1;
 		satan.alpha = 1;
 		wbg.alpha = 0.66;
-			add(Estatic);
-			Estatic.alpha = 1;
-            //bye_bye_street
-            //sky.visible = false;
-			city.destroy();
-			mountains.destroy();
-			street.destroy();
-			FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
-			camGame.flash(FlxColor.WHITE, 1);
-			//addShader(FlxG.camera,"glitchsmh");
-			//Shaders["glitchsmh"].shader.data.on.value = [1.];
-			if (FlxG.save.data.glitch) {
-				FlxG.camera.addShader(wig);
-				camHUD.addShader(wig);
-				wig.data.on.value = [1.];
+		add(Estatic);
+		Estatic.alpha = 1;
+        //bye_bye_street
+        //sky.visible = false;
+		city.destroy();
+		mountains.destroy();
+		street.destroy();
+		FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
+		camGame.flash(FlxColor.WHITE, 1);
+		//addShader(FlxG.camera,"glitchsmh");
+		//Shaders["glitchsmh"].shader.data.on.value = [1.];
+		if (FlxG.save.data.glitch) {
+			FlxG.camera.addShader(wig);
+			camHUD.addShader(wig);
+			wig.data.on.value = [1.];
 			}
-			//bloodshedGrp.visible = false;
-			blackeffect.visible = false;
-			satan.color = FlxColor.BLACK;
-			firebg.alpha = 1;
-			firebg.screenCenter();
+		//bloodshedGrp.visible = false;
+		blackeffect.visible = false;
+		satan.color = FlxColor.BLACK;
+		firebg.alpha = 1;
+		firebg.screenCenter();	
 			
-			
-			//addShader(camHUD, "vhs");
-			if (FlxG.save.data.vhs) {camHUD.addShader(vhs);}
-			//addShader(FlxG.camera, "chromatic aberration");
-			if (FlxG.save.data.chrom) {
-				FlxG.camera.addShader(chrom);
-				camHUD.addShader(chrom);
-				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
-				chrom.data.gOffset.value = [0.0];
-				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
+		//addShader(camHUD, "vhs");
+		if (FlxG.save.data.vhs) {camHUD.addShader(vhs);}
+		//addShader(FlxG.camera, "chromatic aberration");
+		if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
+			camHUD.addShader(chrom);
+			chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
+			chrom.data.gOffset.value = [0.0];
+			chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
 			}
-			remove(bloodshedTrail);
-            bloodshedTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
-            insert(members.indexOf(dad)-1, bloodshedTrail);
-            //dad.y -= 230;
-			//dad.x -= 230;
-			dad.y -= 530;
-			dad.x -= 990;
-			boyfriend.y -= 230;
-			boyfriend.x += 300;
+		remove(bloodshedTrail);
+        bloodshedTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
+        insert(members.indexOf(dad)-1, bloodshedTrail);
+        dad.y -= 230;
+		dad.x -= 230;
+//		dad.y -= 530;
+//		dad.x -= 990;
+		boyfriend.y -= 230;
+		boyfriend.x += 300;
 
 			FlxTween.angle(satan, 0, 359.99, 1.5, 
 				{ 

@@ -19,7 +19,7 @@ rain.start(false, 0.01);
 var rain:CustomShader  = new CustomShader("rain");
 var kadeEngineWatermark:FlxText;
 override function update(elapsed:Float){time += elapsed;
-	rain.data.iTime.value = [-15*Math.sin(time)];
+	rain.data.iTime.value = [-24*Math.sin(time)];
 }
 function postCreate() {
 	iconP1.setIcon('oldbf');
@@ -33,11 +33,12 @@ function stepHit(curStep) {
 			evilTrail.color = FlxColor.RED;
 			insert(members.indexOf(dad)-1, evilTrail);
 			FlxG.camera.flash(FlxColor.WHITE, 1);
+			if (FlxG.save.data.rain) {
 			FlxG.camera.addShader(rain);
-			camHUD.addShader(rain);
+//			camHUD.addShader(rain);
 			rain.data.zoom.value = [40];
 			rain.data.raindropLength.value = [0.1];
-			rain.data.opacity.value = [0.25];
+			rain.data.opacity.value = [0.25];}
 		case 544:
 			defaultCamZoom = 0.8;
 			FlxG.camera.flash(FlxColor.WHITE, 1);

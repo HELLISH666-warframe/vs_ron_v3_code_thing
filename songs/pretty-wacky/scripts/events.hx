@@ -13,6 +13,8 @@ function postCreate(){
     iconP1.visible = false;
     iconP2.visible = false;
 	scoreTxt.alpha = 0;
+	rightBar.visible = false;
+	leftBar.visible = false;
 	comboGroup.visible = false;
 	camHUD.color = FlxColor.GRAY;
 }
@@ -28,6 +30,8 @@ function stepHit(curStep){
 		healthBarBG.alpha = 1;
 		healthBar.alpha = 1;
 		missesTxt.alpha = 1;
+		rightBar.visible = true;
+		leftBar.visible = true;
 		accuracyTxt.alpha = 1;
 		scoreTxt.alpha = 1;
 		iconP1.visible = true;
@@ -36,26 +40,6 @@ function stepHit(curStep){
 		camHUD.alpha = 1;
 		comboGroup.visible = true;
 		FlxG.camera.flash(FlxColor.WHITE, 1);
-		var snowemitter:FlxTypedEmitter = new FlxTypedEmitter();
-		snowemitter.width = FlxG.width*1.5;
-		snowemitter.velocity.set(-10, -240, 10, -320);
-		snowemitter.lifespan.set(5);
-		snowemitter.y = FlxG.height;
-		snowemitter.acceleration.set(0, -100, 0, -300);
-
-		for (i in 0...150)
-		{
-			var p = new FlxParticle();
-			var p2 = new FlxParticle();
-			p.makeGraphic(12,12,FlxColor.GRAY);
-			p2.makeGraphic(24,24,FlxColor.GRAY);
-
-			snowemitter.add(p);
-			snowemitter.add(p2);
-		}
-
-		add(snowemitter);
-		snowemitter.start(false, 0.05);
 //		insert(members.indexOf(stage.getSprite("wbg")), snowemitter); 
 		case 752:
 			defaultCamZoom += 0.1;
@@ -73,9 +57,7 @@ function stepHit(curStep){
 			case 768:
 			if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [0];	FlxG.camera.removeShader(mosaic);}
 			cameraSpeed = 3;
-			if (FlxG.save.data.chrom) {
-				FlxG.camera.addShader(chrom);
-//			camHUD.addShader(chrom);
+			if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
 			chrom.data.rOffset.value = [1];
 			chrom.data.gOffset.value = [0.0];
 			chrom.data.bOffset.value = [1 * -1];
@@ -84,8 +66,8 @@ function stepHit(curStep){
 			FlxG.camera.zoom -= 0.1;
 			FlxG.camera.flash(FlxColor.fromRGB(224, 224, 224), 3);
 /*			FlxTween.cancelTweensOf(camFollowPos);
-*/			FlxTween.tween(camFollowPos, {x: camFollow.x, y: camFollow.y}, 0.01);
-			case 1280:
+			FlxTween.tween(camFollowPos, {x: camFollow.x, y: camFollow.y}, 0.01);
+*/			case 1280:
 				if (FlxG.save.data.chrom) {FlxG.camera.removeShader(chrom);camHUD.removeShader(chrom);}
 //				FlxTween.cancelTweensOf(camFollowPos);
 				cameraSpeed = 1;

@@ -40,3 +40,5 @@ pausestate DONE?
 CREDITS_COMPLETLY_UN-FINICHED_HOW_THE_FUCK_DO_I_CODE_STATES
 
 MUST FIX DIALOGE VIDEO OVERLAP SOFT-LOCK
+
+use_classic_hellron_as_one_char_to_save_space

@@ -4,6 +4,6 @@
         <anim name="hell_bg" anim="idle instance " loop="true"/>
 	<sprite name="firebg" x="440" y="240" sprite="hellStreet/escape_fire" scroll="0.9"  type="loop" scale="4"  />
         <anim name="escape_fire" anim="fire instance " loop="true"/>
-	<sprite name="satan"    x="1" y="-200"   sprite="hellStreet/hellRon_satan"       scroll="0.9" />
+	<sprite name="satan"    x="1" y="-200"   sprite="hellStreet/hellRon_satan"   scale="1.2"    scroll="0.9" />
 	<sprite name="hellRon_ground"               x="-600" y="-300"   sprite="classicStages/hellRon_ground"       scroll="1" />
 </stage>
