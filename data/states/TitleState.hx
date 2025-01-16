@@ -74,6 +74,8 @@ function beatHit(curBeat) {
 function stepHit(curStep){
 	{
 		switch(curStep){
+			case 63:
+				FlxG.camera.removeShader(god);
 			case 64:
 				FlxG.camera.addShader(god);}}}
 function create(){if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);

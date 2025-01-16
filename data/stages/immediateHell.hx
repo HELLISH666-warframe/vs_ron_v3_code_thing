@@ -6,7 +6,6 @@ import flixel.effects.particles.FlxTypedEmitter;
 import openfl.display.BlendMode;
 var cameramove:Bool = false;
 var intensecameramove:Bool = false;
-var fx:FlxSprite;
 var Estatic:FlxSprite;
 var explode:FlxSound;
 var time:Float = 0;
@@ -17,7 +16,6 @@ var wig:CustomShader  = new CustomShader("glitchsmh");
 var bleed:CustomShader  = new CustomShader("bleedingvhs");
 var vhs:CustomShader  = new CustomShader("vhs");
 var bloodshedTrail = null;
-var currentBeat:Float = (Conductor.songPosition / 1000)*(Conductor.bpm/60);
 var rain:flixel.effects.particles.FlxTypedEmitter;
 rain = new FlxTypedEmitter(-1280,0, 1280);
 rain.loadParticles(Paths.image("stages/raindrop"),500);
@@ -51,6 +49,8 @@ exploders.scale.set(3.8, 3.8);
 exploders.scrollFactor.set(0, 0);
 exploders.screenCenter();
 
+var wastedGrp:FlxTypedGroup<Dynamic>;
+
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
@@ -81,18 +81,14 @@ function postCreate() {
     blackeffect.antialiasing = true;
     blackeffect.screenCenter();
     blackeffect.scrollFactor.set();
-    blackeffect.alpha = 0;
     add(blackeffect);
     
 	exploders.visible = false;
 	add(exploders);
 
 
-	hellbg.alpha = 0;
-	satan.alpha = 0;
-    firebg.alpha = 0;
+	hellbg.alpha = 	satan.alpha = 	firebg.alpha =  blackeffect.alpha = 0;
     islands.visible = false;
-	bloodshed_lamp.visible = false;
 
 	if (FlxG.save.data.rain) {FlxG.camera.addShader(rain);
 	rain.data.zoom.value = [40];
@@ -111,11 +107,9 @@ function stepHit(curStep)
 	}
 	if (curStep == 384)
 	{
-		hellbg.alpha = 1;
-		satan.alpha = 1;
 		wbg.alpha = 0.66;
 		add(Estatic);
-		Estatic.alpha = 1;
+		satan.alpha = hellbg.alpha	= firebg.alpha =  Estatic.alpha = 1;
         //bye_bye_street
         //sky.visible = false;
 		city.destroy();
@@ -133,18 +127,15 @@ function stepHit(curStep)
 		//bloodshedGrp.visible = false;
 		blackeffect.visible = false;
 		satan.color = FlxColor.BLACK;
-		firebg.alpha = 1;
 		firebg.screenCenter();	
 			
 		//addShader(camHUD, "vhs");
 		if (FlxG.save.data.vhs) {camHUD.addShader(vhs);}
 		//addShader(FlxG.camera, "chromatic aberration");
-		if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
-			camHUD.addShader(chrom);
+		if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);camHUD.addShader(chrom);
 			chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
 			chrom.data.gOffset.value = [0.0];
-			chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
-			}
+			chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];}
 		remove(bloodshedTrail);
         bloodshedTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
         insert(members.indexOf(dad)-1, bloodshedTrail);
@@ -231,7 +222,6 @@ function stepHit(curStep)
 				if (FlxG.save.data.chrom) {
 				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
 				chrom.data.gOffset.value = [0.0];
-				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
-				}
+				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];}
 			}
 		}

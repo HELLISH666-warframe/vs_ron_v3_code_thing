@@ -13,10 +13,10 @@ var time:Float = 0;
 var iTime:Float = 0;
 var snowemitter:FlxTypedEmitter = new FlxTypedEmitter(9999, 0, 300);
 snowemitter.width = FlxG.width*1.5;
-snowemitter.velocity.set(-10, 1600, 10, 2200);
+snowemitter.velocity.set(-10, -240, 10, -320);
 snowemitter.lifespan.set(5);
 snowemitter.y = FlxG.height;
-snowemitter.acceleration.set(-10, 1600, 10, 2200);
+snowemitter.acceleration.set(-10, 1900, 10, 2200);
 
 for (i in 0...150)
 {
@@ -31,9 +31,6 @@ for (i in 0...150)
     snowemitter.add(p2);
     snowemitter.add(p3);
 }
-
-add(snowemitter);
-snowemitter.start(false, 0.035);
 var chrom:CustomShader  = new CustomShader("chromatic aberration");
 //var bloodshedTrail = null;
 var rain:flixel.effects.particles.FlxTypedEmitter;
@@ -125,9 +122,7 @@ function postCreate() {
     hillfront.visible = true;
     street.visible = true;
     mountainsbackbl.visible = false;
-    hillfrontbl.visible = false;
-    mountainsbl.visible = false;
-    streetbl.visible = false;
+	hillfrontbl.visible = mountainsbl.visible = streetbl.visible = false;
     wbg.alpha = 0;	
     wbg.scale.set(2,2);
     wbg.updateHitbox();
@@ -135,7 +130,6 @@ function postCreate() {
     wbg.screenCenter();
     wbg.scrollFactor.set(0.2, 0.05);
     add(wbg);
-	bloodshed_lamp.visible = false;
 	space.visible = false;
 	earth.visible = false;
     freindly.visible = false;
@@ -159,7 +153,9 @@ function postCreate() {
 	add(fx);
 	add(Estatic);
 	FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
-
+	insert(members.indexOf(dad), snowemitter);
+	add(snowemitter);
+	snowemitter.start(false, 0.035);
 }
 function stepHit(curStep)
     {
@@ -174,13 +170,13 @@ function stepHit(curStep)
         if (curStep >= 384)
         {
             if (curStep <= 576 || ((curStep >= 896) && (curStep <= 1151)))				
-            snowemitter.x = FlxG.camera.scroll.x;
-            snowemitter.y = FlxG.camera.scroll.y;
+				snowemitter.x = FlxG.camera.scroll.x;
+				snowemitter.y = FlxG.camera.scroll.y;
         }
         else
         {
             Estatic.alpha = 0;
-            snowemitter.x = 99999;
+			snowemitter.y = 9999;
         }
     switch (curStep)
     {
@@ -220,8 +216,12 @@ function stepHit(curStep)
 			cameraSpeed = 2;
 		case 129:
 			evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
+			evilTrail.color = FlxColor.RED;
 			insert(members.indexOf(dad)-1, evilTrail);
 		case 256:
+			remove(snowemitter);
+			insert(members.indexOf(dad), snowemitter);
+			add(snowemitter);
 			cameraSpeed = 3;
 			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 275 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});
 			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 1250 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});

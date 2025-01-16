@@ -12,6 +12,9 @@ function postCreate() {
 }
 function stepHit(curStep) {
 	switch(curStep) {
+		case 1:
+			FlxTween.tween(healthBar, {alpha: 0}, 0.3, {ease: FlxEase.circOut});
+			FlxTween.tween(healthBarBG, {alpha: 0}, 0.3, {ease: FlxEase.circOut});
 		case 248 | 760:
 			FlxG.sound.play(Paths.sound('vine'));
 		case 1:

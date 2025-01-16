@@ -2,7 +2,7 @@ var healthLoss:Float = 1;
 healthLoss = health -= 0.02;
 if (!FlxG.save.data.pussy) {
     override function beatHit(){
-        if (((dad.curCharacter == 'hellron-drippin') || (dad.curCharacter == 'bloodshedron')) && (curBeat % 2 == 0))
+        if (((dad.curCharacter == 'hellron-drippin') || (dad.curCharacter == 'dripronclassic')) && (curBeat % 2 == 0))
         {
             var multiplier:Float = 1;
             if (health >= 1)
@@ -23,7 +23,7 @@ if (!FlxG.save.data.pussy) {
             iconP1.alpha = (health-0.25)/2+0.2;
             
         }}
-    {if ((dad.curCharacter == 'hellron') || (dad.curCharacter == 'classichellron') || (dad.curCharacter == 'bloodshedron') ||  (dad.curCharacter == "guitarhellron"))
+ /*   if ((dad.curCharacter == 'hellron') || (dad.curCharacter == 'classichellron') || (dad.curCharacter == 'bloodshedron') ||  (dad.curCharacter == "guitarhellron"))
             {{
                 var multiplier:Float = 1;
                 if (health >= 1)
@@ -38,8 +38,8 @@ if (!FlxG.save.data.pussy) {
                 else
                     health = 0.05*healthLoss;
             }        function onDadHit(e)
-                if (health > 0.2) {health -= 0.024;}}
-    	if (((dad.curCharacter == 'bloodbathnew')) && (curBeat % 2 == 0))
+                if (health > 0.2) {health -= 0.024;}
+   */ 	if (((dad.curCharacter == 'bloodbathnew')) && (curBeat % 2 == 0))
             {{
                 var multiplier:Float = 1;
                 if (health >= 1)
@@ -51,4 +51,4 @@ if (!FlxG.save.data.pussy) {
                 
             }
         function onDadHit(e)
-            if (health > 0.2) {health -= 0.024;}}}}
+            if (health > 0.2) {health -= 0.024;}}}

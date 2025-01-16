@@ -11,14 +11,14 @@ function stepHit(step)
     {
         //stage 2
         case 384:
-            sky.destroy();
-            mountainsback.destroy();
-            mountains.destroy();
-            hillfront.destroy();
-            street.destroy();
+        sky.destroy();
+        mountainsback.destroy();
+        mountains.destroy();
+        hillfront.destroy();
+        street.destroy();
                 
-            platform.visible = true;
-            atelo_popup_animated.visible = true;
-            error.visible = true;
+        platform.visible = true;
+        atelo_popup_animated.visible = true;
+        error.visible = true;
     }
 }

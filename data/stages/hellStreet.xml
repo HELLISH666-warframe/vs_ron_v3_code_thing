@@ -19,7 +19,6 @@
    	<sprite name="streetbl" x="-800" y="-400" sprite="hellStreet/bloodshed_street"/>
     <sprite name="wbg" x="300" y="-5560" sprite="hellStreet/lava"  type="loop" />
          <anim name="lava" anim="lava" loop="true"/>
-     <sprite name="bloodshed_lamp"  x="900" y="-50"   sprite="hellStreet/bloodshed_lamp"    scroll="1"  scale="1"   />
 	<sprite name="space" x="-800" y="-1200" sprite="hellStreet/spacebg" scroll="0.5" />
    	<sprite name="earth" x="-800" y="-1300" sprite="hellStreet/space" scroll="0.5" />
 	<sprite name="islands" x="-800" y="-5560" sprite="hellStreet/bloodshed_streetBroken" scroll="1" />

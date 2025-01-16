@@ -26,6 +26,9 @@ function postCreate() {
 }
 function stepHit(curStep) {
 	switch(curStep) {
+		case 1:
+		FlxTween.tween(healthBar, {alpha: 0}, 0.3, {ease: FlxEase.circOut});
+		FlxTween.tween(healthBarBG, {alpha: 0}, 0.3, {ease: FlxEase.circOut});
 		case 256:
 			defaultCamZoom = 1;
 		case 288:

@@ -30,10 +30,10 @@ import sys.FileSystem;
 	var time:Float = 0;
 	var loBg:FlxSprite;
 	var loBgt:FlxSprite;
+	var crt:CustomShader  = new CustomShader("fake CRT");
 	var chrom:CustomShader  = new CustomShader("chromatic aberration");
 
 	var time:Float = 0;
-var iTime:Float = 0;
 	function create()
 	{
 
@@ -44,14 +44,20 @@ var iTime:Float = 0;
 		FlxG.cameras.reset(cameraWhat);
 		FlxG.cameras.add(cameraText);
 		FlxCamera.defaultCameras = [cameraWhat];
+			if (FlxG.save.data.crt){FlxG.camera.addShader(crt);}
+//		FlxG.camera.addShader(chrom);
+if (FlxG.save.data.chrom) {cameraText.addShader(chrom);
+		chrom.data.rOffset.value = [1/2];
+		chrom.data.gOffset.value = [0.0];
+		chrom.data.bOffset.value = [1 * -1];}
 
 		bg = new FlxSprite();
-		var bg:FlxSprite = CoolUtil.loadAnimatedGraphic(new FlxSprite(), Paths.image('menus/freeplay/mainbgAnimate'));
+		bg.frames = Paths.getSparrowAtlas('menus/freeplay/mainbgAnimate');
+		bg.animation.addByPrefix('animate', 'animate', 24, true);
+		bg.animation.play('animate');
 		bg.scale.set(2,2);
 		bg.updateHitbox();
 		bg.screenCenter();
-		bg.alpha = 0.5;
-		bg.cameras = [cameraText];
 		add(bg);
 
 		vimage = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/freeplay select/ground'), false, 1, 1);
@@ -117,11 +123,6 @@ var iTime:Float = 0;
 		cooltext.y = 125;
         cooltext.x = 550;
 
-		FlxG.camera.addShader(chrom);
-		chrom.data.rOffset.value = [chromeOffset/2];
-		chrom.data.gOffset.value = [0.0];
-		chrom.data.bOffset.value = [chromeOffset * -1];
-		super.create();
 	}
 	override function update(elapsed:Float)
 	{

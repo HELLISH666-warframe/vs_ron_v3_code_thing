@@ -16,6 +16,8 @@ if (cameramove)
 	camHUD.angle = 11 * Math.sin((time/3) * Math.PI);
 	camera.angle = 2 * Math.sin((time/3) * Math.PI);
 	}
+	iconP2.alpha = (2-(health)-0.25)/2+0.2;
+	iconP1.alpha = (health-0.25)/2+0.2;
 }
 function stepHit(curStep){
 	{
@@ -42,6 +44,8 @@ function stepHit(curStep){
 			cameramove = true;
 		}
 	}
+	iconP2.alpha = (2-(health)-0.25)/2+0.2;
+	iconP1.alpha = (health-0.25)/2+0.2;
 	switch(curStep){
 		case 1 | 518 | 540: defaultCamZoom = 0.9;
 		case 253: defaultCamZoom = 1.2;
