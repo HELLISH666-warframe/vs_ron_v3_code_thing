@@ -29,7 +29,10 @@ override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
 	wig.data.iTime.value = [0.005*Math.sin(time)];
-
+    for (i in 0...songs.length)
+	{
+		grpSongs.members[i].y += (Math.sin(i+time)/2);
+	}
 }
 	
 function shadering() 
@@ -41,9 +44,13 @@ function shadering()
 		case "trojan-virus" | "Bleeding":{FlxG.camera.addShader(wig);
 		wig.data.iTime.value = [2,2];wig.data.on.value = [1.];}
 		default:{FlxG.camera.removeShader(grey);camText.removeShader(grey);FlxG.camera.removeShader(wig);
-		wig.data.iTime.value = [2,2];wig.data.on.value = [0];}
-			
+		wig.data.iTime.value = [2,2];wig.data.on.value = [0];}	
     }
+	diffText.color = switch(diffText.text)
+	{
+		case 'COOL':FlxColor.RED;
+		default: FlxColor.WHITE;		
+	}
 }
 function postCreate() {
 	FlxG.cameras.add(camText, false);
@@ -86,21 +93,14 @@ function postCreate() {
 	add(scoreText);
 	
 
-	portraitOverlay = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/portraits/ron'));
+	portraitOverlay = new FlxSprite().loadGraphic(Paths.image('menus/freeplay/portraits/slammed-over'));
 	portraitOverlay.scale.set(0.51,0.51);
 	portraitOverlay.updateHitbox();
-	add(portraitOverlay);
-	portraitOverlay.visible = false;
+	portraitOverlay.visible = false;	add(portraitOverlay);
 	for (i in songs) {
 		var graphic = FlxGraphic.fromAssetKey(Paths.image('menus/freeplay/portraits/' + i.name));
 		graphic.persist = true;
 		preload.push(graphic);
-	if ((i.name.toLowerCase() == 'slammed'))
-	{
-		FlxG.camera.zoom = 1.2;
-	}
-	else
-		FlxG.camera.zoom = 1;
 	}
 	changeSelection(0, true);{
 	if (FlxG.save.data.crt){FlxG.camera.addShader(crt);}
