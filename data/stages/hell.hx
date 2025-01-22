@@ -93,8 +93,7 @@ function stepHit(curStep){if (curSong.toLowerCase() == 'bloodbath')
 				FlxTween.angle(satan, 0, satan.angle+359.99, 3, {ease: FlxEase.circOut} );	
 }
 if (curSong.toLowerCase() == 'bleeding-classic')
-	switch(curStep) {
-	}
+{
 	if ((curStep >= 256) && (curStep <= 512))
 	{
 		if (fx.alpha < 0.6)
@@ -139,4 +138,4 @@ if (curSong.toLowerCase() == 'bleeding-classic')
 			fx.alpha -= 0.05;
 	}
 	Estatic.alpha = (((2-health)/3)+0.2);
-}
+}}

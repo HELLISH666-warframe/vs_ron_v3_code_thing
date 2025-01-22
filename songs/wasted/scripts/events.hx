@@ -2,10 +2,9 @@ var fog:FlxSprite;
 var truefog:FlxSprite;
 var time:Float = 0;
 var iTime:Float = 0;
-var ray = new CustomShader('godray');
-var crt = new CustomShader('fake CRT');
 var wig:CustomShader  = new CustomShader("glitchsmh");
 var chrom:CustomShader  = new CustomShader("chromatic aberration");
+var moveing:Bool = false;
 
 function postCreate() {
 	fog = new FlxSprite().loadGraphic(Paths.image('stages/pissedStreet/fog'));
@@ -23,9 +22,14 @@ function postCreate() {
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
 	wig.data.iTime.value = [0.005*Math.sin(time)];
+if (moveing)
+	{
+for (i in 0...cpuStrums.members.length) cpuStrums.members[i].y += Math.sin((curStep+i*2)/4)/2;
+for (i in 0...playerStrums.members.length) playerStrums.members[i].y += Math.sin((curStep+i*2)/4)/2;
+	}
 }
 function beatHit(curBeat) {
-	if ((curBeat >= 1) && (curBeat < 233))
+	if ((curBeat >= 81) && (curBeat < 146))
 		{
 			for (i in 0...4)
 			{ 
@@ -35,13 +39,13 @@ function beatHit(curBeat) {
 									
 					if (curBeat % 2 == 0)
 					{
-						var angler = (i%1 ? 7 : -7) * ((curBeat%8==0) ? -7 : 7);
+						var angler = (i%2 ? 10 : -10) * ((curBeat%4==2) ? -1 : 1);
 	
-						FlxTween.tween(member, {y: angler + (PlayState.downscroll ? 10 : -10)}, 0.125, {
+						FlxTween.tween(member, {angle: angler, y: member.y + (PlayState.downscroll ? 10 : -10)}, 0.125, {
 								ease: FlxEase.quartIn,
 								onComplete: function(twn:FlxTween)
 								{
-									FlxTween.tween(member, {y: 20 - (PlayState.downscroll ? 10 : -10)}, 0.33, {ease: FlxEase.circInOut});
+									FlxTween.tween(member, {angle: 0, y: member.y - (PlayState.downscroll ? 10 : -10)}, 0.33, {ease: FlxEase.circInOut});
 								}
 							});
 					}
@@ -73,7 +77,7 @@ function beatHit(curBeat) {
 			stage.getSprite("hillfront").alpha = 0.25;
 			stage.getSprite("mountains").alpha = 0.125;
 			gf.alpha = 0.75;
-		case 233:
+		case 146:
 			truefog.visible = false;
 			remove(fog);
 			var it = 0; 
@@ -102,21 +106,18 @@ function stepHit(step)
 		gf.angle += 0.7;
 		boyfriend.angle += Math.sin(curStep/8)/6;
 		dad.angle -= Math.sin(curStep/8)/6;
+		moveing = true;
 		}
 	}
 	switch(curStep) 
 	{
 		case 1088:
-		camGame.visible = false;
-		camHUD.visible = false;
+		camGame.visible = camHUD.visible = false;
 		case 1104:
-		camGame.visible = true;
-		camHUD.visible = true;
-		camGame.addShader(ray);
+		camGame.visible = camHUD.visible = true;
 		case 1360:
-		camGame.removeShader(ray);
-		camGame.visible = false;
-		camHUD.visible = false;
+		camGame.visible = camHUD.visible = false;
+		moveing = false;
 		case 1480:
 		FlxTween.tween(dad, {angle: 0}, 0.2, {ease: FlxEase.linear});
 		FlxTween.tween(boyfriend, {angle: 0}, 0.2, {ease: FlxEase.linear});
@@ -124,14 +125,12 @@ function stepHit(step)
 	if (FlxG.save.data.glitch) {FlxG.camera.addShader(wig);camHUD.addShader(wig);
 		wig.data.iTime.value = [2,2];wig.data.on.value = [1.];
 		}
-		if (FlxG.save.data.crt) {FlxG.camera.addShader(crt);camHUD.addShader(crt);}
 	if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);camHUD.addShader(chrom);
 		chrom.data.rOffset.value = [1/2];
 		chrom.data.gOffset.value = [0.0];
 		chrom.data.bOffset.value = [1 * -1];
 		}
 		case 1488:
-		camGame.visible = true;
-		camHUD.visible = true;
+		camGame.visible = camHUD.visible = true;
 	}
 }

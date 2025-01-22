@@ -101,4 +101,4 @@ function pressEnter() {
 		
 			//MusicBeatState.switchState((ClientPrefs.warnings ? new substates.WarningSubState() : new menus.DesktopMenu()));
 			FlxG.switchState(new ModState('DesktopState')));
-		}
+}

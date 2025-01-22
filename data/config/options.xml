@@ -1,14 +1,14 @@
 <!DOCTYPE codename-mod-options>
 <menu name="ron Options" desc="shader_shit">
-			<checkbox id="glitch" name="Glitch Shaders" desc="Enable/Disable Glitch Shaders." />
-			<checkbox id="chrom" name="chromatic aberration" desc="Enable/Disable chromatic aberration Shaders." />
- <checkbox id="mosaic" name="mosaic Shader" desc="Enable/Disable mosaic Shader. (ONLY_USED_IN_PRETTY-WACKY)" /> 
- <checkbox id="crt" name="CRT Shader" desc="fake_CRT_shader" />
- <checkbox id="colour" name="8bitcolor" desc="8bitcolor_shader" />
+    <checkbox id="glitch" name="Glitch Shaders" desc="Enable/Disable Glitch Shaders." />
+    <checkbox id="chrom" name="chromatic aberration" desc="Enable/Disable chromatic aberration Shaders.(HIGH IMPACT)" />
+    <checkbox id="mosaic" name="mosaic Shader" desc="Enable/Disable mosaic Shader. (ONLY_USED_IN_PRETTY-WACKY)" /> 
+    <checkbox id="crt" name="CRT Shader" desc="fake_CRT_shader" />
+    <checkbox id="colour" name="8bitcolor" desc="8bitcolor_shader" />
  <!-- <checkbox id="saturation" name="Saturation Shaders" desc="Enable/Disable Saturation Shaders. (low/no intensive)" />
   		<checkbox id="drunk" name="Drunk Shaders" desc="Enable/Disable Drunk Shaders. (low/no intensive)" /> -->     
-			<checkbox id="vhs" name="VHS Shader" desc="Enable/Disable VHS Shaders. (BLEEDING'S VHS SHADER & BLR'S SHADER). (low/no intensive)" />
-			<checkbox id="rain" name="RAIN" desc="fucking_rain" />
+    <checkbox id="vhs" name="VHS Shader" desc="Enable/Disable VHS Shaders. (BLEEDING'S VHS SHADER & BLR'S SHADER). (low/no intensive)" />
+	<checkbox id="rain" name="RAIN" desc="fucking_rain" />
 	<checkbox id="pussy" name="NO_GAME_KILLING_ITSELF" desc="having_skill_issue?_anable_this" />
-	<checkbox id="warning" name="warnings" desc="toggle_the_startup_warning(DOESNT_WORK_YET)" />
+	<checkbox id="warning" name="warnings" desc="toggle_the_startup_warning" />
 </menu>

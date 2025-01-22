@@ -20,6 +20,8 @@ var rain:CustomShader  = new CustomShader("rain");
 var kadeEngineWatermark:FlxText;
 override function update(elapsed:Float){time += elapsed;
 	rain.data.iTime.value = [-24*Math.sin(time)];
+	iconP2.alpha = (2-(health)-0.15)/1+0.2;
+	iconP1.alpha = (health-0.15)/1+0.2;
 }
 function postCreate() {
 	iconP1.setIcon('oldbf');

@@ -35,11 +35,6 @@ function postCreate() {
     graadienter.color = FlxColor.BLACK;
     wbg.color = FlxColor.BLACK;
 }
-function resetTrail() {
-    remove(snowemitter);
-    insert(members.indexOf(dad), snowemitter);
-    add(snowemitter);
-}
 function stepHit(step)
 {
     switch (step)
@@ -63,14 +58,12 @@ function stepHit(step)
 			snowemitter.add(p);
 			snowemitter.add(p2);
 		}
-        insert(members.indexOf(dad), snowemitter);
-		add(snowemitter);
+        insert(7, snowemitter);
 		snowemitter.start(false, 0.05);
 
 		graadienter.color = FlxColor.WHITE;
 		wbg.color = FlxColor.WHITE;
         case 768:
-            resetTrail();
             insert(members.indexOf(graadienter), blackeffect); 
             baro.visible = true;
             bart.visible = true;
@@ -83,7 +76,5 @@ function stepHit(step)
             bart.visible = false;
             graadienter.color = FlxColor.fromRGB(255,255,255);
             wbg.color = FlxColor.fromRGB(255,255,255);
-        case 1281:
-            resetTrail();
     }
 }

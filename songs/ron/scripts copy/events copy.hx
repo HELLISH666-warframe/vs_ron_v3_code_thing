@@ -16,24 +16,29 @@ function postCreate(){
 
 function stepHit(curStep)
 {
-	if ((curStep >= 1) && (curStep <= 1304))
-	{
-		if (curStep % 8 == 0)
-	for (i in 0...8)
-		{ 
-		for (guh in [playerStrums, cpuStrums])
-			{
-			var member = guh.members[i];
+	if ((curStep >= 272) && (curStep <= 1304))
+		{
+			for (i in 0...4)
+			{ 
+				for (guh in [playerStrums, cpuStrums])
+				{
+					var member = guh.members[i];
 									
-			FlxTween.globalManager.completeTweensOf(member);
-			if(PlayState.downScroll)
-				member.y -= 20;
-			else
-				member.y += 20;
-			FlxTween.tween(member, {y: defaultStrumY}, 0.65, {ease: FlxEase.backOut});
+					if (curStep % 8 == 0)
+					{
+						var up = (i%1 ? -2 : 2) * ((curStep%8==0) ? 2 : -2);
+	
+						FlxTween.tween(member, {y: up + (PlayState.downscroll ? 10 : -10)}, 0.125, {
+								ease: FlxEase.quartIn,
+								onComplete: function(twn:FlxTween)
+								{
+									FlxTween.tween(member, {y: 20 - (PlayState.downscroll ? 10 : -10)}, 0.65, {ease: FlxEase.backOut});
+								}
+							});
+					}
+				}
+			}
 		}
-	}
-}
 
 	if (curStep == 540 || curStep == 604 || curStep == 668 || curStep == 732 || curStep == 1304)
 		FlxTween.tween(FlxG.camera, {zoom: 1.2}, 0.4, {ease: FlxEase.backOut,});

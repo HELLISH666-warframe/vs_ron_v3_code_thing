@@ -1,9 +1,9 @@
 function stepHit(step){
 	switch(curStep) 
 	{
-	case 248:
+	case 306:
 		defaultCamZoom += 0.2;
-	case 256:
+	case 317:
 		defaultCamZoom -= 0.1;
 		FlxG.camera.flash(FlxColor.WHITE, 1);
 	case 416:

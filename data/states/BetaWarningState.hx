@@ -5,7 +5,9 @@ var crt:CustomShader  = new CustomShader("fake CRT");
 var time:Float = 0;
 var timer:Int;
 var mmtw:FlxSound = new FlxSound();
+
 override function postCreate() {
+
 
 	mmtw = new FlxSound();
 	mmtw = FlxG.sound.load(Paths.music('breakfast'), 0, true);
@@ -55,4 +57,7 @@ override function update(elapsed:Float){time += elapsed;
 		new FlxTimer().start(0.8, function(tmr:FlxTimer)
 		FlxG.switchState(new TitleState()));
 	}
+	if (!FlxG.save.data.warning) {
+		FlxG.switchState(new TitleState());
+}
 }

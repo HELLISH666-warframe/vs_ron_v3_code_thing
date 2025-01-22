@@ -12,6 +12,8 @@
  var crt:CustomShader  = new CustomShader("fake CRT");
  var chrom:CustomShader  = new CustomShader("chromatic aberration");
  var fish:CustomShader  = new CustomShader("fisheye");
+ var wig:CustomShader  = new CustomShader("glitchsmh");
+ var grey:CustomShader  = new CustomShader("grayscale");
 //cam
  var camWhat:FlxCamera;
  var camText:FlxCamera = new FlxCamera();
@@ -26,8 +28,23 @@ public var mode:String = 'main';
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
+	wig.data.iTime.value = [0.005*Math.sin(time)];
+
 }
 	
+function shadering() 
+{
+	var curSong = songs[curSelected].displayName;
+    switch(curSong)
+    {
+		case "gron":{FlxG.camera.addShader(grey);camText.addShader(grey);}
+		case "trojan-virus" | "Bleeding":{FlxG.camera.addShader(wig);
+		wig.data.iTime.value = [2,2];wig.data.on.value = [1.];}
+		default:{FlxG.camera.removeShader(grey);camText.removeShader(grey);FlxG.camera.removeShader(wig);
+		wig.data.iTime.value = [2,2];wig.data.on.value = [0];}
+			
+    }
+}
 function postCreate() {
 	FlxG.cameras.add(camText, false);
 	grpSongs.camera = camText;
@@ -138,17 +155,6 @@ function onChangeSelection(event) {
 		portrait.y -= 20;
 		portrait.angle = -5;
 		FlxTween.tween(portrait, {y: mfwY, angle: 0}, 0.4, {ease: FlxEase.elasticOut});
+		shadering();
 	}});
 }
- function shadering() {
-	clearShader(FlxG.camera);
-	for (i in songs){
-	switch (i.name[curSelected].i.name.toLowerCase())
-	{
-		case "gron":
-			//grayscale looks better unless a cooler paper shader is found
-			//addShader(camWhat,"paper");
-			camText.addShader(crt);
-	}
-}
- }

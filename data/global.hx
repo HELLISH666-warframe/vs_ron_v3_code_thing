@@ -10,9 +10,9 @@ import flixel.FlxG;
 import lime.graphics.Image;
 import funkin.backend.utils.NativeAPI;
 import Type;
+import funkin.menus.BetaWarningState;
 function new()
     {   
-    
         if (FlxG.save.data.glitch == null) FlxG.save.data.glitch = true;
         if (FlxG.save.data.chrom == null) FlxG.save.data.chrom = true;
         if (FlxG.save.data.mosaic == null) FlxG.save.data.mosaic = true;
@@ -42,5 +42,4 @@ function preStateSwitch() {
 	for (redirectState in redirectStates.keys())
 		if (FlxG.game._requestedState is redirectState)
 			FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
-
 }

@@ -100,6 +100,8 @@ override function update(elapsed:Float){time += elapsed;
 		camHUD.angle = 11 * Math.sin((time/1) * Math.PI);
 		FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
 		}
+		iconP2.alpha = (2-(health)-0.15)/1+0.2;
+		iconP1.alpha = (health-0.15)/1+0.2;
 }
 function postCreate() {
     var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); 
@@ -223,8 +225,8 @@ function stepHit(curStep)
 			insert(members.indexOf(dad), snowemitter);
 			add(snowemitter);
 			cameraSpeed = 3;
-			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 275 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});
-			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 1250 ,angle: 360}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 275 ,angle: 360}, 1,{ease: FlxEase.backOut});
+			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x + 1250 ,angle: 360}, 1, {ease: FlxEase.quintInOut});
 /*			for (i in 0...4)
 			{ 
 				var member = strumLineNotes.members[i];

@@ -1,6 +1,7 @@
 /*
 | - Reformated by @ItsLJcool - |
 */
+//and_messed_up_by_me_ear
 import flixel.text.FlxTextFormat;
 import flixel.text.FlxText.FlxTextFormatMarkerPair;
 import flixel.text.FlxTextBorderStyle;
@@ -33,12 +34,15 @@ creditBG.alpha = 0.0001; // renders but doesn't show. if it's 0, then it doesn't
 creditBG.screenCenter();
 add(creditBG);
 
-add(credits);
 
 creditBG.camera = credits.camera = camHUD;
 }
 
-function onSongStart() {
+function stepHit(step) {
+    switch(curStep) 
+	{
+        case 2:
+            add(credits);
 // ??
 var targety:Int = 0;
 targety = Std.int(credits.y);
@@ -52,4 +56,4 @@ FlxTween.tween(creditBG, {alpha: 0.5}, 0.5);
 
 
 for (die in [credits, creditBG]) FlxTween.tween(die, {alpha: 0}, 0.5, {startDelay: 5, onComplete: coolDestroy});
-}
+}}

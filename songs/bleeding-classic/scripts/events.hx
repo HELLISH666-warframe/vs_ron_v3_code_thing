@@ -10,6 +10,10 @@ function resetTrail() {
 function postCreate() {
 	iconP1.setIcon('oldbf');
 }
+override function update(elapsed:Float){
+	iconP2.alpha = (2-(health)-0.15)/1+0.2;
+	iconP1.alpha = (health-0.15)/1+0.2;
+}
 function stepHit(curStep) {
 	switch(curStep) {
 		case 1:

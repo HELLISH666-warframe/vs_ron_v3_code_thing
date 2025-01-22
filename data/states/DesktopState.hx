@@ -76,8 +76,16 @@ function create() {
 				button.color = 0xFF485EC2;
 				if (clickAmounts == 2) {
 					if (icons[i] == "story mode is idiot") {
-						PlayState.loadSong("ron", "hard");
+//						PlayState.loadSong("ron", "hard");
 						FlxG.switchState(new PlayState());
+						PlayState.loadWeek({
+							name: "main",
+							id: "main", // idk what this is i would use the week name lol
+							sprite: null,
+							chars: [null, null, null],
+							songs: [{name: 'ron', hide: false}, {name: 'wasted', hide: false}, {name: 'ayo', hide: false}, {name: 'bloodshed', hide: false}, {name: 'trojan-virus', hide: false},],
+							difficulties: ['hard']
+							}, "hard");
 /*						PlayState.loadWeek("ron", "hard");
 						PlayState.isStoryMode = true;
 						FlxG.switchState.isStoryMode = true;
@@ -94,6 +102,7 @@ function create() {
 						});
 						var video:misc.MP4Handler = new misc.MP4Handler();
 						openSubState(new misc.CustomFadeTransition(.8, false));
+												video.playMP4(Paths.videoRon('ron'), new PlayState(), false, false, false);
 						*/new FlxTimer().start(.5, function(tmr:FlxTimer)
 						{
 							trace("hi");

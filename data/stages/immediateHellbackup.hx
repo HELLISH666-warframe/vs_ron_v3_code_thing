@@ -101,8 +101,8 @@ function stepHit(curStep)
 	{
 		if (curStep == 256)
 		{
-			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 300, angle: playerStrums.members[i].angle}, 1, {ease: FlxEase.linear});
-			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 1250, angle: cpuStrums.members[i].angle + 359}, 1, {ease: FlxEase.linear});
+			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 325}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 800}, (Conductor.crochet/600), {ease: FlxEase.linear});
 		}
 	}
 	if (curStep == 384)
@@ -146,49 +146,50 @@ function stepHit(curStep)
 		boyfriend.y -= 230;
 		boyfriend.x += 300;
 
-		FlxTween.angle(satan, 0, 359.99, 1.5, 
-			{ 
-			ease: FlxEase.quadIn, 
-			onComplete: function(twn:FlxTween) 
-				{
-					FlxTween.angle(satan, 0, 359.99, 0.75, { type: FlxTween.LOOPING } );
+			FlxTween.angle(satan, 0, 359.99, 1.5, 
+				{ 
+				ease: FlxEase.quadIn, 
+				onComplete: function(twn:FlxTween) 
+					{
+						FlxTween.angle(satan, 0, 359.99, 0.75, { type: FlxTween.LOOPING } );
+					}
 				}
-			});
-				
-		FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
+				);
 
-		exploders.visible = true;
-		exploders.animation.play('explosion');
-				
-		//bgLol.visible = false;
-		islands.visible = true;
-		cameramove = true;
-				
-		FlxTween.tween(satan, {y: gf.y - 500}, 1, {ease: FlxEase.backInOut});
-		FlxTween.tween(gf, {y: gf.y + 800, angle: 45}, 1, {ease: FlxEase.quadIn});
-		healthBar.setGraphicSize(800,Std.int(healthBar.height));
-		healthBar.updateHitbox();
-		}
-		if (curStep == 640)
-		{
-			gf.visible = false;
-			cameramove = false;
-			FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360}, 0.8, {ease: FlxEase.expoOut});
-		}
-		//BULLSHIT
-		if (curStep == 1408)
-		{
-			FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
-				
-			cameramove = true;
-			wbg.alpha = 0;
-				
-			FlxTween.globalManager.completeTweensOf(satan);
-			FlxTween.angle(satan, 0, 359.99, 0.33, { type: FlxTween.LOOPING } );
-			exploders.animation.play('explosion');
-		}
+				FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
+
+				exploders.visible = true;
+				exploders.animation.play('explosion');
+
+				//bgLol.visible = false;
+				islands.visible = true;
+				cameramove = true;
+
+				FlxTween.tween(satan, {y: gf.y - 500}, 1, {ease: FlxEase.backInOut});
+				FlxTween.tween(gf, {y: gf.y + 800, angle: 45}, 1, {ease: FlxEase.quadIn});
+				healthBar.setGraphicSize(800,Std.int(healthBar.height));
+				healthBar.updateHitbox();
+			}
+			if (curStep == 640)
+			{
+				gf.visible = false;
+				cameramove = false;
+				FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360}, 0.8, {ease: FlxEase.expoOut});
+			}
+			//BULLSHIT
+			if (curStep == 1408)
+			{
+				FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
+
+				cameramove = true;
+				wbg.alpha = 0;
+
+				FlxTween.globalManager.completeTweensOf(satan);
+				FlxTween.angle(satan, 0, 359.99, 0.33, { type: FlxTween.LOOPING } );
+				exploders.animation.play('explosion');
+				}
 			if (curStep == 1664)
-			{		
+			{
 				//triggerEventNote('Change Scroll Speed', '1.45', '1');
 				camGame.flash(FlxColor.WHITE, 1);
 				cameramove = false;

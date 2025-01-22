@@ -16,16 +16,18 @@ if (cameramove)
 	camHUD.angle = 11 * Math.sin((time/3) * Math.PI);
 	camera.angle = 2 * Math.sin((time/3) * Math.PI);
 	}
-	iconP2.alpha = (2-(health)-0.25)/2+0.2;
-	iconP1.alpha = (health-0.25)/2+0.2;
+//	iconP2.alpha = (2-(health)-0.25)/2+0.2;
+//	iconP1.alpha = (health-0.25)/2+0.2;
+iconP2.alpha = (2-(health)-0.15)/1+0.2;
+iconP1.alpha = (health-0.15)/1+0.2;
 }
 function stepHit(curStep){
 	{
 	if (curStep == 258)
 		{
 			windowmove = true;
-			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 325}, (Conductor.crochet/600), {ease: FlxEase.linear});
-			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x - 800}, (Conductor.crochet/600), {ease: FlxEase.linear});
+			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 300, angle: playerStrums.members[i].angle}, 1,  {ease: FlxEase.linear});
+			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x + 1250, angle: cpuStrums.members[i].angle + 359}, 1, {ease: FlxEase.linear});
 			cameramove = true;
 		}
 		if (curStep == 518)
