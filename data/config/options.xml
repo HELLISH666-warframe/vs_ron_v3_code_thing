@@ -5,10 +5,16 @@
     <checkbox id="mosaic" name="mosaic Shader" desc="Enable/Disable mosaic Shader. (ONLY_USED_IN_PRETTY-WACKY)" /> 
     <checkbox id="crt" name="CRT Shader" desc="fake_CRT_shader" />
     <checkbox id="colour" name="8bitcolor" desc="8bitcolor_shader" />
- <!-- <checkbox id="saturation" name="Saturation Shaders" desc="Enable/Disable Saturation Shaders. (low/no intensive)" />
-  		<checkbox id="drunk" name="Drunk Shaders" desc="Enable/Disable Drunk Shaders. (low/no intensive)" /> -->     
+ <checkbox id="grey" name="greyscale Shader" desc="Enable/Disable greyscale Shader. (low/no intensive)" />   
     <checkbox id="vhs" name="VHS Shader" desc="Enable/Disable VHS Shaders. (BLEEDING'S VHS SHADER & BLR'S SHADER). (low/no intensive)" />
 	<checkbox id="rain" name="RAIN" desc="fucking_rain" />
 	<checkbox id="pussy" name="NO_GAME_KILLING_ITSELF" desc="having_skill_issue?_anable_this" />
 	<checkbox id="warning" name="warnings" desc="toggle_the_startup_warning" />
+    <checkbox id="dev" name="Developer Mode" desc="Enables debug_tools.hx, allows for speeding up/slowing down the game.
+	PRESS 1 - Skip Song
+	PRESS 2 - Slows Game By 10% (Min Speed: 10%)
+	PRESS 3 - Resets Game Speed To 100%
+	PRESS 4 - Speeds Game By 10% (Max Speed: 200%)
+	PRESS 5 - Hold To Speed Game By 2000%, Uses BOTPLAY
+	PRESS 6 - Toggle For Botplay On Player Strums" />
 </menu>

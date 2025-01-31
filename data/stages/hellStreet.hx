@@ -2,6 +2,7 @@ import flixel.addons.effects.FlxTrail;
 import flixel.addons.effects.FlxTrailArea;
 import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
+import flixel.addons.display.FlxBackdrop;
 var evilTrail = null;
 var cameramove:Bool = false;
 var intensecameramove:Bool = false;
@@ -11,6 +12,8 @@ var fx:FlxSprite;
 var Estatic:FlxSprite;
 var time:Float = 0;
 var iTime:Float = 0;
+var wastedGrp:FlxTypedGroup<FlxSprite> = [];
+var bloodshedGrp:FlxTypedGroup<FlxSprite> = [];
 var snowemitter:FlxTypedEmitter = new FlxTypedEmitter(9999, 0, 300);
 snowemitter.width = FlxG.width*1.5;
 snowemitter.velocity.set(-10, -240, 10, -320);
@@ -69,39 +72,23 @@ exploders.screenCenter();
 var explode:FlxSound;
 explode = FlxG.sound.load(Paths.sound("hellexplode"));
 
-//var cloudsbig = new FlxBackdrop(Paths.image('bgs/newbgtest/ron/ron_clouds'), X, 0, 0);
-//cloudsbig.scrollFactor.set(0.1,0.1);
-//cloudsbig.screenCenter(XY);
-//wastedGrp.add(cloudsbig);
-
-//FlxTween.tween(cloudsbig, {x: cloudsbig.x + 6000}, 720, {type: LOOPING});
-
-//var cloudssmall = new FlxBackdrop(Paths.image('bgs/newbgtest/ron/ron_clouds'), X, 0, 0);
-//cloudssmall.scale.set(0.5,0.5);
-//cloudssmall.updateHitbox();
-//cloudssmall.scrollFactor.set(0.05,0.1);
-//cloudssmall.screenCenter(XY);
-//cloudssmall.y -= 120;
-//wastedGrp.add(cloudssmall);
-
-//FlxTween.tween(cloudssmall, {x: cloudssmall.x + 3000}, 360, {type: LOOPING});
 
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
     rain.data.iTime.value = [-24*Math.sin(time)];
-	if (cameramove)
-		{
-		camHUD.angle = 11 * Math.sin((time/2) * Math.PI);
-		FlxG.camera.angle = 2 * Math.sin((time/2) * Math.PI);
-		}
-	if (intensecameramove)
-		{
-		camHUD.angle = 11 * Math.sin((time/1) * Math.PI);
-		FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
-		}
-		iconP2.alpha = (2-(health)-0.15)/1+0.2;
-		iconP1.alpha = (health-0.15)/1+0.2;
+if (cameramove)
+	{
+	camHUD.angle = 11 * Math.sin((time/2) * Math.PI);
+	FlxG.camera.angle = 2 * Math.sin((time/2) * Math.PI);
+	}
+if (intensecameramove)
+	{
+	camHUD.angle = 11 * Math.sin((time/1) * Math.PI);
+	FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
+	}
+	iconP2.alpha = (2-(health)-0.15)/1+0.2;
+	iconP1.alpha = (health-0.15)/1+0.2;
 }
 function postCreate() {
     var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); 
@@ -115,7 +102,7 @@ function postCreate() {
     hellbg.setGraphicSize(Std.int(hellbg.width * 5));
 	asdfsa.visible = false;
     hellbg.alpha = 0.1;
-    witheredRa.visible = false;
+    witheredRa.visible = true;
     firebg.alpha = 0;
     cityback.visible = true;
     cityj.visible = true;
@@ -155,9 +142,39 @@ function postCreate() {
 	add(fx);
 	add(Estatic);
 	FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
-	insert(members.indexOf(dad), snowemitter);
+	insert(100, snowemitter);
 	add(snowemitter);
 	snowemitter.start(false, 0.035);
+
+	wastedGrp = new FlxTypedGroup();
+	bloodshedGrp = new FlxTypedGroup();
+
+	var cloudsbig = new FlxBackdrop(Paths.image('stages/street/ron_clouds'), FlxAxes.X, 0, 0);
+	cloudsbig.scrollFactor.set(0.1,0.1);
+	cloudsbig.screenCenter();
+	insert(10, cloudsbig);
+	wastedGrp.add(cloudsbig);
+	
+	FlxTween.tween(cloudsbig, {x: cloudsbig.x + 6000}, 720, {type: FlxTween.LOOPING });
+	
+	var cloudssmall = new FlxBackdrop(Paths.image('stages/street/ron_clouds'), FlxAxes.X, 0, 0);
+	cloudssmall.scale.set(0.5,0.5);
+	cloudssmall.updateHitbox();
+	cloudssmall.scrollFactor.set(0.05,0.1);
+	cloudssmall.screenCenter();
+	cloudssmall.y -= 120;
+	insert(11, cloudssmall);
+	wastedGrp.add(cloudssmall);
+	
+	FlxTween.tween(cloudssmall, {x: cloudssmall.x + 3000}, 360, {type: FlxTween.LOOPING });
+	wastedGrp.add(street );
+	wastedGrp.add(witheredRa);
+	wastedGrp.add(cityback);
+	wastedGrp.add(cityj);
+	wastedGrp.add(mountainsback);
+	wastedGrp.add(mountains);
+	wastedGrp.add(hillfront);
+
 }
 function stepHit(curStep)
     {
@@ -192,13 +209,9 @@ function stepHit(curStep)
 //			evilTrail.color = FlxColor.RED;
 //			insert(members.indexOf(dad)-1, evilTrail);
 			//bye_bye_street
-			cityback.destroy();
-			cityj.destroy();
-			mountainsback.destroy();
-			mountains.destroy();
-			hillfront.destroy();
-			street.destroy();
+			wastedGrp.destroy();
 
+			asdfsa.visible = true;
             mountainsbackbl.visible = true;
             hillfrontbl.visible = true;
             mountainsbl.visible = true;
@@ -221,9 +234,6 @@ function stepHit(curStep)
 			evilTrail.color = FlxColor.RED;
 			insert(members.indexOf(dad)-1, evilTrail);
 		case 256:
-			remove(snowemitter);
-			insert(members.indexOf(dad), snowemitter);
-			add(snowemitter);
 			cameraSpeed = 3;
 			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 275 ,angle: 360}, 1,{ease: FlxEase.backOut});
 			for (i in 0...cpuStrums.members.length) FlxTween.tween(cpuStrums.members[i], {x: cpuStrums.members[i].x + 1250 ,angle: 360}, 1, {ease: FlxEase.quintInOut});
@@ -256,7 +266,6 @@ function stepHit(curStep)
 			streetbl.destroy();
 			exploders.animation.play('explosion');
 			FlxG.sound.play(Paths.sound('hellexplode'), 5.7);
-//			FlxG.camera.follow(camFollowPos, LOCKON, cameraSpeed*2);
 			cameramove = true;
 			rain.data.zoom.value = [20];
 			rain.data.raindropLength.value = [0.05];
@@ -268,7 +277,7 @@ function stepHit(curStep)
 			camFollow.y -= 10400;
 			boyfriend.y -= 10400;
 			dad.y -= 10400;
-//			gf.visible = false;
+			gf.visible = false;
 //			triggerEventNote('Change Bars Size', '8', '1');
 			FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.quadInOut});
 			islands.y = boyfriend.y + 5100;
@@ -338,14 +347,13 @@ function stepHit(curStep)
 			intensecameramove = true;
 			space.visible = true;
 			earth.visible = true;
-			freindly.y = boyfriend.y + 5100;
 			freindly.visible = true;
 			defaultCamZoom -= 0.1;
 			dad.y += 9400;
 			boyfriend.y = dad.y+650;
-		case 1152: 
-			boyfriend.y = dad.y+650;
-//			healthBar.setGraphicSize(800,Std.int(healthBar.height));
-//			healthBar.updateHitbox();
+		case 1153: 
+			boyfriend.y = dad.y-650;
+			healthBar.setGraphicSize(800,Std.int(healthBar.height));
+			healthBar.updateHitbox();
     }
 }

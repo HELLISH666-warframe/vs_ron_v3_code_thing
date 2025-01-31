@@ -14,7 +14,7 @@ var icons:Map<String, Dynamic> = [
 	"settings" => new OptionsMenu(),
 	"freeplay" => new FreeplayState(),
 	"story mode" => "story mode is idiot",
-	"credits" => new CreditsMain()
+	"credits" => (new ModState('CreditsRon')),
 ];
 var camText:FlxCamera;
 public var leftState:Bool = false;

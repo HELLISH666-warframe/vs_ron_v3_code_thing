@@ -1,0 +1,17 @@
+{
+	"params": [
+		{
+			"name": "Bar Size",
+			"type": "String",
+			"defaultValue": 10
+		}, {
+			"name": "Time in Seconds",
+			"type": "String",
+			"defaultValue": "1"
+		}, {
+			"name": "Easing",
+			"type": "DropDown('In', 'Out', 'Both')",
+			"defaultValue": "Both"
+		}
+	]
+}

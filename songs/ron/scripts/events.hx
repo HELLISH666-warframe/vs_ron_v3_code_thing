@@ -1,4 +1,4 @@
-playCutscenes = false;
+
 var blackeffect:FlxSprite;
 
 var defaultStrumY:Float = 50;
@@ -12,6 +12,7 @@ function postCreate(){
 	blackeffect.screenCenter();
 	blackeffect.scrollFactor.set();
 	blackeffect.alpha = 0;
+	insert(21, blackeffect);
 	add(blackeffect);}
 
 function stepHit(curStep)

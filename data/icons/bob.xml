@@ -1,0 +1,4 @@
+<icon>
+	<anim x="-9" loop="false" anim="normal" y="-2" fps="24" name="normal"/>
+	<anim x="-9" loop="true" anim="losing" y="-5" fps="24" name="losing"/>
+</icon>

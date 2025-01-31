@@ -6,6 +6,7 @@
  import flixel.effects.particles.FlxParticle;
  import flixel.effects.particles.FlxTypedEmitter;
  import flixel.text.FlxTextAlign;
+ import funkin.menus.ui.Alphabet;
 
 //shaders
  var time:Float = 0;
@@ -24,7 +25,9 @@
 var portrait:FlxSprite;
 var preload = [];
 var particles:FlxTypedEmitter;
+var bullShit:Int = 0;
 public var mode:String = 'main';
+public var forceX:Float = Math.NEGATIVE_INFINITY;
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [0.005*Math.sin(time)];
 	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
@@ -34,28 +37,35 @@ override function update(elapsed:Float){time += elapsed;
 		grpSongs.members[i].y += (Math.sin(i+time)/2);
 	}
 }
-	
+public var targetY:Float = 0;
 function shadering() 
 {
 	var curSong = songs[curSelected].displayName;
     switch(curSong)
     {
-		case "gron":{FlxG.camera.addShader(grey);camText.addShader(grey);}
-		case "trojan-virus" | "Bleeding":{FlxG.camera.addShader(wig);
-		wig.data.iTime.value = [2,2];wig.data.on.value = [1.];}
-		default:{FlxG.camera.removeShader(grey);camText.removeShader(grey);FlxG.camera.removeShader(wig);
+		case "gron":{ if (FlxG.save.data.grey){camWhat.addShader(grey);camText.addShader(grey);}}
+		case "trojan-virus" | "Bleeding":{{wig.data.iTime.value = [2,2];wig.data.on.value = [1.];}}
+		default:{camWhat.removeShader(grey);camText.removeShader(grey);
 		wig.data.iTime.value = [2,2];wig.data.on.value = [0];}	
     }
 	diffText.color = switch(diffText.text)
 	{
-		case 'COOL':FlxColor.RED;
-		default: FlxColor.WHITE;		
+		case 'COOL':0xE00020;
+		default: 0xFFFFFFFF;		
+	}
+for (i=>item in grpSongs.members)
+	{
+		{
+			for (i in 0...grpSongs.length)
+				item.x += (Math.sin(i+time)/2);
+		}
 	}
 }
 function postCreate() {
 	FlxG.cameras.add(camText, false);
 	grpSongs.camera = camText;
 	for (i in iconArray) i.camera = camText;
+	{if (FlxG.save.data.glitch)FlxG.camera.addShader(wig);}
 
 	bg = new FlxSprite();
 	bg.frames = Paths.getSparrowAtlas('menus/freeplay/mainbgAnimate');
@@ -101,10 +111,18 @@ function postCreate() {
 		var graphic = FlxGraphic.fromAssetKey(Paths.image('menus/freeplay/portraits/' + i.name));
 		graphic.persist = true;
 		preload.push(graphic);
+	if ((i.name.toLowerCase() == 'slammed'))
+	{
+		FlxG.camera.zoom = 1.2;
+		portraitOverlay.visible = true;
+	}
+	else
+		FlxG.camera.zoom = 1;
+	portraitOverlay.visible = false;
 	}
 	changeSelection(0, true);{
-	if (FlxG.save.data.crt){FlxG.camera.addShader(crt);}
-	if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);camText.addShader(chrom);
+	if (FlxG.save.data.crt){camWhat.addShader(crt);}
+	if (FlxG.save.data.chrom) {camWhat.addShader(chrom);camText.addShader(chrom);
 		chrom.data.rOffset.value = [1/2];
 		chrom.data.gOffset.value = [0.0];
 		chrom.data.bOffset.value = [1 * -1];

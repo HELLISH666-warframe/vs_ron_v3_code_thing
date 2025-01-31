@@ -22,7 +22,8 @@
 	<sprite name="space" x="-800" y="-1200" sprite="hellStreet/spacebg" scroll="0.5" />
    	<sprite name="earth" x="-800" y="-1300" sprite="hellStreet/space" scroll="0.5" />
 	<sprite name="islands" x="-800" y="-5560" sprite="hellStreet/bloodshed_streetBroken" scroll="1" />
+       	<sprite name="freindly" x="-800" y="-5560"  sprite="hellStreet/freindlystars" scroll="0.05" />
+    <girlfriend />
 	<dad />
    	<boyfriend />
-   	<sprite name="freindly" x="-800" y="-5560"  sprite="hellStreet/freindlystars" />
 </stage>

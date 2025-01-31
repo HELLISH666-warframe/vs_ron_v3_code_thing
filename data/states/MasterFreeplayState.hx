@@ -13,9 +13,10 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import FreeplayState;
 import sys.FileSystem;
-
-
-	
+import funkin.backend.MusicBeatState;
+import flixel.group.FlxSpriteGroup;
+import funkin.backend.scripting.Script;
+import Xml;
 
 	var image:FlxSprite;
 	var vimage:FlxSprite;
@@ -32,11 +33,37 @@ import sys.FileSystem;
 	var loBgt:FlxSprite;
 	var crt:CustomShader  = new CustomShader("fake CRT");
 	var chrom:CustomShader  = new CustomShader("chromatic aberration");
+	var weekOrder:Array<String> = [];
+	var weeks:Map<String, Array<String>> = [];
+
 
 	var time:Float = 0;
 	function create()
 	{
 
+		for (i in Paths.getFolderContent('data/weeks')) {
+			if (!StringTools.endsWith(i, '.xml')) continue;
+			try {
+				var xml:Xml = Xml.parse(Assets.getText('data/weeks/' + i)).firstElement();
+				if (xml == null) {
+					throw 'hey you fucked up yo shit bruh! (' + i + ')';
+					continue;
+				}
+	
+				weekOrder[Std.parseInt(xml.get('index'))] = StringTools.replace(i, '.xml', '');
+			} catch(e:Exception) {
+				trace(e);
+				continue;
+			}
+		}
+
+		for (weekName in weekOrder) {
+			weeks[weekName] = [];
+	
+			var xml:Xml = Xml.parse(Assets.getText('data/weeks/' + weekName + '.xml')).firstElement();
+			for (node in xml.elements())
+				weeks[weekName].push(node.get('name'));
+		}
 		persistentUpdate = true;
 		cameraText = new FlxCamera();
 		cameraText.bgColor = 0;
@@ -156,7 +183,16 @@ if (FlxG.save.data.chrom) {cameraText.addShader(chrom);
 
 		if(controls.ACCEPT)
 		{
-			FlxG.switchState(new FreeplayState());
+			Script.staticVariables.set('stupidFreeplayList', weeks[weekOrder[curSelectedMaster].split(' $ ')[0]]);
+			new FlxTimer().start(0, function() {FlxG.switchState(new ModState('menus/FreeplayMenu'));});
+
+			Script.staticVariables.set('stupidFreeplayList', weeks[weekOrder[curSelectedMaster].split(' $ ')[0]]);
+			new FlxTimer().start(0, function() {FlxG.switchState(new ModState('menus/FreeplayMenu'));});
+		} else if (controls.ACCEPT) {
+			MusicBeatState.skipTransIn = MusicBeatState.skipTransOut = true;
+	
+			Script.staticVariables.set('stupidFreeplayList', weeks[weekOrder[curSelectedMaster].split(' $ ')[0]]);
+			FlxG.switchState(new ModState('menus/FreeplayMenu'));
 		}
 		if(controls.DOWN_P)
 		{

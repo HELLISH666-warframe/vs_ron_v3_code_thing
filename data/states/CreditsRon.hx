@@ -1,0 +1,140 @@
+
+import flixel.addons.display.FlxBackdrop;
+import flixel.util.FlxTimer;
+import flixel.util.FlxColor;
+import flixel.FlxG;
+import haxe.Json;
+import openfl.Assets;
+import desolation.gameassets.Alphabet;
+import flixel.FlxSprite;
+import flixel.math.FlxMath;
+import flixel.math.FlxRandom;
+import flixel.text.FlxText;    
+import openfl.display.BitmapData; 
+import flixel.tweens.FlxTween; 
+import flixel.tweens.FlxEase;       
+import desolation.menus.ui.Alphabet_class;       
+	var creditJSON:Dynamic;
+	var nameGroup = [];
+	var curSelected:Int = 0;
+	var largePortrait:FlxSprite;
+	var dividingBar:FlxSprite = new FlxSprite(775, 400).makeGraphic(400, 5);
+	var descText:FlxText;
+	var socialMediaText:FlxText;
+	var socialMediaFavicon:FlxSprite;
+	var time:Float = 0;
+	var	bg:FlxSprite;
+
+	override function create() {
+		bg = new FlxSprite();
+		bg.frames = Paths.getSparrowAtlas('menus/freeplay/classicbgAnimate');
+		bg.color = FlxColor.RED;
+		bg.animation.addByPrefix('animate', 'animate', 24, true);
+		bg.animation.play('animate');
+		bg.scale.set(2,2);
+		bg.updateHitbox();
+		bg.screenCenter();
+		add(bg);
+		creditJSON = Json.parse(Assets.getText(Paths.json("credit")));
+		for (i in 0...creditJSON.length){
+			var j = new Alphabet(0, 100 + (150 * i), creditJSON[i].handle,true);
+			j.ID = i;
+			j.targetY = -100;
+			nameGroup.push(j);
+			add(j);
+			var e = new FlxSprite().loadGraphic(Paths.image("credits/" + creditJSON[i].name));
+			e.setGraphicSize(50, 50);
+			e.updateHitbox();
+			e.antialiasing = true;
+			e.x = curSelected + 190;
+			j.x = socialMediaText + 490;
+//			j.trackingSpr = e;
+			add(e);
+		}
+		largePortrait = new FlxSprite(800, 20).loadGraphic(Paths.image("credits/seezee"));
+		largePortrait.setGraphicSize(350, 350);
+		largePortrait.updateHitbox();
+		largePortrait.antialiasing = true;
+		descText = new FlxText(780-49, 425, 490, "seezee", 20);
+		descText.alignment = 'CENTER';
+		socialMediaText = new FlxText(710,675,0,"Press enter to open social media link", 20);
+		socialMediaFavicon = new FlxSprite(1165+35, 673);
+		var loBg = new FlxSprite(700, 0).makeGraphic(999, 999, 0xFF000000);
+		loBg.alpha = 1;
+		loBg.scrollFactor.set();
+		add(loBg);
+		add(socialMediaFavicon);
+		socialMediaFavicon.visible = false;
+		add(socialMediaText);
+		add(largePortrait);
+		add(descText);
+		add(dividingBar);
+//		super.create();
+
+		changeSelection(0);
+	}
+	var keyCount:Int = 0;
+	var antiSpam:Bool = false;
+	override function update(elapsed:Float) {
+		time += elapsed;	
+		if (time > 1) keyCount = 0;
+		if (!antiSpam) {
+			if (controls.BACK) 				FlxG.switchState(new MainMenuState());
+			if (controls.UP_P) {changeSelection(-1);keyCount=0;FlxG.sound.play(Paths.sound('scrollMenu'));}
+			if (controls.DOWN_P) {changeSelection(1);FlxG.sound.play(Paths.sound('scrollMenu'));}
+			if (controls.DOWN_P || controls.UP_P) {dividingBar.scale.x += 0.2; time = 0;}
+		}
+		dividingBar.scale.x = FlxMath.lerp(dividingBar.scale.x, 1, 0.1 / (1));
+		if (controls.ACCEPT && creditJSON[curSelected].social_link != null) CoolUtil.openURL(creditJSON[curSelected].social_link);
+		for (j in nameGroup) {
+			j.y = FlxMath.lerp(j.y, 360 + (150 * (j.ID - curSelected)), 0.1 / (1));
+			if (j.text != null)
+				if (!antiSpam) j.scale.set(FlxMath.lerp(j.scale.x, (4 - Math.abs(j.ID - curSelected)) * (0.3 - (j.text.length * 0.01)), 0.2 / (1)), FlxMath.lerp(j.scale.y, (4 - Math.abs(j.ID - curSelected)) * (0.3 - (j.text.length * 0.01)), 0.05 / (1/2)));
+			j.targetY = 20+FlxMath.lerp(j.targetY, 100 + -Math.abs(25 * (j.ID - curSelected)), 0.2 / (1));
+		}
+//		super.update(elapsed);
+	}
+	function changeSelection(e) {
+		curSelected += e;
+		if (curSelected > nameGroup.length - 1) keyCount += 1;
+			if (curSelected == 7 && keyCount > 4 && time < 3 && !antiSpam) {
+			FlxG.camera.shake(0.05, 3, function() {
+				FlxG.camera.flash();
+				FlxG.sound.play(Paths.sound("boom"));
+				for (i in nameGroup) {i.autoOffset = false;
+					for (j in i) {j.offset.set(0,0); j.scale.set(new FlxRandom().float(0.4,2),new FlxRandom().float(0.4,2));
+						FlxTween.tween(j, {x: j.x + new FlxRandom().int(-1750, 1750), y: j.y + new FlxRandom().int(-1750, 1750), angle: new FlxRandom().int(360, -360)}, 5, {ease: FlxEase.quadOut});}}
+				new FlxTimer().start(5.1, function(tmr:FlxTimer) {
+					FlxG.sound.play(Paths.sound("rumble"));
+					FlxG.sound.play(Paths.sound("piecedTogether"));
+					FlxG.camera.fade(0xFFFFFF, 3.8, false, function() {#if windows Sys.exit(0); #end});
+					for (i in nameGroup) 
+						for (j in i) FlxTween.tween(j, {x: new FlxRandom().float(495, 515), y: new FlxRandom().float(275, 300)}, new FlxRandom().float(1, 3), {ease: FlxEase.quintInOut});
+				});
+			});
+			FlxG.sound.play(Paths.sound("rumble"));	
+			antiSpam = true;
+			for (j in nameGroup)
+					j.scale.set(FlxMath.lerp(j.scale.x, (4 - Math.abs(j.ID - curSelected)) * (0.3 - (j.text.length * 0.01)), 1), FlxMath.lerp(j.scale.y, (4 - Math.abs(j.ID - curSelected)) * (0.3 - (j.text.length * 0.01)), 1));
+		}
+		if (new FlxRandom().bool(20 * keyCount)) FlxG.sound.play(Paths.sound("thud"));
+		curSelected = (curSelected > nameGroup.length - 1 ? 0 : (curSelected < 0 ? nameGroup.length - 1 : curSelected));
+		FlxG.sound.music.volume = 0.2 * (5-keyCount);
+		largePortrait.loadGraphic(Paths.image("credits/" + creditJSON[curSelected].name));
+		largePortrait.setGraphicSize(350, 350);
+		largePortrait.updateHitbox();
+		descText.text = (creditJSON[curSelected].name);
+		descText.text = (creditJSON[curSelected].description);
+		if (creditJSON[curSelected].social_link != null) {
+			var bitmap = BitmapData.loadFromFile('http://www.google.com/s2/favicons?domain=${creditJSON[curSelected].social_link}&sz=32');
+			bitmap.onComplete(function(bitmap) {
+				socialMediaFavicon.loadGraphic(bitmap);
+				socialMediaFavicon.visible = true;
+			});
+			socialMediaText.text = "Press enter to open social media link";
+		}
+		else {
+			socialMediaText.text = "Theres no social media link";
+			socialMediaFavicon.visible = false;
+		}	
+	}

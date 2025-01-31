@@ -11,6 +11,7 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
+import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileCircle;
 import openfl.Assets;
 var done = false;
 var god:CustomShader  = new CustomShader("godray");
@@ -40,15 +41,17 @@ function update(elapsed:Float) {
 		animbarScrb.velocity.x -= 120;
 		animbarScrt.velocity.x += 120;
 		insert(members.indexOf(titleScreenSprites), animbarScrb);
+		animbarScrt.updateHitbox();
+		animbarScrb.updateHitbox();
 		add(animbarScrt);
 		titleTextt = new FlxSprite().loadGraphic(Paths.image('menus/titlescreen/trueTitlePlay'));
 		insert(members.indexOf(titleScreenSprites), titleTextt);
 		new FlxTimer().start(0.005, function(tmr:FlxTimer)
-			{
-				animbarScrb.x -= 2;
-				animbarScrt.x += 2;
-				tmr.reset(0.005);
-			});
+		{
+			animbarScrb.x -= 2;
+			animbarScrt.x += 2;
+			tmr.reset(0.005);
+		});
 	}
 	{time += elapsed;
 		chrom.data.rOffset.value = [0.005*Math.sin(time)];
@@ -67,10 +70,10 @@ function update(elapsed:Float) {
 			pressEnter();
 	}
 }
-function beatHit(curBeat) {
+function beatHit(curBeat) {			if(!transitioning){
 	FlxTween.completeTweensOf(FlxG.camera);
 	FlxG.camera.zoom += 0.03;
-	FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1500, {ease: FlxEase.backOut});}
+	FlxTween.tween(FlxG.camera, {zoom: 1}, Conductor.crochet / 1500, {ease: FlxEase.backOut});}}
 function stepHit(curStep){
 	{
 		switch(curStep){
@@ -90,7 +93,10 @@ function pressEnter() {
 	FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
 	
 	FlxTween.cancelTweensOf(FlxG.camera);
-	FlxTween.tween(FlxG.camera, {zoom: 3, angle: 22}, 1.5, {ease: FlxEase.quartIn});
+	blackScreen.color = FlxColor.BLACK;
+	blackScreen.screenCenter();
+	FlxTween.tween(blackScreen, {alpha: 1}, 1.1, {ease: FlxEase.circIn});
+	FlxTween.tween(FlxG.camera, {zoom: 3, angle: 22}, 1.1, {ease: FlxEase.quartIn});
 	FlxTween.tween(animbarScrt, {y: animbarScrt.y - 200}, 0.5, {ease: FlxEase.quadIn});
 	FlxTween.tween(animbarScrb, {y: animbarScrb.y + 200}, 0.5, {ease: FlxEase.quadIn});
 	FlxG.camera.fade(0xFF000000, 0.8, true);
@@ -99,6 +105,6 @@ function pressEnter() {
 	// FlxG.sound.music.stop();
 	new FlxTimer().start(1, function(tmr:FlxTimer)
 		
-			//MusicBeatState.switchState((ClientPrefs.warnings ? new substates.WarningSubState() : new menus.DesktopMenu()));
-			FlxG.switchState(new ModState('DesktopState')));
+	//MusicBeatState.switchState((ClientPrefs.warnings ? new substates.WarningSubState() : new menus.DesktopMenu()));
+	FlxG.switchState(new ModState('DesktopState')));
 }

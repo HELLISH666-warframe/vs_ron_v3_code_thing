@@ -7,8 +7,12 @@ import funkin.backend.utils.DiscordUtil;
 import funkin.backend.system.framerate.Framerate;
 import std.Xml;
 
+var creditJSON:Dynamic;
 var curSelected:Int = 0;
 var iconGroup:FlxTypedGroup<FlxSprite>;
+var nameGroup = [];
+var dividingBar:FlxSprite = new FlxSprite(775, 400).makeGraphic(400, 5);
+var time:Float = 0;
 
 var descText:FlxText;
 var descText2:FlxText;
@@ -38,7 +42,6 @@ function create()
         });
     }
 
-{}
 	var bg:FlxSprite = CoolUtil.loadAnimatedGraphic(members[0], Paths.image ('menus/freeplay/classicbgAnimate'));
     members[0].scale.set(2,2);
     members[0].updateHitbox();
@@ -46,6 +49,8 @@ function create()
     bg.y = 90;
     bg.x = 0;
 	bg.color = FlxColor.RED;
+
+	add(dividingBar);
 
 	camFollow = new FlxObject(640, 342, 1, 1);
 	camFollowPos = new FlxObject(640, 342, 1, 1);
@@ -99,14 +104,16 @@ var quitting:Bool = false;
 var intro:Bool = true;
 
 function update(elapsed:Float) {
+	time += elapsed;	
 	var lerpVal:Float = Math.max(0, Math.min(1, elapsed * 7.5));
 	camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x+camFollowXOffset, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
-
+	dividingBar.scale.x = FlxMath.lerp(dividingBar.scale.x, 1, 0.1 / (Math.sin(time)));
 	if (!quitting) {
 		if (controls.UP_P)
 			changeSelection(-1);
 		if (controls.DOWN_P)
 			changeSelection(1);
+		{dividingBar.scale.x += 0.2; time = 0;}
 
 		if (controls.ACCEPT)
 			CoolUtil.openURL(credits[curSelected].social_link);
