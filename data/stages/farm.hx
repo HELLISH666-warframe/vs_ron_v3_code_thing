@@ -1,3 +1,6 @@
-//var bagType = FlxG.random.int(0, 1000) == 0 ? 'popeye' : 'cornbag';
-//var cornBag:BGSprite = new BGSprite('bgs/newbgtest/slammed/cornbag', 1200, 550);
-//add(cornBag);
+function postCreate() {
+    var cornBagrare:FlxSprite = new FlxSprite(1100,500).loadGraphic(Paths.image('stages/farm/popeye'));
+	if (FlxG.random.int(1, 2) == 1)
+        insert(13, cornBagrare);
+
+}

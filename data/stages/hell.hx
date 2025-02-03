@@ -1,25 +1,7 @@
-var fx:FlxSprite;
-var Estatic:FlxSprite;
+importScript("data/scripts/bloodbleed-shit");
 
-fx = new FlxSprite().loadGraphic(Paths.image('stages/effect'));
-fx.setGraphicSize(Std.int(2560 * 1)); // i dont know why but this gets smol if i make it the same size as the kade ver
-fx.updateHitbox();
-fx.antialiasing = true;
-fx.screenCenter();
-fx.scrollFactor.set(0, 0);
-fx.alpha = 0.3;
-
-
-Estatic = new FlxSprite().loadGraphic(Paths.image('stages/deadly'));
-Estatic.scrollFactor.set();
-Estatic.screenCenter();
-Estatic.alpha = 0;
 function postCreate() {
 	firebg.alpha = 0;
-
-	add(fx);
-	add(Estatic);
-	FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
 }
 function stepHit(curStep){if (curSong.toLowerCase() == 'bloodbath') 
 {
@@ -75,6 +57,7 @@ function stepHit(curStep){if (curSong.toLowerCase() == 'bloodbath')
 	}
 }
 	if (curSong.toLowerCase() == 'bloodshed-classic')
+		Estatic.alpha = (((2-health)/3)+0.2);
 		switch(curStep) {
 			case 288:
 				FlxTween.tween(firebg, {alpha: 1}, 1, {ease: FlxEase.circOut});

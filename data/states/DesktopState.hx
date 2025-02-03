@@ -8,6 +8,7 @@ import funkin.menus.ModSwitchMenu;
 import funkin.menus.credits.CreditsMain;
 import flixel.addons.display.FlxBackdrop;
 import flixel.ui.FlxButton;
+var chromeOffset = (FlxG.save.data.chromeOffset/350);
 var icons:Map<String, Dynamic> = [
 	"discord" => "https://discord.gg/ron-874366610918473748",
 	"random" => (new ModState('MasterFreeplayState'))
@@ -48,9 +49,9 @@ function create() {
 			if (FlxG.save.data.colour) {FlxG.camera.addShader(bit);
 			bit.data.enablethisbitch.value = [1.];}
 			if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
-				chrom.data.rOffset.value = [1/2];
+				chrom.data.rOffset.value = [chromeOffset /2];
 				chrom.data.gOffset.value = [0.0];
-				chrom.data.bOffset.value = [1 * -1];
+				chrom.data.bOffset.value = [chromeOffset  * -1];
 			}
 	
 	window = new FlxSprite(FlxG.width/1.3-405,ywindow);
@@ -146,8 +147,8 @@ function update(elapsed:Float) {
 	FlxG.mouse.visible = true;
 	if (FlxG.keys.pressed.CONTROL && FlxG.keys.justPressed.R) add(new RunTab());
 	{time += elapsed;
-		chrom.data.rOffset.value = [0.005*Math.sin(time)];
-		chrom.data.bOffset.value = [-0.005*Math.sin(time)];
+		chrom.data.rOffset.value = [chromeOffset*Math.sin(time)];
+		chrom.data.bOffset.value = [chromeOffset*Math.sin(time)];
 	}
 }
 import flixel.group.FlxSpriteGroup;
@@ -161,7 +162,7 @@ class RunTab extends flixel.FlxBasic {
 	public var help:FlxButton;
 	public var field:FlxInputText;
 	public var tabBar:FlxButton;
-	var t = Paths.getSparrowAtlas("menus/desktop/windowsUi/run tab");
+	var t = Paths.getSparrowAtlas("windowsUi/run tab");
 	public var movingTab = false;
 	public function new() {
 		super();

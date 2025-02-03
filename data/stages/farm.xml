@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-stage>
-<stage zoom="1"  folder="stages/farm/">
+<stage zoom="0.3"  folder="stages/farm/">
    	<sprite name="sky" x="-600" y="-200" sprite="sky" scroll="0.6" />
    	<sprite name="gmod" x="150" y="75" sprite="gm_flatgrass" scale="0.4" scroll="0.6" />
    	<sprite name="hill" x="-173" y="200" sprite="orangey hills"  scroll="0.6" scale="1" />
@@ -7,6 +7,7 @@
 	<sprite name="grass" x="-600" y="500" sprite="grass lands" />
 	<sprite name="left" x="-400" y="200" sprite="cornFence" scroll="1" />
 	<sprite name="two" x="1100" y="200" sprite="cornFence2" scroll="1" />
+	<sprite name="cornBag" x="1100" y="500" sprite="cornbag" scroll="1" />
 	<sprite name="sign" x="0" y="350" sprite="sign" />
    	<dad />
    	<boyfriend />

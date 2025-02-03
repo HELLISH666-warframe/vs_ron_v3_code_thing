@@ -19,8 +19,8 @@ function postCreate(){
 	camHUD.color = FlxColor.GRAY;
 }
 override function update(elapsed:Float){time += elapsed;
-	chrom.data.rOffset.value = [0.005*Math.sin(time)];
-	chrom.data.bOffset.value = [-0.005*Math.sin(time)];}
+	chrom.data.rOffset.value = [chromeOffset*Math.sin(time)];
+	chrom.data.bOffset.value = [-chromeOffset*Math.sin(time)];}
 function stepHit(curStep){
 	switch(curStep){
 		case 250:
@@ -58,9 +58,9 @@ function stepHit(curStep){
 			if (FlxG.save.data.mosaic) {mosaic.data.uBlocksize.value = [0];	FlxG.camera.removeShader(mosaic);}
 			cameraSpeed = 3;
 			if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
-			chrom.data.rOffset.value = [1];
+			chrom.data.rOffset.value = [chromeOffset/2];
 			chrom.data.gOffset.value = [0.0];
-			chrom.data.bOffset.value = [1 * -1];
+			chrom.data.bOffset.value = [chromeOffset * -1];
 			}
 			defaultCamZoom -= 0.1;
 			FlxG.camera.zoom -= 0.1;

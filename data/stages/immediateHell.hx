@@ -4,9 +4,7 @@ import flixel.addons.effects.FlxTrailArea;
 import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
 import openfl.display.BlendMode;
-var cameramove:Bool = false;
-var intensecameramove:Bool = false;
-var Estatic:FlxSprite;
+importScript("data/scripts/bloodbleed-shit");
 var explode:FlxSound;
 var time:Float = 0;
 var iTime:Float = 0;
@@ -29,19 +27,6 @@ rain.start(false, 0.01);
 var rain:CustomShader  = new CustomShader("rain");
 explode = FlxG.sound.load(Paths.sound("hellexplode"));
 
-fx = new FlxSprite().loadGraphic(Paths.image('stages/effect'));
-fx.setGraphicSize(Std.int(2560 * 1)); // i dont know why but this gets smol if i make it the same size as the kade ver
-fx.updateHitbox();
-fx.antialiasing = true;
-fx.screenCenter();
-fx.scrollFactor.set(0, 0);
-fx.alpha = 0.3;
-
-Estatic = new FlxSprite().loadGraphic(Paths.image('stages/deadly'));
-Estatic.scrollFactor.set();
-Estatic.screenCenter();
-Estatic.alpha = 0;
-
 var exploders:FlxSprite = new FlxSprite();
 exploders.frames = Paths.getFrames("stages/hellStreet/explosion");
 exploders.animation.addByPrefix("explosion", "explosion",  24, false);
@@ -52,22 +37,12 @@ exploders.screenCenter();
 var wastedGrp:FlxTypedGroup<Dynamic>;
 
 override function update(elapsed:Float){time += elapsed;
-	chrom.data.rOffset.value = [0.005*Math.sin(time)];
-	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
+	chrom.data.rOffset.value = [chromeOffset*Math.sin(time)];
+	chrom.data.bOffset.value = [-chromeOffset*Math.sin(time)];
 	wig.data.iTime.value = [0.005*Math.sin(time)];
     bleed.data.iTime.value = [1*Math.sin(time)];
 	vhs.data.iTime.value = [1*Math.sin(time)];
     rain.data.iTime.value = [-24*Math.sin(time)];
-if (cameramove)
-	{
-	camHUD.angle = 22 * Math.sin((time/1) * Math.PI);
-	FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
-	}
-if (intensecameramove)
-	{
-	camHUD.angle = 45 * Math.sin((time/0.5) * Math.PI);
-	FlxG.camera.angle = 9 * Math.sin((time/0.5) * Math.PI);
-	}
 }
 function postCreate() {
 	hellbg.setGraphicSize(Std.int(hellbg.width * 5));
@@ -133,9 +108,8 @@ function stepHit(curStep)
 		if (FlxG.save.data.vhs) {camHUD.addShader(vhs);}
 		//addShader(FlxG.camera, "chromatic aberration");
 		if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);camHUD.addShader(chrom);
-			chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
-			chrom.data.gOffset.value = [0.0];
-			chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];}
+			chrom.data.rOffset.value = [chromeOffset*Math.sin(curStep*4)/2];
+			chrom.data.bOffset.value = [chromeOffset*Math.sin(curStep*4) * -1/2];}
 		remove(bloodshedTrail);
         bloodshedTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
         insert(members.indexOf(dad)-1, bloodshedTrail);
@@ -162,7 +136,7 @@ function stepHit(curStep)
 				
 		//bgLol.visible = false;
 		islands.visible = true;
-		cameramove = true;
+		cameramovebleed = true;
 				
 		FlxTween.tween(satan, {y: gf.y - 500}, 1, {ease: FlxEase.backInOut});
 		FlxTween.tween(gf, {y: gf.y + 800, angle: 45}, 1, {ease: FlxEase.quadIn});
@@ -172,7 +146,7 @@ function stepHit(curStep)
 		if (curStep == 640)
 		{
 			gf.visible = false;
-			cameramove = false;
+			cameramovebleed = false;
 			FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360}, 0.8, {ease: FlxEase.expoOut});
 		}
 		//BULLSHIT
@@ -180,7 +154,7 @@ function stepHit(curStep)
 		{
 			FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
 				
-			cameramove = true;
+			cameramovebleed = true;
 			wbg.alpha = 0;
 				
 			FlxTween.globalManager.completeTweensOf(satan);
@@ -191,8 +165,8 @@ function stepHit(curStep)
 			{		
 				//triggerEventNote('Change Scroll Speed', '1.45', '1');
 				camGame.flash(FlxColor.WHITE, 1);
-				cameramove = false;
-				intensecameramove = true;
+				cameramovebleed = false;
+				intensecameramovebleed = true;
 				if (FlxG.save.data.vhs) {camHUD.removeShader(vhs);}
 				if (FlxG.save.data.vhs) {camHUD.addShader(bleed);}
 				//addShader(camHUD, "bleedingvhs");
@@ -215,12 +189,12 @@ function stepHit(curStep)
 				FlxTween.cancelTweensOf(satan);
 				FlxTween.angle(satan, satan.angle, 359.99, 0.5, {ease: FlxEase.quadIn});
 				defaultCamZoom += 0.1;
-			}
-			if (curStep > 384)
-			{
-				if (FlxG.save.data.chrom) {
-				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
-				chrom.data.gOffset.value = [0.0];
-				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];}
-			}
 		}
+		if (curStep > 384)
+		{
+		if (FlxG.save.data.chrom) {
+		chrom.data.rOffset.value = [chromeOffset*Math.sin(curStep*4)/2];
+		chrom.data.gOffset.value = [0.0];
+		chrom.data.bOffset.value = [chromeOffset*Math.sin(curStep*4) * -1/2];}
+	}
+}

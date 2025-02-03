@@ -1,0 +1,1 @@
+public var chromeOffset = (FlxG.save.data.chromeOffset/350);

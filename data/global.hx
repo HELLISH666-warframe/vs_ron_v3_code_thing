@@ -17,6 +17,7 @@ function new()
     {   
         if (FlxG.save.data.glitch == null) FlxG.save.data.glitch = true;
         if (FlxG.save.data.chrom == null) FlxG.save.data.chrom = true;
+        if (FlxG.save.data.chromeOffset == null) FlxG.save.data.chromeOffset = 0.5;
         if (FlxG.save.data.mosaic == null) FlxG.save.data.mosaic = true;
         if (FlxG.save.data.crt == null) FlxG.save.data.crt = true;
         if (FlxG.save.data.colour == null) FlxG.save.data.colour = true;

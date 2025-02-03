@@ -22,8 +22,8 @@ var defaultStrumX:Array<Float> = [50,162,274,386];
 var defaultStrumX2:Array<Float> = [730,842,954,1066];
 
 override function update(elapsed:Float){time += elapsed;
-	chrom.data.rOffset.value = [0.005*Math.sin(time)];
-	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
+	chrom.data.rOffset.value = [chromeOffset*Math.sin(time)];
+	chrom.data.bOffset.value = [-chromeOffset*Math.sin(time)];
 	glitch.data.iTime.value = [0.005*Math.sin(time)];
 	rain.data.iTime.value = [-25*Math.sin(time)];
 	vhs.data.iTime.value = [-1*Math.sin(time)];
@@ -59,8 +59,10 @@ function stepHit(step)
 	switch (step)
 	{
 	case 384:
-		if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);chrom.data.rOffset.value = [1/2];
-			chrom.data.gOffset.value = [0.0];chrom.data.bOffset.value = [1 * -1];}
+		if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
+			chrom.data.rOffset.value = [chromeOffset/2];
+			chrom.data.gOffset.value = [0.0];
+			chrom.data.bOffset.value = [chromeOffset * -1];}
 		if (FlxG.save.data.vhs) {FlxG.camera.addShader(vhs);}
 		if (FlxG.save.data.glitch) {FlxG.camera.addShader(glitch);camHUD.addShader(glitch);}
 		FlxG.camera.flash(FlxColor.WHITE, 1, null, true);

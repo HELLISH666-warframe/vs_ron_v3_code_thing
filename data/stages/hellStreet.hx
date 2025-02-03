@@ -3,13 +3,10 @@ import flixel.addons.effects.FlxTrailArea;
 import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
 import flixel.addons.display.FlxBackdrop;
+importScript("data/scripts/bloodbleed-shit");
 var evilTrail = null;
-var cameramove:Bool = false;
 var intensecameramove:Bool = false;
 var exploders:FlxSprite = new FlxSprite();
-var Estatic2:FlxSprite; 
-var fx:FlxSprite;
-var Estatic:FlxSprite;
 var time:Float = 0;
 var iTime:Float = 0;
 var wastedGrp:FlxTypedGroup<FlxSprite> = [];
@@ -19,6 +16,7 @@ snowemitter.width = FlxG.width*1.5;
 snowemitter.velocity.set(-10, -240, 10, -320);
 snowemitter.lifespan.set(5);
 snowemitter.y = FlxG.height;
+//snowemitter.acceleration.set(-10, 1600, 10, 2200);
 snowemitter.acceleration.set(-10, 1900, 10, 2200);
 
 for (i in 0...150)
@@ -50,19 +48,6 @@ var rain:CustomShader  = new CustomShader("rain");
 var explode:FlxSound;
 explode = FlxG.sound.load(Paths.sound("hellexplode"));
 
-fx = new FlxSprite().loadGraphic(Paths.image('stages/effect'));
-fx.setGraphicSize(Std.int(2560 * 1)); // i dont know why but this gets smol if i make it the same size as the kade ver
-fx.updateHitbox();
-fx.antialiasing = true;
-fx.screenCenter();
-fx.scrollFactor.set(0, 0);
-fx.alpha = 0.3;
-
-Estatic = new FlxSprite().loadGraphic(Paths.image('stages/deadly'));
-Estatic.scrollFactor.set();
-Estatic.screenCenter();
-Estatic.alpha = 0;
-
 var exploders:FlxSprite = new FlxSprite();
 exploders.frames = Paths.getFrames("stages/hellStreet/explosion");
 exploders.animation.addByPrefix("explosion", "explosion",  24, false);
@@ -74,19 +59,9 @@ explode = FlxG.sound.load(Paths.sound("hellexplode"));
 
 
 override function update(elapsed:Float){time += elapsed;
-	chrom.data.rOffset.value = [0.005*Math.sin(time)];
-	chrom.data.bOffset.value = [-0.005*Math.sin(time)];
+	chrom.data.rOffset.value = [chromeOffset*Math.sin(time)];
+	chrom.data.bOffset.value = [-chromeOffset*Math.sin(time)];
     rain.data.iTime.value = [-24*Math.sin(time)];
-if (cameramove)
-	{
-	camHUD.angle = 11 * Math.sin((time/2) * Math.PI);
-	FlxG.camera.angle = 2 * Math.sin((time/2) * Math.PI);
-	}
-if (intensecameramove)
-	{
-	camHUD.angle = 11 * Math.sin((time/1) * Math.PI);
-	FlxG.camera.angle = 4 * Math.sin((time/1) * Math.PI);
-	}
 	iconP2.alpha = (2-(health)-0.15)/1+0.2;
 	iconP1.alpha = (health-0.15)/1+0.2;
 }
@@ -134,14 +109,8 @@ function postCreate() {
     islands.visible = false;
     islands.screenCenter();
     add(islands);		
-    Estatic2 = new FlxSprite().loadGraphic(Paths.image("stages/hellStreet/bloodshed_streetBroken"));
-    Estatic2.scale.set(1.2,1.2); // This changes the scale of the sprite
-    insert(1, Estatic2);
 	exploders.visible = false;
 	add(exploders);
-	add(fx);
-	add(Estatic);
-	FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxTween.PINGPONG});
 	insert(100, snowemitter);
 	add(snowemitter);
 	snowemitter.start(false, 0.035);
@@ -177,29 +146,30 @@ function postCreate() {
 
 }
 function stepHit(curStep)
+{
+//   var evilTrail = null;
+//   if (curStep >= 128 && evilTrail == null) {
+//       evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
+//     }
+    if (curStep < 1151)
+        Estatic.alpha = (((2-health)/3)+0.3)/2;
+    else
+        Estatic.alpha = 0;
+    if (curStep >= 384)
     {
-//        var evilTrail = null;
-//        if (curStep >= 128 && evilTrail == null) {
-//            evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
-//        }
-        if (curStep < 1151)
-            Estatic.alpha = (((2-health)/3)+0.3)/2;
-        else
-            Estatic.alpha = 0;
-        if (curStep >= 384)
-        {
-            if (curStep <= 576 || ((curStep >= 896) && (curStep <= 1151)))				
-				snowemitter.x = FlxG.camera.scroll.x;
-				snowemitter.y = FlxG.camera.scroll.y;
-        }
-        else
-        {
-            Estatic.alpha = 0;
-			snowemitter.y = 9999;
-        }
+        if (curStep <= 576 || ((curStep >= 896) && (curStep <= 1151)))				
+			snowemitter.x = FlxG.camera.scroll.x;
+			snowemitter.y = FlxG.camera.scroll.y;
+    }
+    else
+    {
+        Estatic.alpha = 0;
+		snowemitter.y = 9999;
+    }
     switch (curStep)
     {
 		case 128:
+
 			if (FlxG.save.data.rain) {
 				FlxG.camera.addShader(rain);
 				rain.data.zoom.value = [40];
@@ -224,9 +194,9 @@ function stepHit(curStep)
 			//triggerEventNote('Change Scroll Speed', '1.3', '1');
 			witheredRa.color = 0xFF660000;
 			if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
-				chrom.data.rOffset.value = [1*Math.sin(curStep*4)/2];
+				chrom.data.rOffset.value = [chromeOffset/2];
 				chrom.data.gOffset.value = [0.0];
-				chrom.data.bOffset.value = [1*Math.sin(curStep*4) * -1/2];
+				chrom.data.bOffset.value = [chromeOffset/2];
 				}
 			cameraSpeed = 2;
 		case 129:
@@ -266,7 +236,7 @@ function stepHit(curStep)
 			streetbl.destroy();
 			exploders.animation.play('explosion');
 			FlxG.sound.play(Paths.sound('hellexplode'), 5.7);
-			cameramove = true;
+			cameramoveshed = true;
 			rain.data.zoom.value = [20];
 			rain.data.raindropLength.value = [0.05];
 			defaultCamZoom = 0.7;
@@ -293,7 +263,6 @@ function stepHit(curStep)
 			cameraSpeed = 2.5;
 		case 576:
 			islands.visible = true;
-			Estatic2.visible = true;
 			FlxTween.tween(dad, {y: dad.y + 5600}, 5.4, {ease: FlxEase.quadIn});
 			FlxTween.tween(boyfriend, {y: boyfriend.y + 5600}, 5.4, {ease: FlxEase.quadIn});
 			defaultCamZoom = 0.85;
@@ -304,7 +273,7 @@ function stepHit(curStep)
 			cameraSpeed = 1.5;
 			rain.data.zoom.value = [40];
 			rain.data.raindropLength.value = [0.1];
-			cameramove = false;
+			cameramoveshed = false;
 			defaultCamZoom = 0.7;
 			FlxTween.tween(camGame, {angle: 0}, 1, {ease: FlxEase.circOut});
 			FlxTween.tween(camHUD, {angle: 0}, 1, {ease: FlxEase.circOut});
@@ -316,7 +285,7 @@ function stepHit(curStep)
 
 			exploders.animation.play('explosion');
 		case 896: 
-			cameramove = true;
+			cameramoveshed = true;
 			islands.visible = false;
 			rain.data.zoom.value = [20];
 			rain.data.raindropLength.value = [0.05];
@@ -330,7 +299,7 @@ function stepHit(curStep)
 			satan.y = boyfriend.y + 2000;
 			FlxTween.tween(satan, {y: boyfriend.y - 2000}, 4);
 		case 1136:
-			cameramove = false;
+			cameramoveshed = false;
 			FlxTween.tween(dad, {y: dad.y - 1000}, 1, {ease: FlxEase.quadIn});
 			FlxTween.tween(boyfriend, {y: boyfriend.y - 1000}, 1, {ease: FlxEase.quadIn});
 			camGame.fade(0xFFFFFFFF, (Conductor.stepCrochet/1000)*14);
@@ -344,7 +313,7 @@ function stepHit(curStep)
 			FlxTween.angle(boyfriend, 0, boyfriend.angle + 359.99, 3, { type: FlxTween.LOOPING } );
 			FlxTween.angle(freindly, 0, 5, 3, { type: FlxTween.PINGPONG } );
 			camGame.fade(0xFFFFFFFF, 0.1, true);
-			intensecameramove = true;
+			intensecameramoveshed = true;
 			space.visible = true;
 			earth.visible = true;
 			freindly.visible = true;
@@ -353,7 +322,7 @@ function stepHit(curStep)
 			boyfriend.y = dad.y+650;
 		case 1153: 
 			boyfriend.y = dad.y-650;
-			healthBar.setGraphicSize(800,Std.int(healthBar.height));
-			healthBar.updateHitbox();
+//			healthBar.setGraphicSize(800,Std.int(healthBar.height));
+//			healthBar.updateHitbox();
     }
 }
