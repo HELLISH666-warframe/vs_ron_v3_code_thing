@@ -20,6 +20,7 @@ Estatic.screenCenter();
 Estatic.alpha = 0;
 var chrom:CustomShader  = new CustomShader("chromatic aberration");
 public var chromeOffset = (FlxG.save.data.chromeOffset/350);
+public var chromeOffset2 = (((2 - health)*Math.sin(curStep/10))*FlxG.save.data.chromeOffset/350)/5;
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [chromeOffset*Math.sin(time)];
 	chrom.data.bOffset.value = [-chromeOffset*Math.sin(time)];

@@ -1,23 +1,23 @@
 ron 70 % DONE
 wasted 70 % DONE
 ayo 95 % DONE needs to add jordans anim
-bloodshed 70 % DONE
+bloodshed 80 % DONE
 trojan-virus 90? % DONE
 
-ron-classic 60 % DONE
-wasted-classic 80 % DONE
-ayo-classic 80 % DONE
+ron-classic DONE
+wasted-classic DONE
+ayo-classic DONE
 bloodshed-classic 98 % DONE need to fix fucked up rain
-trojan-virus-classic 97 % DONE
+trojan-virus-classic DONE
 bleeding-classic 60 % DONE
 
 tutorial DONE
-bloodbath 70 % DONE
+bloodbath 90 % DONE
 official-debate 90 % DONE
-gron 70 % DONE
+gron 90 % DONE
 difficult-powers 
 bijuu fucked up bpm need to fix
-holy-shit-dave-fnf 70 % DONE need to fix char posision
+holy-shit-dave-fnf 70 % DONE need to fix char posision_and_needs_text_to_be_comic_fucking_sans
 slammed 70 % DONE must fix stage scale and and corn_bag_thing easter egg
 ron-dsides 90 % DONE
 lights-down-remix 60 % DONE

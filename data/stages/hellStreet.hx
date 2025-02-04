@@ -4,7 +4,6 @@ import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
 import flixel.addons.display.FlxBackdrop;
 importScript("data/scripts/bloodbleed-shit");
-var evilTrail = null;
 var intensecameramove:Bool = false;
 var exploders:FlxSprite = new FlxSprite();
 var time:Float = 0;
@@ -66,7 +65,6 @@ override function update(elapsed:Float){time += elapsed;
 	iconP1.alpha = (health-0.15)/1+0.2;
 }
 function postCreate() {
-    var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); 
     satan.setGraphicSize(Std.int(satan.width * 1.2));
     satan.scrollFactor.set(0.2, 0.4);
     satan.screenCenter();
@@ -147,10 +145,10 @@ function postCreate() {
 }
 function stepHit(curStep)
 {
-//   var evilTrail = null;
-//   if (curStep >= 128 && evilTrail == null) {
-//       evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
-//     }
+   var evilTrail = null;
+   if (curStep >= 128 && evilTrail == null) {
+       evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
+     }
     if (curStep < 1151)
         Estatic.alpha = (((2-health)/3)+0.3)/2;
     else
@@ -176,11 +174,12 @@ function stepHit(curStep)
 				rain.data.raindropLength.value = [0.1];
 				rain.data.opacity.value = [0.25];
 				}
-//			evilTrail.color = FlxColor.RED;
-//			insert(members.indexOf(dad)-1, evilTrail);
+			evilTrail.color = FlxColor.RED;
+			insert(members.indexOf(dad)-1, evilTrail);
 			//bye_bye_street
 			wastedGrp.destroy();
 
+			SCREWYOU = true;
 			asdfsa.visible = true;
             mountainsbackbl.visible = true;
             hillfrontbl.visible = true;
@@ -194,15 +193,11 @@ function stepHit(curStep)
 			//triggerEventNote('Change Scroll Speed', '1.3', '1');
 			witheredRa.color = 0xFF660000;
 			if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
-				chrom.data.rOffset.value = [chromeOffset/2];
+				chrom.data.rOffset.value = [chromeOffset2/2];
 				chrom.data.gOffset.value = [0.0];
-				chrom.data.bOffset.value = [chromeOffset/2];
+				chrom.data.bOffset.value = [chromeOffset2/2];
 				}
 			cameraSpeed = 2;
-		case 129:
-			evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
-			evilTrail.color = FlxColor.RED;
-			insert(members.indexOf(dad)-1, evilTrail);
 		case 256:
 			cameraSpeed = 3;
 			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 275 ,angle: 360}, 1,{ease: FlxEase.backOut});
