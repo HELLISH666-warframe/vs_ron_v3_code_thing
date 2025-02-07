@@ -1,0 +1,19 @@
+{
+	"params": [
+		{
+			"name": "Value",
+			"type": "String",
+			"defaultValue": "0"
+		},
+        {
+			"name": "Time",
+			"type": "String",
+			"defaultValue": "0"
+		},
+        {
+			"name": "Ease",
+			"type": "DropDown('backin', 'expoout', 'linear')",
+			"defValue": "Both"
+		}
+	]
+}

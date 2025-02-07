@@ -56,7 +56,7 @@ function stepHit(curStep){if (curSong.toLowerCase() == 'bloodbath')
 		case 1056: windowmove = false;
 	}
 }
-	if (curSong.toLowerCase() == 'bloodshed-classic')
+	if (curSong.toLowerCase() == 'bloodshed-classic'){
 		Estatic.alpha = (((2-health)/3)+0.2);
 		switch(curStep) {
 			case 288:
@@ -75,6 +75,7 @@ function stepHit(curStep){if (curSong.toLowerCase() == 'bloodbath')
 				FlxTween.cancelTweensOf(satan);
 				FlxTween.angle(satan, 0, satan.angle+359.99, 3, {ease: FlxEase.circOut} );	
 }
+	}
 if (curSong.toLowerCase() == 'bleeding-classic')
 {
 	if ((curStep >= 256) && (curStep <= 512))

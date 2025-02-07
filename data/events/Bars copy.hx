@@ -1,12 +1,15 @@
 function onEvent(_) {
-	if (value1 != "regular" && value1 != "custom" && value1 != "") {
+	if (_.event.name == 'Bars copy'){
+		var value0 = _.event.params[1];
+		var value1 = _.event.params[2];
+	if (value0 != "regular" && value0 != "custom" && value0 != "") {
 		// bloodshed legacy redux zooms. they r fucked up for some reason
-		value2 = value1.split(",")[1] + "," + value1.split(",")[2] + "," + value2;
-		value1 = "custom";
+		value1 = value0.split(",")[1] + "," + value0.split(",")[2] + "," + value1;
+		value0 = "custom";
 	}
-	defaultCamZoom = Std.parseFloat(value2);
-	FlxTween.tween(camGame, {zoom: Std.parseFloat(value2.split(',')[0])}, Std.parseFloat(value2.split(',')[1]), {ease:
-	switch(value2.split(',')[2]) {
+	defaultCamZoom = Std.parseFloat(value1);
+	FlxTween.tween(camGame.zoom, {zoom: Std.parseFloat(value1.split(',')[0])}, Std.parseFloat(value1.split(',')[1]), {ease:
+	switch(value1.split(',')[2]) {
 		case 'backin': FlxEase.backIn;
 		case 'backinout': FlxEase.backInOut;
 		case 'backout': FlxEase.backOut;
@@ -44,27 +47,4 @@ function onEvent(_) {
 		case 'smootherstepinout': FlxEase.smootherStepInOut;
 		case 'smootherstepout': FlxEase.smootherStepOut;
 		case _: FlxEase.linear;
-	}});}
-
-function create()
-{
-	for(i in [bar1, bar2]) {
-		insert(0, i);
-
-		i.cameras = [camHUD];
-		i.zoomFactor = 0;
-	}
-}
-
-function onEvent(_) {
-	if (_.event.name == 'Bars') {
-		var sizeNeeded = _.event.params[0];
-		var timeNeeded = _.event.params[1];
-		var easingType = (_.event.params[2] == "In" ? FlxEase.circIn : 
-			(_.event.params[2] == "Out" ? FlxEase.circOut : boyfriend.FlxEase.circInOut)
-		);
-
-		FlxTween.tween(bar1, {y: -560 + (10 * Std.int(sizeNeeded))}, Conductor.crochet / 1000 * timeNeeded, {ease: easingType});
-		FlxTween.tween(bar2, {y: 720 + -(10 * Std.int(sizeNeeded))}, Conductor.crochet / 1000 * timeNeeded, {ease: easingType});
-	}
-}
+	}});}}

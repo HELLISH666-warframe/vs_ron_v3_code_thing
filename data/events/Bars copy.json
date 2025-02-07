@@ -2,16 +2,12 @@
 	"params": [
 		{
 			"name": "Bar Size",
-			"type": "String",
-			"defaultValue": 10
-		}, {
-			"name": "Time in Seconds",
-			"type": "String",
-			"defaultValue": "1"
-		}, {
-			"name": "Easing",
-			"type": "DropDown('In', 'Out', 'Both')",
+			"type": "DropDown('regular', 'custom', 'Both')",
 			"defaultValue": "Both"
+		}, {
+			"name": "val_2",
+			"type": "String",
+			"defaultValue": "camGame,1,0.64"
 		}
 	]
 }
