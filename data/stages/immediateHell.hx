@@ -7,7 +7,6 @@ import openfl.display.BlendMode;
 importScript("data/scripts/bloodbleed-shit");
 var explode:FlxSound;
 var time:Float = 0;
-var iTime:Float = 0;
 var exploders:FlxSprite = new FlxSprite();
 var chrom:CustomShader  = new CustomShader("chromatic aberration");
 var wig:CustomShader  = new CustomShader("glitchsmh");
@@ -61,8 +60,7 @@ function postCreate() {
 	exploders.visible = false;
 	add(exploders);
 
-
-	hellbg.alpha = 	satan.alpha = 	firebg.alpha =  blackeffect.alpha = 0;
+	hellbg.alpha = 	satan.alpha = firebg.alpha = blackeffect.alpha = 0;
     islands.visible = false;
 
 	if (FlxG.save.data.rain) {FlxG.camera.addShader(rain);
@@ -94,11 +92,8 @@ function stepHit(curStep)
 		camGame.flash(FlxColor.WHITE, 1);
 		//addShader(FlxG.camera,"glitchsmh");
 		//Shaders["glitchsmh"].shader.data.on.value = [1.];
-		if (FlxG.save.data.glitch) {
-			FlxG.camera.addShader(wig);
-			camHUD.addShader(wig);
-			wig.data.on.value = [1.];
-			}
+		if (FlxG.save.data.glitch) {FlxG.camera.addShader(wig);
+			camHUD.addShader(wig);wig.data.on.value = [1.];}
 		//bloodshedGrp.visible = false;
 		blackeffect.visible = false;
 		satan.color = FlxColor.BLACK;
@@ -142,59 +137,68 @@ function stepHit(curStep)
 		FlxTween.tween(gf, {y: gf.y + 800, angle: 45}, 1, {ease: FlxEase.quadIn});
 		healthBar.setGraphicSize(800,Std.int(healthBar.height));
 		healthBar.updateHitbox();
-		}
-		if (curStep == 640)
-		{
-			gf.visible = false;
-			cameramovebleed = false;
-			FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360}, 0.8, {ease: FlxEase.expoOut});
-		}
-		//BULLSHIT
-		if (curStep == 1408)
-		{
-			FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
-				
-			cameramovebleed = true;
-			wbg.alpha = 0;
-				
-			FlxTween.globalManager.completeTweensOf(satan);
-			FlxTween.angle(satan, 0, 359.99, 0.33, { type: FlxTween.LOOPING } );
-			exploders.animation.play('explosion');
-		}
-			if (curStep == 1664)
-			{		
-				//triggerEventNote('Change Scroll Speed', '1.45', '1');
-				camGame.flash(FlxColor.WHITE, 1);
-				cameramovebleed = false;
-				intensecameramovebleed = true;
-				if (FlxG.save.data.vhs) {camHUD.removeShader(vhs);}
-				if (FlxG.save.data.vhs) {camHUD.addShader(bleed);}
-				//addShader(camHUD, "bleedingvhs");
-				Estatic.color = FlxColor.BLACK;
-				Estatic.blend = BlendMode.NORMAL;
-				defaultCamZoom -= 0.1;
-				FlxTween.tween(islands, {y: islands.y + 25}, 1, {ease: FlxEase.circInOut, type: FlxTween.PINGPONG});
-				FlxTween.tween(dad, {y: dad.y + 25}, 1, {ease: FlxEase.circInOut, type: FlxTween.PINGPONG});
-				FlxTween.tween(boyfriend, {y: boyfriend.y + 25}, 1, {ease: FlxEase.circInOut, type: FlxTween.PINGPONG});
-			}
-			if (curStep == 1920)
-			{
-				Estatic.color = FlxColor.RED;
-				satan.color = FlxColor.WHITE;
-				//clearShader(camHUD);
-				//triggerEventNote('Change Scroll Speed', '1.2', '1');
-				camGame.flash(FlxColor.WHITE, 1);
-				FlxTween.tween(hellbg, {alpha: 0}, 1, {ease: FlxEase.circInOut});
-				FlxTween.tween(firebg, {alpha: 0}, 1, {ease: FlxEase.circInOut});
-				FlxTween.cancelTweensOf(satan);
-				FlxTween.angle(satan, satan.angle, 359.99, 0.5, {ease: FlxEase.quadIn});
-				defaultCamZoom += 0.1;
-		}
-		if (curStep > 384)
-		{
+	}
+	if (curStep == 640)
+	{
+		gf.visible = false;
+		cameramovebleed = false;
+		FlxTween.tween(camHUD, {angle: Math.floor(camHUD.angle/360)*360}, 0.8, {ease: FlxEase.expoOut});
+	}
+	//BULLSHIT
+	if (curStep == 1408)
+	{
+		FlxG.sound.play(Paths.sound('hellexplode'), 0.7);
+			
+		cameramovebleed = true;
+		wbg.alpha = 0;
+			
+		FlxTween.globalManager.completeTweensOf(satan);
+		FlxTween.angle(satan, 0, 359.99, 0.33, { type: FlxTween.LOOPING } );
+		exploders.animation.play('explosion');
+	}
+	if (curStep == 1664)
+	{		
+		//triggerEventNote('Change Scroll Speed', '1.45', '1');
+		camGame.flash(FlxColor.WHITE, 1);
+		cameramovebleed = false;
+		intensecameramovebleed = true;
+		if (FlxG.save.data.vhs) {camHUD.removeShader(vhs);}
+		if (FlxG.save.data.vhs) {camHUD.addShader(bleed);}
+		Estatic.color = FlxColor.BLACK;
+		Estatic.blend = BlendMode.NORMAL;
+		defaultCamZoom -= 0.1;
+		FlxTween.tween(islands, {y: islands.y + 25}, 1, {ease: FlxEase.circInOut, type: FlxTween.PINGPONG});
+		FlxTween.tween(dad, {y: dad.y + 25}, 1, {ease: FlxEase.circInOut, type: FlxTween.PINGPONG});
+		FlxTween.tween(boyfriend, {y: boyfriend.y + 25}, 1, {ease: FlxEase.circInOut, type: FlxTween.PINGPONG});
+	}
+	if (curStep == 1920)
+	{
+		Estatic.color = FlxColor.RED;
+		satan.color = FlxColor.WHITE;
+		//clearShader(camHUD);
+		//triggerEventNote('Change Scroll Speed', '1.2', '1');
+		camGame.flash(FlxColor.WHITE, 1);
+		FlxTween.tween(hellbg, {alpha: 0}, 1, {ease: FlxEase.circInOut});
+		FlxTween.tween(firebg, {alpha: 0}, 1, {ease: FlxEase.circInOut});
+		FlxTween.cancelTweensOf(satan);
+		FlxTween.angle(satan, satan.angle, 359.99, 0.5, {ease: FlxEase.quadIn});
+		defaultCamZoom += 0.1;
+	}
+	if (curStep > 384)
+	{
 		if (FlxG.save.data.chrom) {
 		chrom.data.rOffset.value = [chromeOffset*Math.sin(curStep*4)/2];
 		chrom.data.gOffset.value = [0.0];
 		chrom.data.bOffset.value = [chromeOffset*Math.sin(curStep*4) * -1/2];}
 	}
+}
+function destroy() {
+	wbg.destroy();
+	hellbg.destroy();
+	city.destroy();
+	mountains.destroy();
+	firebg.destroy();
+	satan.destroy();
+	street.destroy();
+	islands.destroy();
 }

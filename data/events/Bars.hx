@@ -1,12 +1,18 @@
-var bar1:FunkinSprite = new FunkinSprite(0, -560).makeGraphic(1600 * 2, 560, 0xFF000000);
-var bar2:FunkinSprite = new FunkinSprite(0, 720).makeGraphic(1600 * 2, 560, 0xFF000000);
-function create()
-{
+public var bar1:FunkinSprite = new FunkinSprite(0, -560).makeGraphic(1600 * 2, 560, 0xFF000000);
+public var bar2:FunkinSprite = new FunkinSprite(0, 720).makeGraphic(1600 * 2, 560, 0xFF000000);
+public var camOther:HudCamera;
+function postCreate() {
+	FlxG.cameras.remove(camHUD, false);
+    FlxG.cameras.add(camOther = new HudCamera(), false);
+    camOther.bgColor = 0x00000000;
+    FlxG.cameras.add(camHUD, false);
 	for(i in [bar1, bar2]) {
 		insert(0, i);
 
-		i.cameras = [camHUD];
-		i.zoomFactor = 0;
+		i.cameras = [camOther];
+		//i.zoomFactor = 0;
+		FlxTween.cancelTweensOf(bar2);
+		FlxTween.cancelTweensOf(bar1);
 	}
 }
 
@@ -15,7 +21,7 @@ function onEvent(_) {
 		var sizeNeeded = _.event.params[0];
 		var timeNeeded = _.event.params[1];
 		var easingType = (_.event.params[2] == "In" ? FlxEase.circIn : 
-			(_.event.params[2] == "Out" ? FlxEase.circOut : boyfriend.FlxEase.circInOut)
+			(_.event.params[2] == "Out" ? FlxEase.circOut : FlxEase.circInOut)
 		);
 
 		FlxTween.tween(bar1, {y: -560 + (10 * Std.int(sizeNeeded))}, Conductor.crochet / 1000 * timeNeeded, {ease: easingType});

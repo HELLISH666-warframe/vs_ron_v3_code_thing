@@ -1,69 +1,22 @@
-import flixel.addons.display.FlxBackdrop;
-import flixel.addons.transition.FlxTransitionableState;
-import flixel.util.FlxColor;
-import flixel.text.FlxText;
-import flixel.FlxG;
-import flixel.FlxCamera;
-import flixel.addons.transition.FlxTransitionableState;
-import flixel.FlxSprite;
-import flixel.effects.FlxFlicker;
-import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import flixel.util.FlxTimer;
-import FreeplayState;
-import sys.FileSystem;
-import funkin.backend.MusicBeatState;
-import flixel.group.FlxSpriteGroup;
-import funkin.backend.scripting.Script;
-import Xml;
+import funkin.menus.FreeplayState;
 
-	var image:FlxSprite;
-	var vimage:FlxSprite;
-	var intendedColor:Int;
-	var colorTween:FlxTween;
-	var extraImage:FlxSprite;
-	var classicImage:FlxSprite;
-	static var curSelectedMaster:Int = 0;
-	var cooltext:FlxText;
-	var cameraWhat:FlxCamera;
-	var cameraText:FlxCamera;
-	var time:Float = 0;
-	var loBg:FlxSprite;
-	var loBgt:FlxSprite;
-	var crt:CustomShader  = new CustomShader("fake CRT");
-	var chrom:CustomShader  = new CustomShader("chromatic aberration");
-	var weekOrder:Array<String> = [];
-	var weeks:Map<String, Array<String>> = [];
-
-
-	var time:Float = 0;
+var image:FlxSprite;
+var vimage:FlxSprite;
+var intendedColor:Int;
+var colorTween:FlxTween;
+var extraImage:FlxSprite;
+var classicImage:FlxSprite;
+static var curSelectedMaster:Int = 0;
+var cooltext:FlxText;
+var cameraWhat:FlxCamera;
+var cameraText:FlxCamera;
+var time:Float = 0;
+var loBg:FlxSprite;
+var loBgt:FlxSprite;
+var crt:CustomShader  = new CustomShader("fake CRT");
+var chrom:CustomShader  = new CustomShader("chromatic aberration");
 	function create()
 	{
-
-		for (i in Paths.getFolderContent('data/weeks')) {
-			if (!StringTools.endsWith(i, '.xml')) continue;
-			try {
-				var xml:Xml = Xml.parse(Assets.getText('data/weeks/' + i)).firstElement();
-				if (xml == null) {
-					throw 'hey you fucked up yo shit bruh! (' + i + ')';
-					continue;
-				}
-	
-				weekOrder[Std.parseInt(xml.get('index'))] = StringTools.replace(i, '.xml', '');
-			} catch(e:Exception) {
-				trace(e);
-				continue;
-			}
-		}
-
-		for (weekName in weekOrder) {
-			weeks[weekName] = [];
-	
-			var xml:Xml = Xml.parse(Assets.getText('data/weeks/' + weekName + '.xml')).firstElement();
-			for (node in xml.elements())
-				weeks[weekName].push(node.get('name'));
-		}
 		persistentUpdate = true;
 		cameraText = new FlxCamera();
 		cameraText.bgColor = 0;
@@ -144,13 +97,13 @@ if (FlxG.save.data.chrom) {cameraText.addShader(chrom);
 		cooltext = new FlxText(0, 5, 0, "", 96);
 		cooltext.setFormat(Paths.font("vcr.ttf"), 96, FlxColor.WHITE);
 		cooltext.scrollFactor.set(0,0);
-		cooltext.screenCenter();
+		cooltext.screenCenter(FlxAxes.X);
 		cooltext.cameras = [cameraText];
 		add(cooltext);
 		cooltext.y = 125;
-        cooltext.x = 550;
 
 	}
+	var accepted:Bool = false;
 	override function update(elapsed:Float)
 	{
 		time += elapsed;
@@ -161,38 +114,26 @@ if (FlxG.save.data.chrom) {cameraText.addShader(chrom);
 		switch(curSelectedMaster) {
 			case 0:
 				cooltext.text = "MAIN";
-				FreeplayState.mode = 'main';
 			case 1:
 				cooltext.text = "CLASSIC";
-				FreeplayState.mode = 'classic';
 			case 2:
 				cooltext.text = "EXTRAS";
-				FreeplayState.mode = 'extras';
 		}
+		cooltext.screenCenter(FlxAxes.X);
 		if(controls.RIGHT_P)
 		{
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			CoolUtil.playMenuSFX(0, 0.7);
 			changeSelection(1);
 		}
-
 		if(controls.LEFT_P)
 		{
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			CoolUtil.playMenuSFX(0, 0.7);
 			changeSelection(-1);
 		}
-
 		if(controls.ACCEPT)
 		{
-			Script.staticVariables.set('stupidFreeplayList', weeks[weekOrder[curSelectedMaster].split(' $ ')[0]]);
-			new FlxTimer().start(0, function() {FlxG.switchState(new ModState('menus/FreeplayMenu'));});
-
-			Script.staticVariables.set('stupidFreeplayList', weeks[weekOrder[curSelectedMaster].split(' $ ')[0]]);
-			new FlxTimer().start(0, function() {FlxG.switchState(new ModState('menus/FreeplayMenu'));});
-		} else if (controls.ACCEPT) {
-			MusicBeatState.skipTransIn = MusicBeatState.skipTransOut = true;
-	
-			Script.staticVariables.set('stupidFreeplayList', weeks[weekOrder[curSelectedMaster].split(' $ ')[0]]);
-			FlxG.switchState(new ModState('menus/FreeplayMenu'));
+			FlxG.switchState(new FreeplayState());
+			FlxG.save.data.freeplaything = curSelectedMaster;
 		}
 		if(controls.DOWN_P)
 		{
@@ -202,52 +143,48 @@ if (FlxG.save.data.chrom) {cameraText.addShader(chrom);
 		{
 			FlxG.switchState(new MainMenuState());
 		}
-
 	}
-	function changeSelection(p)
+function changeSelection(p)
+{
+	curSelectedMaster += p;
+	if (curSelectedMaster < 0)
+		curSelectedMaster = 2;
+	if (curSelectedMaster >= 3)
+		curSelectedMaster = 0;
+	FlxTween.globalManager.cancelTweensOf(image);
+	FlxTween.globalManager.cancelTweensOf(classicImage);
+	FlxTween.globalManager.cancelTweensOf(extraImage);
+	image.color = FlxColor.GRAY;
+	classicImage.color = FlxColor.GRAY;
+	extraImage.color = FlxColor.GRAY;
+
+	var newColor = 0xFF8C81D9;
+	switch (curSelectedMaster)
 	{
-		curSelectedMaster += p;
-		if (curSelectedMaster < 0)
-			curSelectedMaster = 2;
-		if (curSelectedMaster >= 3)
-			curSelectedMaster = 0;
-		FlxTween.globalManager.cancelTweensOf(image);
-		FlxTween.globalManager.cancelTweensOf(classicImage);
-		FlxTween.globalManager.cancelTweensOf(extraImage);
-		image.color = FlxColor.GRAY;
-		classicImage.color = FlxColor.GRAY;
-		extraImage.color = FlxColor.GRAY;
-
-		var newColor = 0xFF8C81D9;
-		switch (curSelectedMaster)
-		{
-			case 0:
-				loBgt.x = 866;
-				loBg.x = 433;
-				image.color = FlxColor.WHITE;
-			case 1:
-				loBgt.x = 866;
-				loBg.x = 0;
-				newColor = 0xFFC63C3f;
-				classicImage.color = FlxColor.WHITE;
-			case 2:
-				loBgt.x = 0;
-				loBg.x = 433;
-				newColor = 0xFFDCF5F4;
-				extraImage.color = FlxColor.WHITE;
-		}
-		if(newColor != intendedColor) {
-			if(colorTween != null) {
-				colorTween.cancel();
-			}
-			intendedColor = newColor;
-			colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
-				onComplete: function(twn:FlxTween) {
-					colorTween = null;
-				}
-			});
-		}
+		case 0:
+			loBgt.x = 866;
+			loBg.x = 433;
+			image.color = FlxColor.WHITE;
+		case 1:
+			loBgt.x = 866;
+			loBg.x = 0;
+			newColor = 0xFFC63C3f;
+			classicImage.color = FlxColor.WHITE;
+		case 2:
+			loBgt.x = 0;
+			loBg.x = 433;
+			newColor = 0xFFDCF5F4;
+			extraImage.color = FlxColor.WHITE;
 	}
-
-
-
+	if(newColor != intendedColor) {
+		if(colorTween != null) {
+			colorTween.cancel();
+		}
+		intendedColor = newColor;
+		colorTween = FlxTween.color(bg, 1, bg.color, intendedColor, {
+			onComplete: function(twn:FlxTween) {
+				colorTween = null;
+			}
+		});
+	}
+}

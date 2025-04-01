@@ -1,17 +1,8 @@
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup;
 import flixel.input.gamepad.FlxGamepad;
-import flixel.math.FlxPoint;
-import flixel.math.FlxRect;
 import flixel.sound.FlxSound;
-import flixel.system.ui.FlxSoundTray;
-import flixel.text.FlxText;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
-import flixel.util.FlxColor;
-import flixel.util.FlxTimer;
 import lime.app.Application;
-import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileCircle;
 import openfl.Assets;
 var done = false;
 var god:CustomShader  = new CustomShader("godray");
@@ -102,9 +93,7 @@ function pressEnter() {
 	FlxG.camera.fade(0xFF000000, 0.8, true);
 
 	transitioning = true;
-	// FlxG.sound.music.stop();
 	new FlxTimer().start(1, function(tmr:FlxTimer)
 		
-	//MusicBeatState.switchState((ClientPrefs.warnings ? new substates.WarningSubState() : new menus.DesktopMenu()));
 	FlxG.switchState(new ModState('DesktopState')));
 }

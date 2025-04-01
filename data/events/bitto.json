@@ -12,7 +12,7 @@
 		},
         {
 			"name": "Ease",
-			"type": "DropDown('backin', 'expoout', 'linear')",
+			"type": "DropDown('backin', 'expoout', 'linear','backInOut','circinout','backout')",
 			"defValue": "Both"
 		}
 	]

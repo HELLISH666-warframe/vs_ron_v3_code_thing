@@ -1,6 +1,7 @@
 <!DOCTYPE codename-engine-stage>
 <stage zoom="0.6" folder="stages/other/">
-<sprite name="bg" x="-140" y="240" sprite="clusterfunk" scroll="1"  type="loop" scale="2"  >
-             <anim name="bg" anim="BG instance " loop="true"/>
-    </sprite>
+<sprite name="bg" x="-140" y="240" sprite="clusterfunk" scroll="1"  type="loop" scale="2"  />
+         <anim name="bg" anim="BG instance " loop="true"/>
+             	<dad x="100" y="100" />
+	<boyfriend x="750" y="100"  />	
 </stage>

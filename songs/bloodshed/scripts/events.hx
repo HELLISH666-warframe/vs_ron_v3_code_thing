@@ -10,8 +10,8 @@ Estatic = new FlxSprite().loadGraphic(Paths.image('stages/deadly'));
 Estatic.scrollFactor.set();
 Estatic.screenCenter();
 Estatic.alpha = 0;
-}
-*/function stepHit(curStep) {
+}*/
+function stepHit(curStep) {
 	switch(curStep) {
 		case 1:
 		var snowemitter:FlxTypedEmitter = new FlxTypedEmitter(9999, 0, 300);

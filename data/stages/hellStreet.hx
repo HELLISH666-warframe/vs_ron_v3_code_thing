@@ -4,7 +4,6 @@ import flixel.effects.particles.FlxParticle;
 import flixel.effects.particles.FlxTypedEmitter;
 import flixel.addons.display.FlxBackdrop;
 importScript("data/scripts/bloodbleed-shit");
-var intensecameramove:Bool = false;
 var exploders:FlxSprite = new FlxSprite();
 var time:Float = 0;
 var iTime:Float = 0;
@@ -53,9 +52,7 @@ exploders.animation.addByPrefix("explosion", "explosion",  24, false);
 exploders.scale.set(5.8, 5.8);
 exploders.scrollFactor.set(0, 0);
 exploders.screenCenter();
-var explode:FlxSound;
-explode = FlxG.sound.load(Paths.sound("hellexplode"));
-
+var explode:FlxSound = FlxG.sound.load(Paths.sound("hellexplode"));
 
 override function update(elapsed:Float){time += elapsed;
 	chrom.data.rOffset.value = [chromeOffset*Math.sin(time)];
@@ -175,7 +172,6 @@ function stepHit(curStep)
 				rain.data.opacity.value = [0.25];
 				}
 			evilTrail.color = FlxColor.RED;
-			insert(members.indexOf(dad)-1, evilTrail);
 			//bye_bye_street
 			wastedGrp.destroy();
 
@@ -198,6 +194,9 @@ function stepHit(curStep)
 				chrom.data.bOffset.value = [chromeOffset2/2];
 				}
 			cameraSpeed = 2;
+		case 129:
+			insert(members.indexOf(dad)-1, evilTrail);
+			healthBar.createFilledBar(FlxColor.fromRGB(19,19,19), FlxColor.fromRGB(195, 117, 66));
 		case 256:
 			cameraSpeed = 3;
 			for (i in 0...playerStrums.members.length) FlxTween.tween(playerStrums.members[i], {x: playerStrums.members[i].x - 275 ,angle: 360}, 1,{ease: FlxEase.backOut});
@@ -214,7 +213,8 @@ function stepHit(curStep)
 				FlxTween.tween(strumLineNotes.members[i], { x: defaultStrumX[i] - 275,angle: 360}, 1, {ease: FlxEase.backOut});
 				defaultStrumX[i] -= 275;
 			}
-*/		case 320:
+*/
+		case 320:
 			FlxTween.tween(satan, {y: satan.y - 700, angle: 359.99}, 3, {ease: FlxEase.circInOut});
 		case 368:
 			defaultCamZoom = 1;

@@ -1,1 +1,3 @@
-nuh uh
+function postCreate() {
+    evilbar();
+}

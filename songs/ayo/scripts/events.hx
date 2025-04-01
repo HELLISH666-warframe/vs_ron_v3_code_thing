@@ -16,10 +16,11 @@ function bruh()
 			}
 		});
 	}
+function postCreate() {
+	camGame.color = 0xFFAAAAAA;
+}
 function stepHit(curStep) {
 	switch (curStep) {
-		case 1:
-			camGame.fade(0xFF000000, 12.8, true);
 		case 128:
 			defaultCamZoom = 0.7;
 			camGame.color = FlxColor.WHITE;
@@ -48,4 +49,6 @@ function stepHit(curStep) {
 			FlxG.camera.flash(FlxColor.WHITE, 1);
 	}
 }
-//function onSongStart(){}
+function onSongStart() {
+	camGame.fade(0xFF000000, 12.8, true);
+}

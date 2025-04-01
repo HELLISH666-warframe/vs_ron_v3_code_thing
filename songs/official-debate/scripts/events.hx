@@ -1,4 +1,8 @@
-function postCreate(){}
+function postCreate(){
+	leftBar.flipX = true;
+	rightBar.flipX = true;
+	hpBorder.flipX = true;s
+}
 
 function stepHit(curStep) {
 	switch(curStep) {

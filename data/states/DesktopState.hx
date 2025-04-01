@@ -11,11 +11,11 @@ import flixel.ui.FlxButton;
 var chromeOffset = (FlxG.save.data.chromeOffset/350);
 var icons:Map<String, Dynamic> = [
 	"discord" => "https://discord.gg/ron-874366610918473748",
-	"random" => (new ModState('MasterFreeplayState'))
+	"random" => "https://www.facebook.com",
 	"settings" => new OptionsMenu(),
-	"freeplay" => new FreeplayState(),
+	"freeplay" => (new ModState('MasterFreeplayState'))
 	"story mode" => "story mode is idiot",
-	"credits" => (new ModState('CreditsRon')),
+	"credits" => (new ModState('CreditsRon'))
 ];
 var camText:FlxCamera;
 public var leftState:Bool = false;

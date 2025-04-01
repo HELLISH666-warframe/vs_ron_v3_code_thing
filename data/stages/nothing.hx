@@ -58,7 +58,7 @@ function stepHit(step)
 			snowemitter.add(p);
 			snowemitter.add(p2);
 		}
-        insert(7, snowemitter);
+        insert(9, snowemitter);
 		snowemitter.start(false, 0.05);
 
 		graadienter.color = FlxColor.WHITE;

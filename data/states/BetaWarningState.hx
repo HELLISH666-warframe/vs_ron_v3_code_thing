@@ -5,6 +5,7 @@ var crt:CustomShader  = new CustomShader("fake CRT");
 var time:Float = 0;
 var timer:Int;
 var mmtw:FlxSound = new FlxSound();
+var chromeOffset = (FlxG.save.data.chromeOffset/350);
 
 override function postCreate() {
 
@@ -36,9 +37,9 @@ override function postCreate() {
 	}
 	if (FlxG.save.data.vhs) {FlxG.camera.addShader(vhs);}
 	if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);
-		chrom.data.rOffset.value = [1/2];
+		chrom.data.rOffset.value = [chromeOffset/2];
 		chrom.data.gOffset.value = [0.0];
-		chrom.data.bOffset.value = [1 * -1];
+		chrom.data.bOffset.value = [chromeOffset * -1];
 	}
 }
 override function update(elapsed:Float){time += elapsed;

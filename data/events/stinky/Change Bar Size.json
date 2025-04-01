@@ -1,0 +1,13 @@
+{
+	"params": [
+		{
+			"name": "Bar Size",
+			"type": "String",
+			"defaultValue": 10
+		}, {
+			"name": "Time in Seconds",
+			"type": "String",
+			"defaultValue": "1"
+		}
+	]
+}

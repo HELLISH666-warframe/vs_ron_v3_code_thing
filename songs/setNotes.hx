@@ -34,7 +34,7 @@ function create(){
         case 'trojan-virus-classic':{
             noteName.text = 'RON_NOTES';
         }
-        case 'Bleeding-classic':{
+        case 'bleeding-classic':{
             noteName.text = 'ronhell';
         }
         case 'Bloodbath':{

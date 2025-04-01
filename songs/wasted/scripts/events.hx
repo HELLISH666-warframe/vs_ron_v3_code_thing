@@ -6,6 +6,8 @@ var wig:CustomShader  = new CustomShader("glitchsmh");
 var chrom:CustomShader  = new CustomShader("chromatic aberration");
 var moveing:Bool = false;
 
+var defaultStrumY:Float = 50;
+
 function postCreate() {
 	fog = new FlxSprite().loadGraphic(Paths.image('stages/pissedStreet/fog'));
 	fog.scale.set(2, 2);
@@ -29,7 +31,7 @@ for (i in 0...playerStrums.members.length) playerStrums.members[i].y += Math.sin
 	}
 }
 function beatHit(curBeat) {
-	if ((curBeat >= 81) && (curBeat < 146))
+	if (((curStep >= 320) && (curStep <= 576)) || ((curStep >= 832) && (curStep <= 1088)))
 		{
 			for (i in 0...4)
 			{ 
@@ -39,13 +41,13 @@ function beatHit(curBeat) {
 									
 					if (curBeat % 2 == 0)
 					{
-						var angler = (i%2 ? 10 : -10) * ((curBeat%4==2) ? -1 : 1);
+						var angler = (i%1 ? 7 : -7) * ((curBeat%8==0) ? -7 : 7);
 	
-						FlxTween.tween(member, {angle: angler, y: member.y + (PlayState.downscroll ? 10 : -10)}, 0.125, {
+						FlxTween.tween(member, {y: angler + (PlayState.downscroll ? 10 : -10)}, 0.125, {
 								ease: FlxEase.quartIn,
 								onComplete: function(twn:FlxTween)
 								{
-									FlxTween.tween(member, {angle: 0, y: member.y - (PlayState.downscroll ? 10 : -10)}, 0.33, {ease: FlxEase.circInOut});
+									FlxTween.tween(member, {y: 20 - (PlayState.downscroll ? 10 : -10)}, 0.33, {ease: FlxEase.circInOut});
 								}
 							});
 					}
@@ -130,6 +132,8 @@ function stepHit(step)
 		chrom.data.gOffset.value = [0.0];
 		chrom.data.bOffset.value = [chromeOffset * -1];
 		}
+		for (i in 0...playerStrums.members.length) playerStrums.members[i].y = defaultStrumY;
+		for (i in 0...cpuStrums.members.length) cpuStrums.members[i].y = defaultStrumY;
 		case 1488:
 		camGame.visible = camHUD.visible = true;
 	}

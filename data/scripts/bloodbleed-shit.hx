@@ -61,4 +61,7 @@ if (FlxG.save.data.chrom) {FlxG.camera.addShader(chrom);camHUD.addShader(chrom);
 	add(fx);
 	add(Estatic);
 	FlxTween.tween(Estatic, {"scale.x":1.2,"scale.y":1.2}, Conductor.crochet / 1000, {ease: FlxEase.quadInOut, type: FlxEase.PINGPONG});
+	{if (dad.curCharacter == 'hellron')
+//	if (curStage == 'hell')
+GameOverSubstate.script = 'data/scripts/gameovers/slap';}
 }

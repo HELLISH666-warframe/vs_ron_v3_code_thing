@@ -16,6 +16,7 @@ var crt = new CustomShader('fake CRT');
 var ray = new CustomShader('godray');
 var iTime:Float = 0;
 var time:Float = 0;
+var defaultStrumY:Float = 50;
 public var camOverlay:FlxCamera;
 camOverlay = new FlxCamera();
 if (FlxG.save.data.rain) {FlxG.camera.addShader(rain);rain.data.zoom.value = [32];
@@ -47,13 +48,6 @@ function postCreate() {
 	street.visible = hillfront.visible = mountains.visible = city.visible = sky.visible = rain3.visible = true;
 	rain2.visible = true;
 	rain1.visible = true;
-//	for (i in 1...4) {
-//		var rainshader = new CustomShader("rain");
-//		rainshader.zoom = (i / 3) * 70;
-//		rainshader.raindropLength = 0.1 / i;
-//		rainshader.opacity = 0.25;
-//		__script__.get("rain" + i).shader = rainshader;
-//	}
 }
 function stepHit(step)
 {
@@ -134,12 +128,6 @@ function stepHit(step)
 			boyfriend.angle = 0;
 			dad.angle = 0;
 
-//			startCharacterPos(boyfriend);
-//			startCharacterPos(gf, true);
-//			startCharacterPos(dad);
-		
-//			triggerEventNote('Change Character', 'bf', 'bfDark');
-//			triggerEventNote('Change Character', 'gf', 'gfDark');
 		case 1488:
 //		if (FlxG.save.data.crt) {FlxG.camera.addShader(crt);camHUD.addShader(crt);}
 		if (FlxG.save.data.rain) {rain.data.zoom.value = [32];
@@ -150,9 +138,5 @@ function stepHit(step)
 		defaultCamZoom = 1;
 		camGame.alpha = 1;
 		FlxG.camera.flash(FlxColor.WHITE, 1, null, true);
-//		triggerEventNote('Change Bars Size', '12', '0.01');
-//		triggerEventNote('Change Scroll Speed', '1.2', '1');
 	}
 }
-//function update() 
-//	for (i in 1...4) __script__.get("rain" + i).shader.iTime = Conductor.songPosition / 1000;

@@ -2,17 +2,17 @@ import funkin.backend.utils.FunkinParentDisabler;
 import funkin.options.Options;
 import funkin.options.OptionsMenu;
 import funkin.options.keybinds.KeybindsOptions;
+import funkin.editors.charter.Charter;
 import Sys;
 
-var parentDisabler:FunkinParentDisabler;
 var optionArray = ["resume song", "restart song", "shut down", "log off"];
 var curSelected = 0;
 var optionButtons = [];
 var pauseMusic:FlxSound;
 var bit:CustomShader  = new CustomShader("8bitcolor");
 var camPause:FlxCamera;
-override function create() {
-    parentDisabler = new FunkinParentDisabler();
+function postCreate() {
+    var parentDisabler = new FunkinParentDisabler();
 	add(parentDisabler);
 
 	camPause = new FlxCamera();
@@ -60,7 +60,9 @@ override function update(elapsed:Float) {
 					case "log off":
 						PlayState.deathCounter = 0;
 						PlayState.seenCutscene = false;
-						if(PlayState.isStoryMode) {
+						if (PlayState.chartingMode && Charter.undos.unsaved)
+                            PlayState.instance.saveWarn(false);
+						else if(PlayState.isStoryMode) {
 							FlxG.switchState(new ModState("DesktopState"));
 						} else {
                             FlxG.switchState(PlayState.isStoryMode ? new StoryMenuState() : new FreeplayState());
@@ -80,4 +82,5 @@ bit.data.enablethisbitch.value = [1.];}
 function destroy() {
     FlxG.camera.removeShader(bit);
     FlxG.sound.destroySound(pauseMusic);
+	FlxG.cameras.remove(camPause);
 }
