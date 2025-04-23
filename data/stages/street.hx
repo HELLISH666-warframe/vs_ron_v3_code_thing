@@ -1,21 +1,7 @@
 function postCreate() {
 	
-	sky.visible = true;
-	bigcloud.visible = true;
-	backcity.visible = true;
-	city.visible = true;
-    backmountain.visible = true;
-	mountain.visible = true;
-	hill.visible = true;
-	street.visible = true;
-	skywasted.visible = false;
-	rain3.visible = false;
-	citywasted.visible = false;
-	mountainswasted.visible = false;
-    hillfrontwasted.visible = false;
-	rain2.visible = false;
-	streetwasted.visible = false;
-	rain1.visible = false;
+    for(i in [skywasted,rain3,citywasted,mountainswasted,hillfrontwasted,rain2,streetwasted,rain1])
+	i.visible = false;
     for (i in 1...4) {
 		var rainshader = new CustomShader("rain");
 		rainshader.zoom = (i / 3) * 70;
@@ -38,16 +24,10 @@ function stepHit(step)
             hill.destroy();
             street.destroy();
 
-            skywasted.visible = true;
-            rain3.visible = true;
-            citywasted.visible = true;
-            mountainswasted.visible = true;
-            hillfrontwasted.visible = true;
-            rain2.visible = true;
-            streetwasted.visible = true;
-            rain1.visible = true;
-            }
-        }
-        function update() 
-            for (i in 1...4) __script__.get("rain" + i).shader.iTime = Conductor.songPosition / 1000;
+            for(i in [skywasted,rain3,citywasted,mountainswasted,hillfrontwasted,rain2,streetwasted,rain1])
+            i.visible = true;
+    }
+}
+function update() 
+for (i in 1...4) __script__.get("rain" + i).shader.iTime = Conductor.songPosition / 1000;
         

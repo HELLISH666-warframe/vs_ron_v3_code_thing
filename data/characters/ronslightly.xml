@@ -1,9 +1,8 @@
 <!DOCTYPE codename-engine-character>
-<!-- Made with WizardMantis's Character Converter on https://codename-engine.com/ -->
-<character sprite="newcharstest/ronPissed" icon="ronslightly" color="#aa8900" y="450" camx="-550" camy="-560" scale="0.5">
-	<anim name="idle" anim="ronPissed idle" x="1410" y="1180"/>
-	<anim name="singLEFT" anim="ronPissed left" x="1444" y="1166"/>
-	<anim name="singDOWN" anim="ronPissed down" x="1428" y="1188"/>
-	<anim name="singUP" anim="ronPissed up" x="1402" y="1194"/>
-	<anim name="singRIGHT" anim="ronPissed right" x="1386" y="1182"/>
+<character x="1700" y="2000" sprite="newcharstest/ronPissed" camx="-2650" camy="-2200" icon="ronslightly" color="#AA8900">
+	<anim name="singRIGHT" anim="right" x="1744" y="1708" fps="24" loop="false"/>
+	<anim name="idle" anim="idle" x="1710" y="1754" fps="24" loop="false"/>
+	<anim name="singLEFT" anim="left" x="1864" y="1704" fps="24" loop="false"/>
+	<anim name="singDOWN" anim="down" x="1762" y="1689" fps="24" loop="false"/>
+	<anim name="singUP" anim="up" x="1737" y="1760" fps="24" loop="false"/>
 </character>

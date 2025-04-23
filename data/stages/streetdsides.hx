@@ -1,43 +1,17 @@
 function postCreate() {
-	
-	conall_sky.visible = true;
-	conall_bgBehind.visible = true;
-	conall_bg.visible = true;
-	conall_bucket.visible = true;
-    conallwasted_sky.visible = false;
-	rain3.visible = false;
-	conallwasted_bgBehind.visible = false;
-	conallwasted_bg.visible = false;
-    conallwasted_bucket.visible = false;
-	rain2.visible = false;
-	rain1.visible = false;
-    for (i in 1...4) {
-		var rainshader = new CustomShader("rain");
-		rainshader.zoom = (i / 3) * 70;
-		rainshader.raindropLength = 0.1 / i;
-		rainshader.opacity = 0.25;
-		__script__.get("rain" + i).shader = rainshader;
-	}
+    for(i in [wasted_sky,wasted_bgBehind,wasted_bg,wasted_bucket])
+    i.visible = false;
+    conall_bg.antialiasing=true;
 }
-function stepHit(step)
-{
+function stepHit(step){
     switch (curStep)
     {
-         //stage 2
-        case 1315:
-            conall_sky.destroy();
-			conall_bgBehind.destroy();
-			conall_bg.destroy();
-            conall_bucket.destroy();
-            conallwasted_sky.visible = true;
-            rain3.visible = true;
-            conallwasted_bgBehind.visible = true;
-            conallwasted_bg.visible = true;
-            conallwasted_bucket.visible = true;
-            rain2.visible = true;
-            rain1.visible = true;
+    case 1315:
+        conall_sky.destroy();
+		conall_bgBehind.destroy();
+		conall_bg.destroy();
+        conall_bucket.destroy();
+        for(i in [wasted_sky,wasted_bgBehind,wasted_bg,wasted_bucket])
+            i.visible = true;
     }
 }
-        function update() 
-            for (i in 1...4) __script__.get("rain" + i).shader.iTime = Conductor.songPosition / 1000;
-        

@@ -1,6 +1,6 @@
 <!DOCTYPE codename-engine-character>
 <character x="-190" y="350" sprite="bfGeometrydash" flipX="true" camy="100" isPlayer="true" icon="bf" color="#0D3BFD" gameOverChar="meta" isGF="false">
-	<anim name="idle" anim="idle instance 1" x="-5" y="0" fps="24" loop="false"/>
+	<anim name="idle" anim="idle instance 1" x="-5" y="0" fps="24" loop="false" indices="6"/>
 	<anim name="singUP" anim="up instance 1" x="-29" y="27" fps="24" loop="false"/>
 	<anim name="singLEFT" anim="left instance 1" x="12" y="-2" fps="24" loop="false"/>
 	<anim name="singRIGHT" anim="right instance 1" x="-42" y="-6" fps="24" loop="false"/>

@@ -19,14 +19,10 @@ var creditPath = Paths.file("songs/" + curSong + "/credits.txt");
 var creditText = "ItsLJcool stole the credits";
 if (Assets.exists(creditPath)) creditText = Assets.getText(creditPath);
 
-
 credits = new FlxText(0, 0, 0, creditText);
 credits.setFormat(Paths.font("w95.otf"), 24, FlxColor.WHITE, "center", FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 credits.scrollFactor.set();
 credits.screenCenter();
-
-
-
 
 creditBG = new FlxSprite().makeGraphic(600, FlxG.height + 10, FlxColor.BLACK);
 creditBG.scrollFactor.set();

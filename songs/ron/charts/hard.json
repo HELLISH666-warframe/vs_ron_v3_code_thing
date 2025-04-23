@@ -172,9 +172,9 @@
 			"params": [
 				0,
 				"ronslightly",
-				false,
+				true,
 				"0,0",
-				true
+				false
 			],
 			"time": 115058.823529412,
 			"name": "Change Character"
@@ -3080,11 +3080,11 @@
 					"type": 0
 				}
 			],
+			"visible": true,
+			"type": 0,
 			"characters": [
 				"ron"
-			],
-			"visible": true,
-			"type": 0
+			]
 		},
 		{
 			"position": "boyfriend",
@@ -4273,7 +4273,7 @@
 				},
 				{
 					"id": 1,
-					"sLen": 617.647058823466,
+					"sLen": 617.647058823459,
 					"time": 60705.8823529411,
 					"type": 0
 				},
@@ -5910,22 +5910,22 @@
 					"type": 0
 				}
 			],
+			"visible": true,
+			"type": 1,
 			"characters": [
 				"bf"
-			],
-			"visible": true,
-			"type": 1
+			]
 		},
 		{
 			"position": "girlfriend",
 			"notes": [],
+			"visible": false,
+			"type": 2,
 			"characters": [
 				"gf"
-			],
-			"visible": false,
-			"type": 2
+			]
 		}
 	],
-	"stage": "street",
+	"stage": "street-wip",
 	"noteTypes": []
 }

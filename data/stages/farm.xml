@@ -10,5 +10,5 @@
 	<sprite name="cornBag" x="1100" y="500" sprite="cornbag" scroll="1" />
 	<sprite name="sign" x="0" y="350" sprite="sign" />
    	<dad />
-   	<boyfriend />
+   	<boyfriend x="1300" y="600"/>
 </stage>

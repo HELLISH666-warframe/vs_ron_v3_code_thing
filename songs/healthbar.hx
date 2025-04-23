@@ -24,16 +24,13 @@ public function evilbar() {
 
 function create() {
     healthBarBG1 = new FlxSprite().loadGraphic(Paths.image('game/healthbar/healthBarintheworks'));
-    healthBarBG1.y = FlxG.height * 0.89;
-    healthBarBG1.screenCenter(FlxAxes.X);
-    healthBarBG1.scale.set(1,.85);
     healthBarBG2 = new FlxSprite().loadGraphic(Paths.image('game/healthbar/healthBarintheworks'));
-    healthBarBG2.y = FlxG.height * 0.89;
-    healthBarBG2.screenCenter(FlxAxes.X);
-    healthBarBG2.scale.set(1,.85);
-    
-    healthBar1 = new FlxBar(healthBarBG1.x + 4, healthBarBG1.y + 4, 'RIGHT_TO_LEFT', Std.int(healthBarBG1.width - 8), Std.int(healthBarBG1.height - 8), this,
-    'health', 0, 2);
+    for(i in [healthBarBG1,healthBarBG2]){
+        i.screenCenter(FlxAxes.X);
+        i.y = FlxG.height * 0.87;
+        i.scale.set(1,.85);
+    }
+    healthBar1 = new FlxBar(healthBarBG1.x + 4, healthBarBG1.y + 4, '', Std.int(healthBarBG1.width - 8), Std.int(healthBarBG1.height - 8), health, 0, 2);
 }
 function postUpdate(elapsed:Float) {
     healthBarBG1.clipRect = new FlxRect((2-health)/2*healthBarBG1.width,0,health/2*healthBarBG1.width,healthBarBG1.height);

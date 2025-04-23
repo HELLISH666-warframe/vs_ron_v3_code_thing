@@ -1,16 +1,13 @@
 <!DOCTYPE codename-engine-stage>
 <stage zoom="0.8" folder="stages/">
-    <sprite name="wbg" x="-800" y="-400" sprite="hellStreet/bloodshed_sky" scroll="0.1"/>
+    <sprite name="wbg" x="-140" y="-9" sprite="hellStreet/bloodshed_sky" scroll="0.1" scale="2" />
     <sprite name="hellbg" x="340" y="340" sprite="classicStages/hell_bg" scroll="0.9"  type="loop" />
         <anim name="hell_bg" anim="idle instance " loop="true"/>
-   	<sprite name="city" x="-290" y="-400" sprite="hellStreet/bloodshed_city" scroll="0.25"/>
-   	<sprite name="mountains" x="-800" y="-400" sprite="hellStreet/bloodshed_mountains" scroll="0.3"/>
+    <sprite name="city" x="-146" y="55" sprite="hellStreet/bloodshed_city" scroll="0.25" scale="2"/>
+     <sprite name="mountains" x="-130" y="250" sprite="hellStreet/bloodshed_mountains" scroll="0.3" scale="2" />
     <sprite name="firebg" x="300" y="-400" sprite="hellStreet/escape_fire" scroll="1" type="loop" scale="6" />
          <anim name="escape_fire" anim="fire instance " loop="true"/>
-    <sprite name="satan" x="70" y="-200" sprite="hellStreet/hellRon_satan" />
-   	<sprite name="street" x="-800" y="-400" sprite="hellStreet/bloodshed_street"/>
-    <sprite name="islands" x="-800" y="-640" sprite="hellStreet/bloodshed_streetBroken" scroll="1" scale="1" />
-     <girlfriend />
-	<dad />
-   	<boyfriend />
+    <sprite name="satan" x="70" y="-200" sprite="hellStreet/hellRon_satan" scrollx="0.2" scrolly="0.4"/>
+     <sprite name="street" x="0" y="173" sprite="hellStreet/bloodshed_street" scale="2.2" />
+    <sprite name="islands" x="230" y="620" sprite="hellStreet/bloodshed_streetBroken" scroll="1" scale="2" />
 </stage>

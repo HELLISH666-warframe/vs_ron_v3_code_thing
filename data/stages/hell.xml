@@ -5,5 +5,5 @@
 	<sprite name="firebg" x="440" y="240" sprite="hellStreet/escape_fire" scroll="0.9"  type="loop" scale="6"/>
         <anim name="escape_fire" anim="fire instance " loop="true"/>
 	<sprite name="satan" x="1" y="-100" sprite="hellStreet/hellRon_satan" scale="1.2"    scroll="0.9" />
-	<sprite name="hellRon_ground" x="-300" y="-300" sprite="classicStages/hellRon_ground"    scale="1.2" scroll="1" />
+	<sprite name="hellRon_ground" x="200" y="260" sprite="classicStages/hellRon_ground"    scale="2.2" scroll="1" />
 </stage>

@@ -1,18 +1,18 @@
 <!DOCTYPE codename-engine-stage>
 <stage zoom="0.9" folder="stages/">
-    <sprite name="bruj" x="300" y="300" sprite="trojan-virus/bruj" scroll="1" type="loop" scale="5"   />
+    <sprite name="bruj" x="300" y="300" sprite="trojan-virus/bruj" scroll="1" type="loop" scale="5" />
          <anim name="bruj" anim="bruj" loop="true"/>
-	<sprite name="sky" x="-800" y="-400" sprite="madStreet/ayo_sky" />
-	<sprite name="mountainsback" x="-800" y="-400" sprite="madStreet/ayo_mountainsback" />
+    <sprite name="sky" x="-140" y="-9" sprite="madStreet/ayo_sky" scale="2" />
+    <sprite name="mountainsback" x="-146" y="-100" sprite="madStreet/ayo_mountainsback" scale="2" />
 	<sprite name="mountains" x="-800" y="-400" sprite="madStreet/ayo_mountains" />
-	<sprite name="hillfront" x="-800" y="-400" sprite="madStreet/ayo_hillfront" />
-	<sprite name="street" x="-800" y="-410" sprite="madStreet/ayo_street" />
-    <sprite name="platform" x="-600" y="70" sprite="trojan-virus/platform" scroll="1"  />
-    	<girlfriend />
-    	<dad />
-	<boyfriend />
+    <sprite name="hillfront" x="-130" y="425" sprite="madStreet/ayo_hillfront" scale="2" />
+    <sprite name="street" x="0" y="173" sprite="madStreet/ayo_street" scale="2.2" />
+    <sprite name="platform" x="200" y="900" sprite="trojan-virus/platform" scroll="1" scale="2"/>
+    <girlfriend/>
+    <dad/>
+	<boyfriend/>
     <sprite name="atelo_popup_animated" x="300" y="300" sprite="trojan-virus/atelo_popup_animated" scroll="1" type="loop" scale="4" />
          <anim name="popups instance " anim="popups instance " loop="true"/>
-    <sprite name="error" x="1000" y="900" sprite="trojan-virus/error" scroll="1" type="loop" scale="2"   />
+    <sprite name="error" x="1000" y="900" sprite="trojan-virus/error" scroll="1" type="loop" scale="2" />
          <anim name="error instance  " anim="error instance " loop="true"/>
 </stage>

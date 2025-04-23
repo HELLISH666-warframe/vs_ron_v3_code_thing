@@ -1,4 +1,0 @@
-<icon>
-	<anim x="0" loop="false" anim="BFS0" y="1" fps="24" name="normal"/>
-	<anim x="1" loop="true" anim="BFSLosing" y="-6" fps="24" name="losing"/>
-</icon>

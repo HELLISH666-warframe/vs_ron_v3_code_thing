@@ -1,7 +1,6 @@
 <!DOCTYPE codename-engine-stage>
-<stage zoom="0.7" name="tgt" folder="stages/other/" startCamPosY="600" startCamPosX="1000">
-	<sprite name="tgt"               x="-600" y="-450"   sprite="tgt"       scroll="0.9" />
-	<girlfriend />
-	<dad />
-	<boyfriend />	
+<stage zoom="0.9" name="tgt" folder="stages/other/" startCamPosY="600" startCamPosX="1000">
+	<sprite name="tgt" x="-200" y="-90" sprite="tgt" scale="2"/>
+	<dad camxoffset="-60" camyoffset="140"/>
+	<boyfriend camxoffset="-60"/>	
 </stage>

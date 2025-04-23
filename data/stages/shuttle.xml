@@ -1,7 +1,6 @@
 <!DOCTYPE codename-engine-stage>
-<stage zoom="0.7" name="shuttle" folder="stages/other/" startCamPosY="600" startCamPosX="1000">
-	<girlfriend />
-	<sprite name="bg_less_concept"         scale="1"      x="-400" y="-55"   sprite="bg_less_concept"       scroll="1" />
+<stage zoom="0.9" name="shuttle" folder="stages/other/" startCamPosY="600" startCamPosX="1000">
+	<sprite name="bg_less_concept" scale="2" x="40" y="130" sprite="bg_less_concept" scroll="0.9" />
 	<dad />
 	<boyfriend />	
 </stage>

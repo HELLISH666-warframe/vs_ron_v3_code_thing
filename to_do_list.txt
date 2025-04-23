@@ -16,22 +16,22 @@ bloodbath 90 % DONE
 official-debate 90 % DONE
 gron 90 % DONE
 difficult-powers 
-bijuu fucked up bpm need to fix
+bijuu  90 % DONE
 holy-shit-dave-fnf 70 % DONE need to fix char posision_and_needs_text_to_be_comic_fucking_sans
 slammed 70 % DONE must fix stage scale and and corn_bag_thing easter egg
 ron-dsides 90 % DONE
-lights-down-remix 60 % DONE
+lights-down-remix 90 % DONE
 pretty-wacky  DONE nMOTHA_FUCKA
 certified-champion DONE
-rong-aisle 80 % DONE
+rong-aisle DONE__i_think
 bloodshed-legacy-redux 40 % DONE
-cluster-funk 98 % DONE NEED TO CODE BFGD DEATH
+cluster-funk 99 % DONE NEED TO CODE BFGD DEATH
 oh-my-god-hes-ballin DONE
 awesome-ron DONE
 fardventure fuck you
-bleeding 90 % DONE
+bleeding 97 % DONE
 
-freeplay 40 % DONE
+freeplay 80 % DONE
 
 desktop 80 % DONE
 
@@ -42,3 +42,16 @@ CREDITS_COMPLETLY_UN-FINICHED_HOW_THE_FUCK_DO_I_CODE_STATES
 MUST FIX DIALOGE VIDEO OVERLAP SOFT-LOCK
 
 use_classic_hellron_as_one_char_to_save_space
+
+//fucking_dumb_sprite_sheet_scaling
+ballerorina
+ron
+bloodbathnew
+conall
+bloodbathnew
+hellron-drippin
+ronMad
+ronDave
+ron-classic-wasted
+ronslightly
+presidentTrump

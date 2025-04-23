@@ -3,6 +3,7 @@ import funkin.backend.utils.WindowUtils;
 import funkin.menus.MainMenuState;
 import funkin.menus.StoryMenuState;
 import lime.graphics.Image;
+allowGitaroo = false;
 function new()
 {   
     if (FlxG.save.data.glitch == null) FlxG.save.data.glitch = true;
@@ -20,13 +21,13 @@ function new()
     if (FlxG.save.data.flashing == null) FlxG.save.data.flashing = true;
     if (FlxG.save.data.dev == null) FlxG.save.data.dev = false;
 
+    if (FlxG.save.data.effort == null) FlxG.save.data.effort = true;
 }
-public var chromeOffset = (FlxG.save.data.chromeOffset/350);
 function update() {
     FlxG.autoPause = false;
-    Main.framerateSprite.codenameBuildField.text = "REAL Memory Counter: " + 193759 + "TB\nThe REAL FL Studio 21.1.1.3750";
+    Main.framerateSprite.codenameBuildField.text = "STINKY_AND_MESSY" + "\nCODE_BUILD";
 }
-WindowUtils.winTitle = "versus literly every fanmade mod ever";
+WindowUtils.winTitle = "vs literally every fnf fan mod ever";
 window.setIcon(Image.fromBytes(Assets.getBytes(Paths.image('icon'))));
 var redirectStates:Map<FlxState, String> = [
     MainMenuState => "DesktopState", 
@@ -37,4 +38,15 @@ function preStateSwitch() {
 	for (redirectState in redirectStates.keys())
 		if (FlxG.game._requestedState is redirectState)
 			FlxG.game._requestedState = new ModState(redirectStates.get(redirectState));
+}
+function postUpdate(elapsed:Float) {
+    if (FlxG.keys.justPressed.F12)  FlxG.fullscreen = !FlxG.fullscreen;   
+}
+//thank_you_frakits_i_had_NO_idea_this_was_possible
+function update(elapsed:Float)
+if (FlxG.keys.justPressed.F6) {
+FlxG.bitmap.clearCache();
+FlxG.bitmap._cache.clear();
+Paths.tempFramesCache.clear();
+FlxG.resetState();
 }

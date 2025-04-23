@@ -1,5 +1,5 @@
-public var bar1:FunkinSprite = new FunkinSprite(0, -560).makeGraphic(1600 * 2, 560, 0xFF000000);
-public var bar2:FunkinSprite = new FunkinSprite(0, 720).makeGraphic(1600 * 2, 560, 0xFF000000);
+public var bar1:FlxSprite = new FlxSprite(0, -560).makeSolid(1600 * 2, 560, 0xFF000000);
+public var bar2:FlxSprite = new FlxSprite(0, 720).makeSolid(1600 * 2, 560, 0xFF000000);
 public var camOther:HudCamera;
 function postCreate() {
 	FlxG.cameras.remove(camHUD, false);

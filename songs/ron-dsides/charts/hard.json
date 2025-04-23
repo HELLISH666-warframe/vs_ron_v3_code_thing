@@ -91,8 +91,148 @@
 			"params": [
 				0
 			],
+			"name": "Camera Movement",
+			"time": 28839.7790055249
+		},
+		{
+			"params": [
+				1
+			],
+			"name": "Camera Movement",
+			"time": 30248.6187845304
+		},
+		{
+			"params": [
+				0
+			],
+			"name": "Camera Movement",
+			"time": 35883.9779005525
+		},
+		{
+			"params": [
+				1
+			],
+			"name": "Camera Movement",
+			"time": 38784.5303867403
+		},
+		{
+			"params": [
+				0
+			],
 			"time": 42486.4864864865,
 			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 48397.7900552486,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 53701.6574585635,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 58425.4143646409,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 63812.1546961326,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 69116.0220994475,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 74668.5082872928,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 79723.7569060774,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 87679.5580110497,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"name": "Camera Movement",
+			"time": 91325.9668508287
+		},
+		{
+			"params": [
+				1
+			],
+			"name": "Camera Movement",
+			"time": 92403.3149171271
+		},
+		{
+			"params": [
+				0
+			],
+			"name": "Camera Movement",
+			"time": 93977.9005524862
+		},
+		{
+			"params": [
+				1
+			],
+			"name": "Camera Movement",
+			"time": 96132.5966850829
+		},
+		{
+			"params": [
+				0
+			],
+			"name": "Camera Movement",
+			"time": 97624.3093922652
+		},
+		{
+			"params": [
+				1
+			],
+			"name": "Camera Movement",
+			"time": 98370.1657458564
+		},
+		{
+			"params": [
+				0
+			],
+			"name": "Camera Movement",
+			"time": 102265.193370166
+		},
+		{
+			"params": [
+				1
+			],
+			"name": "Camera Movement",
+			"time": 107734.806629834
 		},
 		{
 			"params": [
@@ -104,6 +244,27 @@
 			],
 			"name": "Scroll Speed Change",
 			"time": 109060.773480663
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 120331.491712707,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 125883.977900552,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 130690.607734807,
+			"name": "Camera Movement"
 		}
 	],
 	"stage": "streetdsides",
@@ -3856,11 +4017,11 @@
 					"type": 0
 				}
 			],
-			"type": 0,
 			"characters": [
 				"conall"
 			],
-			"visible": true
+			"visible": true,
+			"type": 0
 		},
 		{
 			"position": "boyfriend",
@@ -6375,7 +6536,7 @@
 				},
 				{
 					"id": 2,
-					"sLen": 248.999999999825,
+					"sLen": 248.999999999811,
 					"time": 113618.784530387,
 					"type": 0
 				},
@@ -7478,20 +7639,20 @@
 					"type": 0
 				}
 			],
-			"type": 1,
 			"characters": [
 				"bf-dsides"
 			],
-			"visible": true
+			"visible": true,
+			"type": 1
 		},
 		{
 			"position": "girlfriend",
 			"notes": [],
-			"type": 2,
 			"characters": [
 				"gf-dsides"
 			],
-			"visible": false
+			"visible": false,
+			"type": 2
 		}
 	],
 	"codenameChart": true,

@@ -215,5 +215,11 @@
 		"handle": "Top 10 Awesome",
 		"description": "awesome (Composer)",
 		"social_link": "https://youtube.com/@Top10Awesome"
+	},
+	{
+		"name": "ear",
+		"handle": "earframe",
+		"description": "porter?\n\nHELP_MY_SPACEBAR_BROKE.",
+		"social_link": "https://four.com/"
 	}
 ]

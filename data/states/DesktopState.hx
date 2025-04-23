@@ -5,7 +5,6 @@ var chrom:CustomShader  = new CustomShader("chromatic aberration");
 var rainbowscreen:FlxBackdrop;
 import funkin.options.OptionsMenu;
 import funkin.menus.ModSwitchMenu;
-import funkin.menus.credits.CreditsMain;
 import flixel.addons.display.FlxBackdrop;
 import flixel.ui.FlxButton;
 var chromeOffset = (FlxG.save.data.chromeOffset/350);

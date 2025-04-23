@@ -29,7 +29,8 @@ override function update(elapsed:Float){time += elapsed;
     rain.data.iTime.value = [-24*Math.sin(time)];}
 	function create() {
 
-		graadienter = new FlxSprite(-800,-400).loadGraphic(Paths.image('stages/nothing/ss_gradient'));
+		graadienter = new FlxSprite(-100,-200).loadGraphic(Paths.image('stages/nothing/ss_gradient'));
+		graadienter.scale.set(2,2);
 		graadienter.blend = BlendMode.ADD;
 		graadienter.antialiasing = true;
 		insert(6, graadienter); // this should insert the bg behind the characters

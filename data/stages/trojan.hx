@@ -1,6 +1,7 @@
 //fuck_you_im_having_the_animated_bg_always_loaded
 function postCreate() {
 	
+    mountainsback.color=FlxColor.RED;
 	platform.visible = false;
 	atelo_popup_animated.visible = false;
 	error.visible = false;

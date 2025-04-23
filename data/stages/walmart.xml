@@ -1,5 +1,6 @@
 <!DOCTYPE codename-engine-stage>
-<stage zoom="0.8" folder="stages/other">
-   <girlfriend />
-   <sprite name="walmart" x="-600" y="-380" sprite="wallmart" scale="1"/>
+<stage zoom="0.9" folder="stages/other">
+   <sprite name="walmart" x="-15" y="-70" sprite="wallmart" scale="2"/>
+   <dad camxoffset="-200" camyoffset="20"/>
+	<boyfriend y="170" x="745"/>	
 </stage>

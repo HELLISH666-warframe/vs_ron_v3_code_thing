@@ -1,8 +1,8 @@
 <!DOCTYPE codename-engine-stage>
-<stage zoom="0.9" folder="stages/dave">
-   	<sprite name="sky" x="-400" y="-100" sprite="ICANTBELIEVEIHAVETOCLARIFYTHIS" scroll="0.1" />
-   	<sprite name="gate" x="-500" y="200" scale="1.2" sprite="gate" scroll="0.8" />
-   	<sprite name="grass" x="-700" y="500" sprite="grass" scale="1.2" scroll="0.9" />
-   	<dad  y="100"/>
+<stage zoom="0.9" folder="stages/dave" startCamPosY="600" startCamPosX="10">
+   	<sprite name="sky" x="-100" y="260" scale="2" sprite="sky" scroll="0.75" />
+   	<sprite name="gate" x="-500" y="200" scale="1.2" sprite="gate" scroll="0.9" />
+   	<sprite name="grass" x="-700" y="500" sprite="grass" scale="1.2" scroll="1" />
+   	<dad camyoffset="80" y="100"/>
    	<boyfriend y="100" />
 </stage>

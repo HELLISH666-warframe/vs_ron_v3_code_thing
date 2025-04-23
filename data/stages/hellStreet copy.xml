@@ -1,0 +1,29 @@
+<!DOCTYPE codename-engine-stage>
+<stage zoom="0.8" folder="stages/">
+    <sprite name="asdfsa" x="-800" y="-400" sprite="hellStreet/bloodshed_sky" scroll="0.1"/>
+	<sprite name="hellbg" x="140" y="240" sprite="classicStages/hell_bg" scroll="0.9"  type="loop" scale="4"  />
+        <anim name="hell_bg" anim="idle instance " loop="true"/>
+    <sprite name="witheredRa" x="-140" y="-9" sprite="street/ron_sky" scroll="0.1" scale="2" />
+     <sprite name="firebg" x="300" y="-9560" sprite="hellStreet/escape_fire"  type="loop" />
+         <anim name="escape_fire" anim="fire instance " loop="true"/>
+    <sprite name="cityback" x="-440" y="-150" sprite="street/ron_cityback" scroll="0.25" scale="2" />
+    <sprite name="cityj" x="-146" y="55" sprite="street/ron_city" scroll="0.25" scale="2" />
+    <sprite name="mountainsback" x="-800" y="-400" sprite="street/ron_mountainsback" scroll="0.3" />
+    <sprite name="mountains" x="-140" y="270" sprite="street/ron_mountains" scroll="0.3" scale="2"/>
+    <sprite name="hillfront" x="-130" y="425" sprite="street/ron_hillfront" scroll="0.4" scale="2" />
+    <sprite name="street" x="0" y="173" sprite="street/ron_street" scale="2.2" />
+     <sprite name="mountainsbackbl" x="-800" y="-400" sprite="hellStreet/bloodshed_mountainsback" scroll="0.25"/>
+   	<sprite name="hillfrontbl" x="-800" y="-400" sprite="hellStreet/bloodshed_city" scroll="0.25"/>
+        <sprite name="satan" x="-100" y="600" sprite="hellStreet/hellRon_satan"/>
+   	<sprite name="mountainsbl" x="-800" y="-400" sprite="hellStreet/bloodshed_mountains" scroll="0.3"/>
+    <sprite name="streetbl" x="0" y="173" sprite="hellStreet/bloodshed_street" scale="2.2" />
+    <sprite name="wbg" x="300" y="-5560" sprite="hellStreet/lava"  type="loop" />
+         <anim name="lava" anim="lava" loop="true"/>
+	<sprite name="space" x="-800" y="-1200" sprite="hellStreet/spacebg" scroll="0.5" />
+   	<sprite name="earth" x="-800" y="-1300" sprite="hellStreet/space" scroll="0.5" />
+	<sprite name="islands" x="-800" y="-5560" sprite="hellStreet/bloodshed_streetBroken" scroll="1" />
+       	<sprite name="freindly" x="-800" y="-5560"  sprite="hellStreet/freindlystars" scroll="0.05" />
+    <girlfriend />
+	<dad />
+   	<boyfriend />
+</stage>

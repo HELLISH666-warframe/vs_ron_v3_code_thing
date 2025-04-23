@@ -1,5 +1,8 @@
 <!DOCTYPE codename-engine-stage>
 <stage zoom="0.69" folder="stages/grey/">
-	<sprite name="sky" x="-700" y="-1700" scale="2" sprite="paperBack" updateHitbox="true"/>
-	<sprite name="street" x="-1600" y="-1700" scale="2" sprite="paperFront" updateHitbox="true"/>
+	<sprite name="sky" x="-600" y="240" scale="4" sprite="paperBack" scroll="0.9" updateHitbox="true"/>
+	<sprite name="street" x="-100" y="1350"  scale="4" sprite="paperFront" scroll="0.9" updateHitbox="true"/>
+	<girlfriend x="2000" y="2100"/>
+	<player x="2600" y="2500" camxoffset="-130"/>
+	<opponent x="1340" y="2318" camxoffset="-380" camyoffset="-80"/>
 </stage>
